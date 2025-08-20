@@ -1,0 +1,80 @@
+Build me a **fully responsive portfolio website** for Kennedy Muritu.  
+
+🔹 **Pages/Sections Needed:**
+1. **Home Page**  
+   - Dark theme background (black/gray).  
+   - Header with navigation: `Home | About | Projects | Services | Hire Me 🤝`  
+   - Title: "Welcome to My Portfolio".  
+   - Subsection with **Resume/Developer download button** (link below).  
+   - Social icons with links (GitHub, LinkedIn, Instagram, X, TikTok).  
+   - Profile image on the right, with my name `Kennedy Muritu`.  
+   - WhatsApp CTA button: "Send Me a Message".  
+
+2. **About Page**  
+   - Title: **Who is Kennedy?** (elegant serif font).  
+   - Text: "I’m a Mechatronics Engineering student passionate about blending technology and creativity. I love solving digital challenges with smart, efficient solutions and continuously expanding my skill set."  
+   - Image of laptop & coffee (resource provided).  
+   - Logos (Kagumo High School, DirectEd, Murang’a University of Technology).  
+   - CTA button: **The Journey** → scrolls to journey section (optional).  
+
+3. **Projects Page**  
+   - Title: **Projects**  
+   - Four project cards, each with icons & descriptions:  
+     - **Shuka Metaverse** – Immersive Web3 Game Interface.  
+     - **TechHub Solutions** – E-commerce Engine for Print Services.  
+     - **Sparkle Laundry Home** – Automated Convenience Platform.  
+     - **Royal Priesthood** – Digital Ministry Platform.  
+   - Tagline: *"Where Strategy Meets Execution."*  
+   - CTA button: **Send Me a Message** (WhatsApp link).  
+
+4. **Services Page**  
+   - Title: **Services**  
+   - Three service cards with illustrations & descriptions:  
+     - **Strategic Foundation** → Digital Strategy & Architecture Audit.  
+     - **Conversion-Focused Design** → UI/UX That Drives Results.  
+     - **Engineered Execution** → High-Performance Web Development.  
+   - Tagline: *"We Plan, Desing then Build"* (keep typo as in design).  
+   - CTA: **Send Me a Message**.  
+   - Footer: "© 2025 Kennedy Muritu | Built with ❤️ on Replit".  
+
+---
+
+🔹 **Animations & Styling:**  
+- Smooth scrolling between sections.  
+- Fade-in animations for text/images.  
+- Hover effects on buttons & project cards.  
+- Responsive grid layout (mobile → stacked, desktop → grid).  
+- Rounded corners, soft shadows for cards.  
+- Subtle floating animation for project/service icons.  
+
+---
+
+🔹 **Assets to Use:**  
+- Profile picture (provided).  
+- Laptop/coffee image (provided).  
+- Logos: Kagumo HS, DirectEd, MUT (provided).  
+- Project icons (provided).  
+- Service illustrations (provided).  
+
+---
+
+🔹 **Social Links (make clickable icons in footer & home):**
+- GitHub → https://github.com/Muri-tuu  
+- Instagram → https://www.instagram.com/muri_tuu/  
+- X → https://x.com/muri_tuu  
+- LinkedIn → https://www.linkedin.com/in/kennedy-muritu-a35649354/  
+- TikTok → https://www.tiktok.com/@muri_tuu  
+
+🔹 **Resume Link:**  
+- View & download → https://drive.google.com/file/d/1xcfNH0HThexVpjk7nTFRyEHhSWH8ZsCn/view?usp=drive_link  
+
+🔹 **WhatsApp CTA Link:**  
+- https://wa.me/254115594826?text=Hello%20Kennedy,%20I'm%20interested%20in%20discussing%20a%20potential%20project%20opportunity.  
+
+---
+
+👉 Generate the full codebase in **React + Tailwind CSS** (hosted on Replit).  
+👉 Ensure **full responsiveness** across desktop, tablet, and mobile.  
+👉 All links must work.  
+👉 Users should be able to **view and download the resume**.  
+👉 Match the exact **design, layout, and animations** from the screenshots provided.  
