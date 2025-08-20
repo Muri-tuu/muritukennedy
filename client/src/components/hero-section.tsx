@@ -122,7 +122,6 @@ export default function HeroSection() {
                 <i className="fab fa-tiktok text-xl relative z-10"></i>
               </motion.a>
               <div className="flex items-center ml-2 sm:ml-4">
-                <i className="fas fa-arrow-turn-down text-gray-400 mr-2"></i>
                 <span className="text-gray-400 text-xs sm:text-sm">@muri_tuu</span>
               </div>
             </div>

@@ -66,26 +66,28 @@ export default function ProjectsSection() {
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.3 }}
                 >
-                  <div className="mb-6 flex justify-center">
-                    <motion.div 
-                      className="relative"
-                      animate={{ 
-                        y: [0, -10, 0],
-                      }}
-                      transition={{
-                        duration: 3,
-                        repeat: Infinity,
-                        ease: "easeInOut"
-                      }}
-                    >
-                      <motion.img
-                        src={project.icon}
-                        alt={`${project.title} icon`}
-                        className="w-16 h-16 sm:w-20 sm:h-20 object-contain transition-transform duration-300"
-                        whileHover={{ scale: 1.1, rotate: 5 }}
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-blue-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
-                    </motion.div>
+                  <div className="mb-6">
+                    <div className="bg-dark-800/60 backdrop-blur-sm rounded-2xl p-6 border border-gray-600 group-hover:border-blue-500 transition-all duration-300">
+                      <motion.div 
+                        className="relative flex justify-center"
+                        animate={{ 
+                          y: [0, -10, 0],
+                        }}
+                        transition={{
+                          duration: 3,
+                          repeat: Infinity,
+                          ease: "easeInOut"
+                        }}
+                      >
+                        <motion.img
+                          src={project.icon}
+                          alt={`${project.title} icon`}
+                          className="w-24 h-24 sm:w-28 sm:h-28 lg:w-32 lg:h-32 object-contain transition-transform duration-300"
+                          whileHover={{ scale: 1.1, rotate: 5 }}
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-blue-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
+                      </motion.div>
+                    </div>
                   </div>
                   
                   <h3 className="text-xl sm:text-2xl font-serif font-bold text-blue-400 mb-2 group-hover:text-blue-300 transition-colors duration-300">{project.title}</h3>
@@ -120,8 +122,7 @@ export default function ProjectsSection() {
             viewport={{ once: true }}
             className="text-center"
           >
-            <div className="flex items-center justify-center space-x-4">
-              <i className="fas fa-arrow-turn-down text-gray-400"></i>
+            <div className="flex items-center justify-center">
               <motion.a
                 href="https://wa.me/254115594826?text=Hello%20Kennedy,%20I'm%20interested%20in%20discussing%20a%20potential%20project%20opportunity."
                 target="_blank"

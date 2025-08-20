@@ -97,8 +97,7 @@ export default function ServicesSection() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <div className="flex items-center justify-center space-x-4">
-              <i className="fas fa-arrow-turn-down text-gray-400"></i>
+            <div className="flex items-center justify-center">
               <motion.a
                 href="https://wa.me/254115594826?text=Hello%20Kennedy,%20I'm%20interested%20in%20discussing%20a%20potential%20project%20opportunity."
                 target="_blank"
