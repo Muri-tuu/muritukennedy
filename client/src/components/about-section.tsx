@@ -82,12 +82,14 @@ export default function AboutSection() {
               {/* CTA */}
               <div className="flex items-center space-x-4">
                 <i className="fas fa-arrow-turn-down text-gray-400"></i>
-                <button
+                <motion.button
                   onClick={scrollToProjects}
-                  className="inline-flex items-center px-6 py-3 bg-transparent border border-green-500 text-green-400 font-medium rounded-full hover:bg-green-500/10 transition-all duration-300 transform hover:scale-105"
+                  className="inline-flex items-center px-6 py-3 bg-transparent border border-green-500 text-green-400 font-medium rounded-full hover:bg-green-500/10 transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-green-500/20"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
                 >
                   The Journey
-                </button>
+                </motion.button>
               </div>
             </motion.div>
             
@@ -100,10 +102,12 @@ export default function AboutSection() {
               className="lg:order-2"
             >
               <div className="relative">
-                <img
+                <motion.img
                   src={whoIsKennedyImage}
                   alt="Laptop and coffee cup on bedsheets representing work-life balance"
-                  className="w-full h-auto rounded-2xl shadow-2xl border border-gray-600 hover:border-blue-500 transition-all duration-300 transform hover:scale-105"
+                  className="w-full h-auto rounded-2xl shadow-2xl border border-gray-600 hover:border-blue-500 transition-all duration-300 cursor-pointer"
+                  whileHover={{ scale: 1.05, rotate: 1 }}
+                  transition={{ duration: 0.3 }}
                 />
               </div>
             </motion.div>

@@ -58,32 +58,43 @@ export default function ProjectsSection() {
                 viewport={{ once: true }}
                 className="text-center"
               >
-                <div className="mb-6 flex justify-center">
-                  <motion.div 
-                    className="relative"
-                    animate={{ 
-                      y: [0, -10, 0],
-                    }}
-                    transition={{
-                      duration: 3,
-                      repeat: Infinity,
-                      ease: "easeInOut"
-                    }}
-                  >
-                    <img
-                      src={project.icon}
-                      alt={`${project.title} icon`}
-                      className="w-20 h-20 object-contain"
-                    />
-                  </motion.div>
-                </div>
-                
-                <h3 className="text-2xl font-serif font-bold text-blue-400 mb-2">{project.title}</h3>
-                
-                <div className="flex items-center justify-center mb-4">
-                  <div className="w-2 h-2 bg-green-500 rounded-full mr-3"></div>
-                  <p className="text-white font-medium">{project.subtitle}</p>
-                </div>
+                <motion.a
+                  href="https://github.com/Muri-tuu"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block cursor-pointer group"
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <div className="mb-6 flex justify-center">
+                    <motion.div 
+                      className="relative"
+                      animate={{ 
+                        y: [0, -10, 0],
+                      }}
+                      transition={{
+                        duration: 3,
+                        repeat: Infinity,
+                        ease: "easeInOut"
+                      }}
+                    >
+                      <motion.img
+                        src={project.icon}
+                        alt={`${project.title} icon`}
+                        className="w-20 h-20 object-contain transition-transform duration-300"
+                        whileHover={{ scale: 1.1, rotate: 5 }}
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-blue-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
+                    </motion.div>
+                  </div>
+                  
+                  <h3 className="text-2xl font-serif font-bold text-blue-400 mb-2 group-hover:text-blue-300 transition-colors duration-300">{project.title}</h3>
+                  
+                  <div className="flex items-center justify-center mb-4">
+                    <div className="w-2 h-2 bg-green-500 rounded-full mr-3 animate-pulse"></div>
+                    <p className="text-white font-medium group-hover:text-gray-200 transition-colors duration-300">{project.subtitle}</p>
+                  </div>
+                </motion.a>
               </motion.div>
             ))}
           </div>
@@ -111,14 +122,16 @@ export default function ProjectsSection() {
           >
             <div className="flex items-center justify-center space-x-4">
               <i className="fas fa-arrow-turn-down text-gray-400"></i>
-              <a
+              <motion.a
                 href="https://wa.me/254115594826?text=Hello%20Kennedy,%20I'm%20interested%20in%20discussing%20a%20potential%20project%20opportunity."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center px-6 py-3 bg-transparent border border-green-500 text-green-400 font-medium rounded-full hover:bg-green-500/10 transition-all duration-300 transform hover:scale-105"
+                className="inline-flex items-center px-6 py-3 bg-transparent border border-green-500 text-green-400 font-medium rounded-full hover:bg-green-500/10 transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-green-500/20"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
               >
                 Send Me a Message
-              </a>
+              </motion.a>
             </div>
           </motion.div>
         </div>

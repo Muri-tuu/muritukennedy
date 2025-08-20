@@ -1,12 +1,12 @@
 import { motion } from "framer-motion";
-import servicesImage from "@assets/Services_1755692624113.jpg";
+import strategicFoundationImage from "@assets/Services_1755692624113.jpg";
 import uixImage from "@assets/UIX_1755692624115.jpg";
 import webDevelopmentImage from "@assets/Web Development_1755692624116.jpg";
 
 export default function ServicesSection() {
   const services = [
     {
-      image: servicesImage,
+      image: strategicFoundationImage,
       title: "Strategic Foundation",
       subtitle: "Digital Strategy & Architecture Audit",
       delay: 0
@@ -51,13 +51,20 @@ export default function ServicesSection() {
                 viewport={{ once: true }}
                 className="text-center"
               >
-                <div className="mb-6 relative overflow-hidden rounded-xl">
-                  <img
+                <motion.div 
+                  className="mb-6 relative overflow-hidden rounded-xl cursor-pointer"
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <motion.img
                     src={service.image}
                     alt={service.title}
                     className="w-full h-48 object-cover rounded-xl"
+                    whileHover={{ scale: 1.1 }}
+                    transition={{ duration: 0.3 }}
                   />
-                </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
+                </motion.div>
                 
                 <h3 className="text-2xl font-serif font-bold text-blue-400 mb-2">{service.title}</h3>
                 
@@ -78,7 +85,7 @@ export default function ServicesSection() {
             className="text-center mb-8"
           >
             <h3 className="text-3xl font-serif font-bold bg-gradient-to-r from-pink-500 to-violet-500 bg-clip-text text-transparent">
-              We Plan, Desing then Build
+              We Plan, Design then Build
             </h3>
           </motion.div>
           
@@ -92,14 +99,16 @@ export default function ServicesSection() {
           >
             <div className="flex items-center justify-center space-x-4">
               <i className="fas fa-arrow-turn-down text-gray-400"></i>
-              <a
+              <motion.a
                 href="https://wa.me/254115594826?text=Hello%20Kennedy,%20I'm%20interested%20in%20discussing%20a%20potential%20project%20opportunity."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center px-6 py-3 bg-transparent border border-green-500 text-green-400 font-medium rounded-full hover:bg-green-500/10 transition-all duration-300 transform hover:scale-105"
+                className="inline-flex items-center px-6 py-3 bg-transparent border border-green-500 text-green-400 font-medium rounded-full hover:bg-green-500/10 transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-green-500/20"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
               >
                 Send Me a Message
-              </a>
+              </motion.a>
             </div>
           </motion.div>
           
@@ -114,27 +123,94 @@ export default function ServicesSection() {
             <div className="flex flex-col md:flex-row justify-between items-center">
               {/* Social Links */}
               <div className="flex space-x-6 mb-4 md:mb-0">
-                <a href="https://github.com/Muri-tuu" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-black rounded-full flex items-center justify-center text-white hover:scale-110 transition-all duration-300">
-                  <i className="fab fa-github text-xl"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/kennedy-muritu-a35649354/" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white hover:scale-110 transition-all duration-300">
-                  <i className="fab fa-linkedin text-xl"></i>
-                </a>
-                <a href="https://www.instagram.com/muri_tuu/" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-white hover:scale-110 transition-all duration-300">
-                  <i className="fab fa-instagram text-xl"></i>
-                </a>
-                <a href="https://x.com/muri_tuu" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-black rounded-full flex items-center justify-center text-white hover:scale-110 transition-all duration-300">
-                  <i className="fab fa-x-twitter text-xl"></i>
-                </a>
-                <a href="https://www.tiktok.com/@muri_tuu" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-black rounded-full flex items-center justify-center text-white hover:scale-110 transition-all duration-300">
-                  <i className="fab fa-tiktok text-xl"></i>
-                </a>
+                <motion.a 
+                  href="https://github.com/Muri-tuu" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="w-12 h-12 bg-black rounded-full flex items-center justify-center text-white relative overflow-hidden group"
+                  whileHover={{ scale: 1.15, rotate: 5 }}
+                  whileTap={{ scale: 0.95 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-r from-gray-600 to-gray-800 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full"
+                    initial={{ scale: 0 }}
+                    whileHover={{ scale: 1 }}
+                  />
+                  <i className="fab fa-github text-xl relative z-10"></i>
+                </motion.a>
+                <motion.a 
+                  href="https://www.linkedin.com/in/kennedy-muritu-a35649354/" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white relative overflow-hidden group"
+                  whileHover={{ scale: 1.15, rotate: -5 }}
+                  whileTap={{ scale: 0.95 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-r from-blue-400 to-blue-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full"
+                    initial={{ scale: 0 }}
+                    whileHover={{ scale: 1 }}
+                  />
+                  <i className="fab fa-linkedin text-xl relative z-10"></i>
+                </motion.a>
+                <motion.a 
+                  href="https://www.instagram.com/muri_tuu/" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-white relative overflow-hidden group"
+                  whileHover={{ scale: 1.15, rotate: 5 }}
+                  whileTap={{ scale: 0.95 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-r from-pink-400 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full"
+                    initial={{ scale: 0 }}
+                    whileHover={{ scale: 1 }}
+                  />
+                  <i className="fab fa-instagram text-xl relative z-10"></i>
+                </motion.a>
+                <motion.a 
+                  href="https://x.com/muri_tuu" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="w-12 h-12 bg-black rounded-full flex items-center justify-center text-white relative overflow-hidden group"
+                  whileHover={{ scale: 1.15, rotate: -5 }}
+                  whileTap={{ scale: 0.95 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-r from-gray-700 to-black opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full"
+                    initial={{ scale: 0 }}
+                    whileHover={{ scale: 1 }}
+                  />
+                  <svg className="w-5 h-5 relative z-10" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                  </svg>
+                </motion.a>
+                <motion.a 
+                  href="https://www.tiktok.com/@muri_tuu" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="w-12 h-12 bg-black rounded-full flex items-center justify-center text-white relative overflow-hidden group"
+                  whileHover={{ scale: 1.15, rotate: 5 }}
+                  whileTap={{ scale: 0.95 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-r from-red-500 to-black opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full"
+                    initial={{ scale: 0 }}
+                    whileHover={{ scale: 1 }}
+                  />
+                  <i className="fab fa-tiktok text-xl relative z-10"></i>
+                </motion.a>
               </div>
               
               {/* Footer Text */}
               <div className="text-center md:text-right">
                 <p className="text-gray-400 mb-2">
-                  © 2025 <span className="text-blue-400">Kennedy Muritu</span>
+                  © 2025 <a href="https://www.linkedin.com/in/kennedy-muritu-a35649354/" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300 transition-colors duration-300 hover:underline">Kennedy Muritu</a>
                 </p>
                 <p className="text-gray-400">
                   Built with <span className="text-red-500">❤️</span> on Replit
