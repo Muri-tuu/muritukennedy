@@ -5,7 +5,7 @@ export default function HeroSection() {
   return (
     <section id="home" className="min-h-screen flex items-center justify-center pt-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto w-full">
-        <div className="grid lg:grid-cols-2 gap-8 items-start">
+        <div className="grid lg:grid-cols-2 gap-8 items-center lg:items-start">
           {/* Left Content Card */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -14,8 +14,8 @@ export default function HeroSection() {
             className="space-y-6"
           >
             {/* Welcome Card */}
-            <div className="bg-dark-700/80 backdrop-blur-sm rounded-3xl p-8 border border-gray-600">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold leading-tight text-white">
+            <div className="bg-dark-700/80 backdrop-blur-sm rounded-3xl p-6 sm:p-8 border border-gray-600">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-serif font-bold leading-tight text-white">
                 Welcome to<br />
                 My Portfolio
               </h1>
@@ -38,7 +38,7 @@ export default function HeroSection() {
             </div>
             
             {/* Social Links */}
-            <div className="flex items-center space-x-4">
+            <div className="flex flex-wrap items-center gap-3 sm:gap-4">
               <motion.a 
                 href="https://github.com/Muri-tuu" 
                 target="_blank" 
@@ -121,9 +121,9 @@ export default function HeroSection() {
                 />
                 <i className="fab fa-tiktok text-xl relative z-10"></i>
               </motion.a>
-              <div className="flex items-center ml-4">
+              <div className="flex items-center ml-2 sm:ml-4">
                 <i className="fas fa-arrow-turn-down text-gray-400 mr-2"></i>
-                <span className="text-gray-400 text-sm">@muri_tuu</span>
+                <span className="text-gray-400 text-xs sm:text-sm">@muri_tuu</span>
               </div>
             </div>
           </motion.div>
@@ -135,18 +135,18 @@ export default function HeroSection() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="lg:order-2"
           >
-            <div className="bg-dark-700/80 backdrop-blur-sm rounded-3xl p-8 border border-gray-600 text-center">
+            <div className="bg-dark-700/80 backdrop-blur-sm rounded-3xl p-6 sm:p-8 border border-gray-600 text-center">
               <div className="mb-6">
                 <motion.img
                   src={profilePicture}
                   alt="Kennedy Muritu - Professional Profile Picture"
-                  className="w-48 h-48 object-cover rounded-2xl mx-auto shadow-2xl border-2 border-gray-600 hover:border-blue-500 transition-all duration-300 cursor-pointer"
+                  className="w-36 h-36 sm:w-44 sm:h-44 lg:w-48 lg:h-48 object-cover rounded-2xl mx-auto shadow-2xl border-2 border-gray-600 hover:border-blue-500 transition-all duration-300 cursor-pointer"
                   whileHover={{ scale: 1.05, rotate: 1 }}
                   transition={{ duration: 0.3 }}
                 />
               </div>
               
-              <h2 className="text-2xl font-serif font-bold text-white mb-6">
+              <h2 className="text-xl sm:text-2xl font-serif font-bold text-white mb-6">
                 <a href="https://www.linkedin.com/in/kennedy-muritu-a35649354/" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition-colors duration-300 hover:underline">
                   Kennedy<br />Muritu
                 </a>

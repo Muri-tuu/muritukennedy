@@ -35,7 +35,7 @@ export default function ProjectsSection() {
   return (
     <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8 bg-dark-900">
       <div className="max-w-7xl mx-auto">
-        <div className="bg-dark-700/80 backdrop-blur-sm rounded-3xl p-8 lg:p-12 border border-gray-600">
+        <div className="bg-dark-700/80 backdrop-blur-sm rounded-3xl p-6 sm:p-8 lg:p-12 border border-gray-600">
           {/* Section Title */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -48,7 +48,7 @@ export default function ProjectsSection() {
           </motion.div>
           
           {/* Projects Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-12 mb-12">
+          <div className="grid sm:grid-cols-2 gap-8 lg:gap-12 mb-12">
             {projects.map((project, index) => (
               <motion.div
                 key={project.title}
@@ -81,18 +81,18 @@ export default function ProjectsSection() {
                       <motion.img
                         src={project.icon}
                         alt={`${project.title} icon`}
-                        className="w-20 h-20 object-contain transition-transform duration-300"
+                        className="w-16 h-16 sm:w-20 sm:h-20 object-contain transition-transform duration-300"
                         whileHover={{ scale: 1.1, rotate: 5 }}
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-blue-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
                     </motion.div>
                   </div>
                   
-                  <h3 className="text-2xl font-serif font-bold text-blue-400 mb-2 group-hover:text-blue-300 transition-colors duration-300">{project.title}</h3>
+                  <h3 className="text-xl sm:text-2xl font-serif font-bold text-blue-400 mb-2 group-hover:text-blue-300 transition-colors duration-300">{project.title}</h3>
                   
                   <div className="flex items-center justify-center mb-4">
                     <div className="w-2 h-2 bg-green-500 rounded-full mr-3 animate-pulse"></div>
-                    <p className="text-white font-medium group-hover:text-gray-200 transition-colors duration-300">{project.subtitle}</p>
+                    <p className="text-sm sm:text-base text-white font-medium group-hover:text-gray-200 transition-colors duration-300">{project.subtitle}</p>
                   </div>
                 </motion.a>
               </motion.div>

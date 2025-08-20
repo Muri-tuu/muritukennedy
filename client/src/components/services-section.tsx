@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import strategicFoundationImage from "@assets/Services_1755692624113.jpg";
+import strategicFoundationImage from "@assets/Strategic Foundation_1755694471347.jpg";
 import uixImage from "@assets/UIX_1755692624115.jpg";
 import webDevelopmentImage from "@assets/Web Development_1755692624116.jpg";
 
@@ -28,7 +28,7 @@ export default function ServicesSection() {
   return (
     <section id="services" className="py-20 px-4 sm:px-6 lg:px-8 bg-dark-900">
       <div className="max-w-7xl mx-auto">
-        <div className="bg-dark-700/80 backdrop-blur-sm rounded-3xl p-8 lg:p-12 border border-gray-600">
+        <div className="bg-dark-700/80 backdrop-blur-sm rounded-3xl p-6 sm:p-8 lg:p-12 border border-gray-600">
           {/* Section Title */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -41,7 +41,7 @@ export default function ServicesSection() {
           </motion.div>
           
           {/* Services Grid */}
-          <div className="grid lg:grid-cols-3 gap-8 mb-12">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-12">
             {services.map((service, index) => (
               <motion.div
                 key={service.title}
@@ -66,11 +66,11 @@ export default function ServicesSection() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
                 </motion.div>
                 
-                <h3 className="text-2xl font-serif font-bold text-blue-400 mb-2">{service.title}</h3>
+                <h3 className="text-xl sm:text-2xl font-serif font-bold text-blue-400 mb-2">{service.title}</h3>
                 
                 <div className="flex items-center justify-center mb-4">
                   <div className="w-2 h-2 bg-green-500 rounded-full mr-3"></div>
-                  <p className="text-white font-medium">{service.subtitle}</p>
+                  <p className="text-sm sm:text-base text-white font-medium">{service.subtitle}</p>
                 </div>
               </motion.div>
             ))}
@@ -84,7 +84,7 @@ export default function ServicesSection() {
             viewport={{ once: true }}
             className="text-center mb-8"
           >
-            <h3 className="text-3xl font-serif font-bold bg-gradient-to-r from-pink-500 to-violet-500 bg-clip-text text-transparent">
+            <h3 className="text-2xl sm:text-3xl font-serif font-bold bg-gradient-to-r from-pink-500 to-violet-500 bg-clip-text text-transparent">
               We Plan, Design then Build
             </h3>
           </motion.div>
@@ -122,7 +122,7 @@ export default function ServicesSection() {
           >
             <div className="flex flex-col md:flex-row justify-between items-center">
               {/* Social Links */}
-              <div className="flex space-x-6 mb-4 md:mb-0">
+              <div className="flex flex-wrap justify-center md:justify-start space-x-4 sm:space-x-6 mb-4 md:mb-0">
                 <motion.a 
                   href="https://github.com/Muri-tuu" 
                   target="_blank" 

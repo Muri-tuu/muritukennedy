@@ -15,7 +15,7 @@ export default function AboutSection() {
   return (
     <section id="about" className="py-20 px-4 sm:px-6 lg:px-8 bg-dark-900">
       <div className="max-w-7xl mx-auto">
-        <div className="bg-dark-700/80 backdrop-blur-sm rounded-3xl p-8 lg:p-12 border border-gray-600">
+        <div className="bg-dark-700/80 backdrop-blur-sm rounded-3xl p-6 sm:p-8 lg:p-12 border border-gray-600">
           {/* Section Title */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -29,7 +29,7 @@ export default function AboutSection() {
             </h2>
           </motion.div>
           
-          <div className="grid lg:grid-cols-2 gap-12 items-start">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
             {/* Content */}
             <motion.div
               initial={{ opacity: 0, x: -40 }}
@@ -46,12 +46,12 @@ export default function AboutSection() {
               
               {/* Educational Logos */}
               <div className="mb-8">
-                <div className="bg-dark-800/60 rounded-2xl p-6 border border-blue-500/30">
-                  <div className="flex items-center justify-center space-x-8">
+                <div className="bg-dark-800/60 rounded-2xl p-4 sm:p-6 border border-blue-500/30">
+                  <div className="flex items-center justify-center space-x-4 sm:space-x-6 lg:space-x-8">
                     <motion.img
                       src={khsLogo}
                       alt="Kagumo High School Logo"
-                      className="h-12 w-auto object-contain"
+                      className="h-8 sm:h-10 lg:h-12 w-auto object-contain"
                       initial={{ opacity: 0, scale: 0.8 }}
                       whileInView={{ opacity: 1, scale: 1 }}
                       transition={{ duration: 0.5, delay: 0.1 }}
@@ -60,7 +60,7 @@ export default function AboutSection() {
                     <motion.img
                       src={directedLogo}
                       alt="DirectEd Development Foundation Logo"
-                      className="h-12 w-auto object-contain"
+                      className="h-8 sm:h-10 lg:h-12 w-auto object-contain"
                       initial={{ opacity: 0, scale: 0.8 }}
                       whileInView={{ opacity: 1, scale: 1 }}
                       transition={{ duration: 0.5, delay: 0.2 }}
@@ -69,7 +69,7 @@ export default function AboutSection() {
                     <motion.img
                       src={mutLogo}
                       alt="Murang'a University of Technology Logo"
-                      className="h-12 w-auto object-contain"
+                      className="h-8 sm:h-10 lg:h-12 w-auto object-contain"
                       initial={{ opacity: 0, scale: 0.8 }}
                       whileInView={{ opacity: 1, scale: 1 }}
                       transition={{ duration: 0.5, delay: 0.3 }}
@@ -105,7 +105,7 @@ export default function AboutSection() {
                 <motion.img
                   src={whoIsKennedyImage}
                   alt="Laptop and coffee cup on bedsheets representing work-life balance"
-                  className="w-full h-auto rounded-2xl shadow-2xl border border-gray-600 hover:border-blue-500 transition-all duration-300 cursor-pointer"
+                  className="w-full h-auto max-w-md mx-auto lg:max-w-none rounded-2xl shadow-2xl border border-gray-600 hover:border-blue-500 transition-all duration-300 cursor-pointer object-cover"
                   whileHover={{ scale: 1.05, rotate: 1 }}
                   transition={{ duration: 0.3 }}
                 />
