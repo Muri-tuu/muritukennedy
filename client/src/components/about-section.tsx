@@ -79,27 +79,15 @@ export default function AboutSection() {
                 </div>
               </div>
               
-              {/* CTA */}
-              <div className="flex items-center space-x-4">
-                <i className="fas fa-arrow-turn-down text-gray-400"></i>
-                <motion.button
-                  onClick={scrollToProjects}
-                  className="inline-flex items-center px-6 py-3 bg-transparent border border-green-500 text-green-400 font-medium rounded-full hover:bg-green-500/10 transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-green-500/20"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  The Journey
-                </motion.button>
-              </div>
             </motion.div>
             
-            {/* Image */}
+            {/* Image and CTA */}
             <motion.div
               initial={{ opacity: 0, x: 40 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="lg:order-2"
+              className="lg:order-2 space-y-8"
             >
               <div className="relative">
                 <motion.img
@@ -109,6 +97,19 @@ export default function AboutSection() {
                   whileHover={{ scale: 1.05, rotate: 1 }}
                   transition={{ duration: 0.3 }}
                 />
+              </div>
+              
+              {/* CTA positioned below image on right side */}
+              <div className="flex items-center justify-center lg:justify-end space-x-4">
+                <i className="fas fa-arrow-turn-down text-gray-400"></i>
+                <motion.button
+                  onClick={scrollToProjects}
+                  className="inline-flex items-center px-6 py-3 bg-transparent border border-green-500 text-green-400 font-medium rounded-full hover:bg-green-500/10 transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-green-500/20"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  The Journey
+                </motion.button>
               </div>
             </motion.div>
           </div>
