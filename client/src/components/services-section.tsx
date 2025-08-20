@@ -9,96 +9,140 @@ export default function ServicesSection() {
       image: servicesImage,
       title: "Strategic Foundation",
       subtitle: "Digital Strategy & Architecture Audit",
-      description: "Comprehensive analysis of your digital ecosystem to identify opportunities, optimize performance, and create scalable architecture foundations that drive long-term success.",
-      gradient: "from-blue-500 to-purple-600",
       delay: 0
     },
     {
       image: uixImage,
       title: "Conversion-Focused Design",
       subtitle: "UI/UX That Drives Results",
-      description: "User-centered design solutions that not only look stunning but are strategically crafted to maximize conversions, enhance user engagement, and deliver measurable business outcomes.",
-      gradient: "from-purple-500 to-pink-600",
       delay: 0.1
     },
     {
       image: webDevelopmentImage,
       title: "Engineered Execution",
       subtitle: "High-Performance Web Development",
-      description: "Robust, scalable web solutions built with cutting-edge technologies. From responsive frontends to powerful backends, delivering exceptional performance and reliability.",
-      gradient: "from-cyan-500 to-blue-600",
       delay: 0.2
     }
   ];
 
   return (
-    <section id="services" className="py-20 px-4 sm:px-6 lg:px-8 bg-dark-800">
+    <section id="services" className="py-20 px-4 sm:px-6 lg:px-8 bg-dark-900">
       <div className="max-w-7xl mx-auto">
-        {/* Section Title */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-4xl sm:text-5xl font-serif font-bold mb-4 text-white">Services</h2>
-        </motion.div>
-        
-        {/* Services Grid */}
-        <div className="grid lg:grid-cols-3 gap-8 mb-12">
-          {services.map((service, index) => (
-            <motion.div
-              key={service.title}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: service.delay }}
-              viewport={{ once: true }}
-              className="service-card bg-gradient-to-br from-dark-700 to-dark-800 rounded-2xl p-8 border border-gray-700 hover:border-blue-500 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl group"
-            >
-              <div className="mb-8 relative overflow-hidden rounded-xl">
-                <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-90`}></div>
-                <img
-                  src={service.image}
-                  alt={service.title}
-                  className="w-full h-48 object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-              </div>
-              <div className="mb-6 flex items-center">
-                <div className="w-4 h-4 bg-green-500 rounded-full mr-3 animate-pulse"></div>
-                <h3 className="text-2xl font-bold text-blue-400">{service.title}</h3>
-              </div>
-              <p className="text-gray-300 mb-4 font-medium">{service.subtitle}</p>
-              <p className="text-gray-400 leading-relaxed">{service.description}</p>
-            </motion.div>
-          ))}
-        </div>
-        
-        {/* Tagline & CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center"
-        >
-          <h3 className="text-3xl font-serif font-bold mb-8 bg-gradient-to-r from-pink-500 to-violet-500 bg-clip-text text-transparent">
-            We Plan, Desing then Build
-          </h3>
+        <div className="bg-dark-700/80 backdrop-blur-sm rounded-3xl p-8 lg:p-12 border border-gray-600">
+          {/* Section Title */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="mb-16"
+          >
+            <h2 className="text-4xl sm:text-5xl font-serif font-bold text-white">Services</h2>
+          </motion.div>
           
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-            <a
-              href="https://wa.me/254115594826?text=Hello%20Kennedy,%20I'm%20interested%20in%20discussing%20a%20potential%20project%20opportunity."
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-green-600 to-emerald-500 text-white font-medium rounded-xl hover:from-green-700 hover:to-emerald-600 transition-all duration-300 transform hover:scale-105 hover:shadow-lg text-lg"
-            >
-              <i className="fab fa-whatsapp mr-3 text-xl"></i>
-              Send Me a Message
-            </a>
+          {/* Services Grid */}
+          <div className="grid lg:grid-cols-3 gap-8 mb-12">
+            {services.map((service, index) => (
+              <motion.div
+                key={service.title}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: service.delay }}
+                viewport={{ once: true }}
+                className="text-center"
+              >
+                <div className="mb-6 relative overflow-hidden rounded-xl">
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    className="w-full h-48 object-cover rounded-xl"
+                  />
+                </div>
+                
+                <h3 className="text-2xl font-serif font-bold text-blue-400 mb-2">{service.title}</h3>
+                
+                <div className="flex items-center justify-center mb-4">
+                  <div className="w-2 h-2 bg-green-500 rounded-full mr-3"></div>
+                  <p className="text-white font-medium">{service.subtitle}</p>
+                </div>
+              </motion.div>
+            ))}
           </div>
-        </motion.div>
+          
+          {/* Tagline */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-8"
+          >
+            <h3 className="text-3xl font-serif font-bold bg-gradient-to-r from-pink-500 to-violet-500 bg-clip-text text-transparent">
+              We Plan, Desing then Build
+            </h3>
+          </motion.div>
+          
+          {/* CTA */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <div className="flex items-center justify-center space-x-4">
+              <i className="fas fa-arrow-turn-down text-gray-400"></i>
+              <a
+                href="https://wa.me/254115594826?text=Hello%20Kennedy,%20I'm%20interested%20in%20discussing%20a%20potential%20project%20opportunity."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center px-6 py-3 bg-transparent border border-green-500 text-green-400 font-medium rounded-full hover:bg-green-500/10 transition-all duration-300 transform hover:scale-105"
+              >
+                Send Me a Message
+              </a>
+            </div>
+          </motion.div>
+          
+          {/* Social Links & Footer */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="border-t border-gray-600 pt-8"
+          >
+            <div className="flex flex-col md:flex-row justify-between items-center">
+              {/* Social Links */}
+              <div className="flex space-x-6 mb-4 md:mb-0">
+                <a href="https://github.com/Muri-tuu" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-black rounded-full flex items-center justify-center text-white hover:scale-110 transition-all duration-300">
+                  <i className="fab fa-github text-xl"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/kennedy-muritu-a35649354/" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white hover:scale-110 transition-all duration-300">
+                  <i className="fab fa-linkedin text-xl"></i>
+                </a>
+                <a href="https://www.instagram.com/muri_tuu/" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-white hover:scale-110 transition-all duration-300">
+                  <i className="fab fa-instagram text-xl"></i>
+                </a>
+                <a href="https://x.com/muri_tuu" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-black rounded-full flex items-center justify-center text-white hover:scale-110 transition-all duration-300">
+                  <i className="fab fa-x-twitter text-xl"></i>
+                </a>
+                <a href="https://www.tiktok.com/@muri_tuu" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-black rounded-full flex items-center justify-center text-white hover:scale-110 transition-all duration-300">
+                  <i className="fab fa-tiktok text-xl"></i>
+                </a>
+              </div>
+              
+              {/* Footer Text */}
+              <div className="text-center md:text-right">
+                <p className="text-gray-400 mb-2">
+                  © 2025 <span className="text-blue-400">Kennedy Muritu</span>
+                </p>
+                <p className="text-gray-400">
+                  Built with <span className="text-red-500">❤️</span> on Replit
+                </p>
+              </div>
+            </div>
+          </motion.div>
+        </div>
       </div>
     </section>
   );
