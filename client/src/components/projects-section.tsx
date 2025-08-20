@@ -67,7 +67,7 @@ export default function ProjectsSection() {
                   transition={{ duration: 0.3 }}
                 >
                   <div className="mb-6">
-                    <div className="bg-dark-800/60 backdrop-blur-sm rounded-2xl p-6 border border-gray-600 group-hover:border-blue-500 transition-all duration-300">
+                    <div className="bg-dark-800/60 backdrop-blur-sm rounded-2xl p-6 border border-gray-600 group-hover:border-blue-500 transition-all duration-300 aspect-square flex items-center justify-center">
                       <motion.div 
                         className="relative flex justify-center"
                         animate={{ 
