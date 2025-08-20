@@ -18,9 +18,9 @@ export default function AboutSection() {
         <div className="bg-dark-700/80 backdrop-blur-sm rounded-3xl p-6 sm:p-8 lg:p-12 border border-gray-600">
           {/* Section Title */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 1.0, ease: "easeOut" }}
             viewport={{ once: true }}
             className="mb-12"
           >
@@ -34,7 +34,7 @@ export default function AboutSection() {
             <motion.div
               initial={{ opacity: 0, x: -40 }}
               whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
+              transition={{ duration: 1.0, ease: "easeOut" }}
               viewport={{ once: true }}
             >
               <div className="flex items-start mb-8">
@@ -49,7 +49,7 @@ export default function AboutSection() {
                 className="mb-8"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
                 viewport={{ once: true }}
               >
                 <motion.div 

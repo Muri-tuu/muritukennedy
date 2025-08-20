@@ -38,9 +38,9 @@ export default function ProjectsSection() {
         <div className="bg-dark-700/80 backdrop-blur-sm rounded-3xl p-6 sm:p-8 lg:p-12 border border-gray-600">
           {/* Section Title */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 1.0, ease: "easeOut" }}
             viewport={{ once: true }}
             className="mb-16"
           >
@@ -54,7 +54,7 @@ export default function ProjectsSection() {
                 key={project.title}
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: project.delay }}
+                transition={{ duration: 1.0, delay: project.delay * 0.2, ease: "easeOut" }}
                 viewport={{ once: true }}
                 className="text-center"
               >
@@ -64,7 +64,7 @@ export default function ProjectsSection() {
                   rel="noopener noreferrer"
                   className="block cursor-pointer group"
                   whileHover={{ scale: 1.05 }}
-                  transition={{ duration: 0.3 }}
+                  transition={{ duration: 0.4, ease: "easeInOut" }}
                 >
                   <div className="mb-6">
                     <motion.div 
@@ -73,7 +73,7 @@ export default function ProjectsSection() {
                         y: [0, -5, 0],
                       }}
                       transition={{
-                        duration: 3,
+                        duration: 4,
                         repeat: Infinity,
                         ease: "easeInOut"
                       }}
@@ -83,6 +83,7 @@ export default function ProjectsSection() {
                         alt={`${project.title} icon`}
                         className="w-full h-full object-cover transition-transform duration-300"
                         whileHover={{ scale: 1.1 }}
+                        transition={{ duration: 0.3, ease: "easeInOut" }}
                       />
                     </motion.div>
                   </div>

@@ -8,9 +8,9 @@ export default function HeroSection() {
         <div className="grid lg:grid-cols-2 gap-8 items-center lg:items-start">
           {/* Left Content Card */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 1.2, ease: "easeOut" }}
             className="space-y-6"
           >
             {/* Welcome Card */}
@@ -129,9 +129,9 @@ export default function HeroSection() {
           
           {/* Right Profile Card */}
           <motion.div
-            initial={{ opacity: 0, y: 40 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            transition={{ duration: 1.2, delay: 0.4, ease: "easeOut" }}
             className="lg:order-2"
           >
             <div className="bg-dark-700/80 backdrop-blur-sm rounded-3xl p-6 sm:p-8 border border-gray-600 text-center">
@@ -141,7 +141,7 @@ export default function HeroSection() {
                   alt="Kennedy Muritu - Professional Profile Picture"
                   className="w-36 h-36 sm:w-44 sm:h-44 lg:w-48 lg:h-48 object-cover rounded-2xl mx-auto shadow-2xl border-2 border-gray-600 hover:border-blue-500 transition-all duration-300 cursor-pointer"
                   whileHover={{ scale: 1.05, rotate: 1 }}
-                  transition={{ duration: 0.3 }}
+                  transition={{ duration: 0.5, ease: "easeInOut" }}
                 />
               </div>
               
