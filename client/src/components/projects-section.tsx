@@ -68,7 +68,7 @@ export default function ProjectsSection() {
                 >
                   <div className="mb-6">
                     <motion.div 
-                      className="relative bg-dark-800/60 backdrop-blur-sm rounded-2xl border border-gray-600 group-hover:border-blue-500 transition-all duration-300 aspect-square overflow-hidden"
+                      className="relative bg-dark-800/60 backdrop-blur-sm rounded-2xl border border-gray-600 group-hover:border-blue-500 group-hover:shadow-lg group-hover:shadow-blue-500/50 transition-all duration-300 aspect-square overflow-hidden"
                       animate={{ 
                         y: [0, -5, 0],
                       }}
@@ -84,7 +84,6 @@ export default function ProjectsSection() {
                         className="w-full h-full object-cover transition-transform duration-300"
                         whileHover={{ scale: 1.1 }}
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-blue-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     </motion.div>
                   </div>
                   
