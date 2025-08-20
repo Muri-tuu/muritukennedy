@@ -67,27 +67,25 @@ export default function ProjectsSection() {
                   transition={{ duration: 0.3 }}
                 >
                   <div className="mb-6">
-                    <div className="bg-dark-800/60 backdrop-blur-sm rounded-2xl p-6 border border-gray-600 group-hover:border-blue-500 transition-all duration-300 aspect-square flex items-center justify-center">
-                      <motion.div 
-                        className="relative flex justify-center"
-                        animate={{ 
-                          y: [0, -10, 0],
-                        }}
-                        transition={{
-                          duration: 3,
-                          repeat: Infinity,
-                          ease: "easeInOut"
-                        }}
-                      >
-                        <motion.img
-                          src={project.icon}
-                          alt={`${project.title} icon`}
-                          className="w-24 h-24 sm:w-28 sm:h-28 lg:w-32 lg:h-32 object-contain transition-transform duration-300"
-                          whileHover={{ scale: 1.1, rotate: 5 }}
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-blue-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
-                      </motion.div>
-                    </div>
+                    <motion.div 
+                      className="relative bg-dark-800/60 backdrop-blur-sm rounded-2xl border border-gray-600 group-hover:border-blue-500 transition-all duration-300 aspect-square overflow-hidden"
+                      animate={{ 
+                        y: [0, -5, 0],
+                      }}
+                      transition={{
+                        duration: 3,
+                        repeat: Infinity,
+                        ease: "easeInOut"
+                      }}
+                    >
+                      <motion.img
+                        src={project.icon}
+                        alt={`${project.title} icon`}
+                        className="w-full h-full object-cover transition-transform duration-300"
+                        whileHover={{ scale: 1.1 }}
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-blue-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </motion.div>
                   </div>
                   
                   <h3 className="text-xl sm:text-2xl font-serif font-bold text-blue-400 mb-2 group-hover:text-blue-300 transition-colors duration-300">{project.title}</h3>
