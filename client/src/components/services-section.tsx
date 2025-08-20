@@ -209,7 +209,7 @@ export default function ServicesSection() {
               {/* Footer Text */}
               <div className="text-center md:text-right">
                 <p className="text-gray-400 mb-2">
-                  © 2025 <a href="https://www.linkedin.com/in/kennedy-muritu-a35649354/" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300 transition-colors duration-300 hover:underline">Kennedy Muritu</a>
+                  © 2025 <a href="https://www.linkedin.com/in/kennedy-muritu-a35649354/" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300 transition-colors duration-300">Kennedy Muritu</a>
                 </p>
                 <p className="text-gray-400">
                   Built with <span className="text-red-500">❤️</span> on Replit

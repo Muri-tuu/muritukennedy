@@ -146,7 +146,7 @@ export default function HeroSection() {
               </div>
               
               <h2 className="text-xl sm:text-2xl font-serif font-bold text-white mb-6">
-                <a href="https://www.linkedin.com/in/kennedy-muritu-a35649354/" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition-colors duration-300 hover:underline">
+                <a href="https://www.linkedin.com/in/kennedy-muritu-a35649354/" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition-colors duration-300">
                   Kennedy<br />Muritu
                 </a>
               </h2>
