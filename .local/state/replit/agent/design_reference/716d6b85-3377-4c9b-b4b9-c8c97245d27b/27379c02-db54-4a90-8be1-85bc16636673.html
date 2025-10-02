@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kennedy Muritu - Portfolio | Mechatronics Engineering Student</title>
+    <meta name="description" content="Kennedy Muritu's portfolio - Mechatronics Engineering student passionate about blending technology and creativity. Discover my projects and services.">
+    <meta name="keywords" content="Kennedy Muritu, portfolio, mechatronics engineering, web development, UI/UX design">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💼</text></svg>">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                        'serif': ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        primary: {
+                            50: '#f0f9ff',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                        },
+                        dark: {
+                            900: '#0a0a0a',
+                            800: '#1a1a1a',
+                            700: '#2a2a2a',
+                        }
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.8s ease-in-out',
+                        'slide-up': 'slideUp 0.8s ease-out',
+                        'float': 'float 3s ease-in-out infinite',
+                        'glow': 'glow 2s ease-in-out infinite alternate',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' }
+                        },
+                        slideUp: {
+                            '0%': { opacity: '0', transform: 'translateY(40px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' }
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-10px)' }
+                        },
+                        glow: {
+                            '0%': { boxShadow: '0 0 20px rgba(59, 130, 246, 0.5)' },
+                            '100%': { boxShadow: '0 0 30px rgba(59, 130, 246, 0.8)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-dark-900 text-white font-sans overflow-x-hidden">
+    <!-- Navigation -->
+    <!-- @COMPONENT: Navigation [responsive navbar with smooth scrolling] -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-dark-900/80 backdrop-blur-md border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <span class="text-xl font-bold bg-gradient-to-r from-primary-500 to-cyan-400 bg-clip-text text-transparent">Kennedy</span>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#home" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-white hover:text-primary-400 transition-colors duration-300">Home</a>
+                        <a href="#about" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-white hover:text-primary-400 transition-colors duration-300">About</a>
+                        <a href="#projects" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-white hover:text-primary-400 transition-colors duration-300">Projects</a>
+                        <a href="#services" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-white hover:text-primary-400 transition-colors duration-300">Services</a>
+                        <a href="#contact" class="bg-gradient-to-r from-primary-600 to-cyan-500 text-white px-4 py-2 rounded-lg text-sm font-medium hover:from-primary-700 hover:to-cyan-600 transition-all duration-300 transform hover:scale-105">
+                            Hire Me <i class="fas fa-handshake ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="bg-dark-800 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-dark-700 transition-colors duration-300">
+                        <i class="fas fa-bars text-lg"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Navigation -->
+        <div id="mobile-menu" class="md:hidden hidden bg-dark-800/95 backdrop-blur-md">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="nav-link mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-white hover:text-primary-400 transition-colors duration-300">Home</a>
+                <a href="#about" class="nav-link mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-white hover:text-primary-400 transition-colors duration-300">About</a>
+                <a href="#projects" class="nav-link mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-white hover:text-primary-400 transition-colors duration-300">Projects</a>
+                <a href="#services" class="nav-link mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-white hover:text-primary-400 transition-colors duration-300">Services</a>
+                <a href="#contact" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium bg-gradient-to-r from-primary-600 to-cyan-500 text-white hover:from-primary-700 hover:to-cyan-600 transition-all duration-300">
+                    Hire Me <i class="fas fa-handshake ml-1"></i>
+                </a>
+            </div>
+        </div>
+    </nav>
+    <!-- @END_COMPONENT: Navigation -->
+
+    <!-- Home Section -->
+    <!-- @COMPONENT: HeroSection [main landing area with profile and CTA] -->
+    <section id="home" class="min-h-screen flex items-center justify-center pt-16 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto w-full">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Content -->
+                <div class="animate-fade-in">
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold mb-6 leading-tight">
+                        <span class="block text-white">Welcome to</span>
+                        <span class="block bg-gradient-to-r from-primary-500 to-cyan-400 bg-clip-text text-transparent">My Portfolio</span>
+                    </h1>
+                    
+                    <p class="text-xl text-gray-300 mb-8 leading-relaxed">
+                        Hi, I'm <span class="text-primary-400 font-semibold">Kennedy Muritu</span> - A passionate Mechatronics Engineering student crafting digital experiences that blend innovation with functionality.
+                    </p>
+                    
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-col sm:flex-row gap-4 mb-8">
+                        <a href="https://drive.google.com/file/d/1xcfNH0HThexVpjk7nTFRyEHhSWH8ZsCn/view?usp=drive_link" 
+                           target="_blank"
+                           class="inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-primary-600 to-cyan-500 text-white font-medium rounded-lg hover:from-primary-700 hover:to-cyan-600 transition-all duration-300 transform hover:scale-105 hover:shadow-lg">
+                            <i class="fas fa-download mr-2"></i>
+                            Download Resume
+                        </a>
+                        <a href="https://wa.me/254115594826?text=Hello%20Kennedy,%20I'm%20interested%20in%20discussing%20a%20potential%20project%20opportunity."
+                           target="_blank"
+                           class="inline-flex items-center justify-center px-6 py-3 bg-green-600 text-white font-medium rounded-lg hover:bg-green-700 transition-all duration-300 transform hover:scale-105 hover:shadow-lg">
+                            <i class="fab fa-whatsapp mr-2"></i>
+                            Send Me a Message
+                        </a>
+                    </div>
+                    
+                    <!-- Social Links -->
+                    <div class="flex space-x-6">
+                        <a href="https://github.com/Muri-tuu" target="_blank" class="social-icon text-gray-400 hover:text-white transition-colors duration-300 text-xl">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/kennedy-muritu-a35649354/" target="_blank" class="social-icon text-gray-400 hover:text-blue-500 transition-colors duration-300 text-xl">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://www.instagram.com/muri_tuu/" target="_blank" class="social-icon text-gray-400 hover:text-pink-500 transition-colors duration-300 text-xl">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://x.com/muri_tuu" target="_blank" class="social-icon text-gray-400 hover:text-blue-400 transition-colors duration-300 text-xl">
+                            <i class="fab fa-x-twitter"></i>
+                        </a>
+                        <a href="https://www.tiktok.com/@muri_tuu" target="_blank" class="social-icon text-gray-400 hover:text-red-500 transition-colors duration-300 text-xl">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Profile Image -->
+                <div class="animate-slide-up lg:order-2">
+                    <div class="relative mx-auto max-w-md">
+                        <div class="absolute inset-0 bg-gradient-to-r from-primary-600 to-cyan-500 rounded-full blur-3xl opacity-30 animate-glow"></div>
+                        <!-- Professional headshot of Kennedy Muritu smiling in outdoor setting -->
+                        <img src="attached_assets/Profile Picture_1755692636143.jpg" 
+                             alt="Kennedy Muritu - Professional Profile Picture" 
+                             class="relative z-10 w-full h-auto rounded-full shadow-2xl border-4 border-gray-700 hover:border-primary-500 transition-all duration-300 transform hover:scale-105" />
+                        <div class="absolute -bottom-4 left-1/2 transform -translate-x-1/2 bg-dark-800 px-4 py-2 rounded-full border border-gray-700">
+                            <p class="text-white font-medium text-center">Kennedy Muritu</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: HeroSection -->
+
+    <!-- About Section -->
+    <!-- @COMPONENT: AboutSection [personal information and background] -->
+    <section id="about" class="py-20 px-4 sm:px-6 lg:px-8 bg-dark-800">
+        <div class="max-w-7xl mx-auto">
+            <!-- Section Title -->
+            <div class="text-center mb-16 animate-fade-in">
+                <h2 class="text-4xl sm:text-5xl font-serif font-bold mb-6 bg-gradient-to-r from-primary-500 to-cyan-400 bg-clip-text text-transparent">
+                    Who is Kennedy?
+                </h2>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Content -->
+                <div class="animate-slide-up">
+                    <p class="text-lg text-gray-300 leading-relaxed mb-8">
+                        I'm a Mechatronics Engineering student passionate about blending technology and creativity. I love solving digital challenges with smart, efficient solutions and continuously expanding my skill set.
+                    </p>
+                    
+                    <!-- Educational Background -->
+                    <div class="mb-8">
+                        <h3 class="text-xl font-semibold text-white mb-4">Educational Journey</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 bg-gradient-to-r from-primary-600 to-cyan-500 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-graduation-cap text-white"></i>
+                                </div>
+                                <div>
+                                    <p class="font-medium text-white">Murang'a University of Technology</p>
+                                    <p class="text-gray-400 text-sm">Mechatronics Engineering</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 bg-gradient-to-r from-green-600 to-emerald-500 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-certificate text-white"></i>
+                                </div>
+                                <div>
+                                    <p class="font-medium text-white">DirectEd Development Foundation</p>
+                                    <p class="text-gray-400 text-sm">Software Development Program</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 bg-gradient-to-r from-purple-600 to-pink-500 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-school text-white"></i>
+                                </div>
+                                <div>
+                                    <p class="font-medium text-white">Kagumo High School</p>
+                                    <p class="text-gray-400 text-sm">Secondary Education</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Optional CTA -->
+                    <button onclick="document.getElementById('projects').scrollIntoView({behavior: 'smooth'})" 
+                            class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-500 text-white font-medium rounded-lg hover:from-purple-700 hover:to-pink-600 transition-all duration-300 transform hover:scale-105">
+                        <span>The Journey</span>
+                        <i class="fas fa-arrow-down ml-2"></i>
+                    </button>
+                </div>
+                
+                <!-- Image -->
+                <div class="animate-fade-in lg:order-2">
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-500 rounded-2xl blur-2xl opacity-20"></div>
+                        <!-- Aesthetic workspace image with laptop and coffee on bedsheets -->
+                        <img src="attached_assets/Who is Kennedy_1755692624117.jpg" 
+                             alt="Laptop and coffee cup on bedsheets representing work-life balance" 
+                             class="relative z-10 w-full h-auto rounded-2xl shadow-2xl border border-gray-700 hover:border-primary-500 transition-all duration-300 transform hover:scale-105" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: AboutSection -->
+
+    <!-- Projects Section -->
+    <!-- @COMPONENT: ProjectsSection [showcase of portfolio projects] -->
+    <section id="projects" class="py-20 px-4 sm:px-6 lg:px-8 bg-dark-900">
+        <div class="max-w-7xl mx-auto">
+            <!-- Section Title -->
+            <div class="text-center mb-16 animate-fade-in">
+                <h2 class="text-4xl sm:text-5xl font-serif font-bold mb-4 text-white">Projects</h2>
+                <p class="text-xl text-gray-300 italic">Where Strategy Meets Execution.</p>
+            </div>
+            
+            <!-- @MAP: projects.map(project => ( -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-8 mb-12">
+                <!-- Project Card 1: Shuka Metaverse -->
+                <div class="project-card bg-gradient-to-br from-dark-800 to-dark-700 rounded-2xl p-8 border border-gray-700 hover:border-primary-500 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl animate-slide-up group">
+                    <div class="flex items-start justify-between mb-6">
+                        <div class="w-16 h-16 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-xl flex items-center justify-center animate-float group-hover:animate-none">
+                            <!-- Abstract 3D infinity loop representing metaverse concept -->
+                            <img src="attached_assets/Shuka Metaverse_1755692624114.jpg" alt="Shuka Metaverse 3D infinity loop logo" class="w-12 h-12 object-contain" />
+                        </div>
+                        <div class="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <i class="fas fa-external-link-alt text-primary-400 text-xl"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-3">Shuka Metaverse</h3>
+                    <p class="text-gray-300 mb-4 leading-relaxed">Immersive Web3 Game Interface</p>
+                    <p class="text-gray-400 text-sm">Built an engaging metaverse gaming platform that bridges traditional gaming with blockchain technology, featuring immersive user experiences and seamless Web3 integration.</p>
+                </div>
+                
+                <!-- Project Card 2: TechHub Solutions -->
+                <div class="project-card bg-gradient-to-br from-dark-800 to-dark-700 rounded-2xl p-8 border border-gray-700 hover:border-primary-500 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl animate-slide-up group" style="animation-delay: 0.1s;">
+                    <div class="flex items-start justify-between mb-6">
+                        <div class="w-16 h-16 bg-gradient-to-br from-purple-400 to-pink-500 rounded-xl flex items-center justify-center animate-float group-hover:animate-none">
+                            <!-- Modern 3D printer icon representing print services -->
+                            <img src="attached_assets/TechHub_1755692624115.png" alt="TechHub 3D printer service icon" class="w-12 h-12 object-contain" />
+                        </div>
+                        <div class="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <i class="fas fa-external-link-alt text-primary-400 text-xl"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-3">TechHub Solutions</h3>
+                    <p class="text-gray-300 mb-4 leading-relaxed">E-commerce Engine for Print Services</p>
+                    <p class="text-gray-400 text-sm">Developed a comprehensive e-commerce platform specifically tailored for print services, featuring inventory management, custom order processing, and integrated payment solutions.</p>
+                </div>
+                
+                <!-- Project Card 3: Sparkle Laundry Home -->
+                <div class="project-card bg-gradient-to-br from-dark-800 to-dark-700 rounded-2xl p-8 border border-gray-700 hover:border-primary-500 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl animate-slide-up group" style="animation-delay: 0.2s;">
+                    <div class="flex items-start justify-between mb-6">
+                        <div class="w-16 h-16 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-xl flex items-center justify-center animate-float group-hover:animate-none">
+                            <!-- Colorful washing machine illustration with laundry items -->
+                            <img src="attached_assets/Sparkle Laundry Home_1755692624114.png" alt="Sparkle Laundry washing machine and accessories" class="w-12 h-12 object-contain" />
+                        </div>
+                        <div class="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <i class="fas fa-external-link-alt text-primary-400 text-xl"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-3">Sparkle Laundry Home</h3>
+                    <p class="text-gray-300 mb-4 leading-relaxed">Automated Convenience Platform</p>
+                    <p class="text-gray-400 text-sm">Created an automated laundry service platform that streamlines the entire process from pickup scheduling to delivery tracking, enhancing customer convenience and operational efficiency.</p>
+                </div>
+                
+                <!-- Project Card 4: Royal Priesthood -->
+                <div class="project-card bg-gradient-to-br from-dark-800 to-dark-700 rounded-2xl p-8 border border-gray-700 hover:border-primary-500 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl animate-slide-up group" style="animation-delay: 0.3s;">
+                    <div class="flex items-start justify-between mb-6">
+                        <div class="w-16 h-16 bg-gradient-to-br from-yellow-400 to-amber-500 rounded-xl flex items-center justify-center animate-float group-hover:animate-none">
+                            <!-- Golden crown and harp religious ministry logo -->
+                            <img src="attached_assets/Royal Priesthood_1755692624113.png" alt="Royal Priesthood golden crown and harp logo" class="w-12 h-12 object-contain" />
+                        </div>
+                        <div class="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <i class="fas fa-external-link-alt text-primary-400 text-xl"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-3">Royal Priesthood</h3>
+                    <p class="text-gray-300 mb-4 leading-relaxed">Digital Ministry Platform</p>
+                    <p class="text-gray-400 text-sm">Designed and developed a comprehensive digital platform for ministry operations, including sermon streaming, community engagement features, and donation management systems.</p>
+                </div>
+            </div>
+            <!-- @END_MAP )) -->
+            
+            <!-- CTA -->
+            <div class="text-center animate-fade-in">
+                <a href="https://wa.me/254115594826?text=Hello%20Kennedy,%20I'm%20interested%20in%20discussing%20a%20potential%20project%20opportunity."
+                   target="_blank"
+                   class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-green-600 to-emerald-500 text-white font-medium rounded-xl hover:from-green-700 hover:to-emerald-600 transition-all duration-300 transform hover:scale-105 hover:shadow-lg text-lg">
+                    <i class="fab fa-whatsapp mr-3 text-xl"></i>
+                    Send Me a Message
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: ProjectsSection -->
+
+    <!-- Services Section -->
+    <!-- @COMPONENT: ServicesSection [professional services offered] -->
+    <section id="services" class="py-20 px-4 sm:px-6 lg:px-8 bg-dark-800">
+        <div class="max-w-7xl mx-auto">
+            <!-- Section Title -->
+            <div class="text-center mb-16 animate-fade-in">
+                <h2 class="text-4xl sm:text-5xl font-serif font-bold mb-4 text-white">Services</h2>
+            </div>
+            
+            <!-- Services Grid -->
+            <div class="grid lg:grid-cols-3 gap-8 mb-12">
+                <!-- Service 1: Strategic Foundation -->
+                <div class="service-card bg-gradient-to-br from-dark-700 to-dark-800 rounded-2xl p-8 border border-gray-700 hover:border-primary-500 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl animate-slide-up group">
+                    <div class="mb-8 relative overflow-hidden rounded-xl">
+                        <div class="absolute inset-0 bg-gradient-to-br from-blue-500 to-purple-600 opacity-90"></div>
+                        <!-- Person analyzing digital interfaces and data visualizations -->
+                        <img src="attached_assets/Services_1755692624113.jpg" alt="Strategic analysis of digital interfaces and data" class="w-full h-48 object-cover" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                    </div>
+                    <div class="mb-6 flex items-center">
+                        <div class="w-4 h-4 bg-green-500 rounded-full mr-3 animate-pulse"></div>
+                        <h3 class="text-2xl font-bold text-primary-400">Strategic Foundation</h3>
+                    </div>
+                    <p class="text-gray-300 mb-4 font-medium">Digital Strategy & Architecture Audit</p>
+                    <p class="text-gray-400 leading-relaxed">Comprehensive analysis of your digital ecosystem to identify opportunities, optimize performance, and create scalable architecture foundations that drive long-term success.</p>
+                </div>
+                
+                <!-- Service 2: Conversion-Focused Design -->
+                <div class="service-card bg-gradient-to-br from-dark-700 to-dark-800 rounded-2xl p-8 border border-gray-700 hover:border-primary-500 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl animate-slide-up group" style="animation-delay: 0.1s;">
+                    <div class="mb-8 relative overflow-hidden rounded-xl">
+                        <div class="absolute inset-0 bg-gradient-to-br from-purple-500 to-pink-600 opacity-90"></div>
+                        <!-- Modern UI/UX design mockups on laptop screen -->
+                        <img src="attached_assets/UIX_1755692624115.jpg" alt="Modern UI/UX design mockups and prototypes" class="w-full h-48 object-cover" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                    </div>
+                    <div class="mb-6 flex items-center">
+                        <div class="w-4 h-4 bg-green-500 rounded-full mr-3 animate-pulse"></div>
+                        <h3 class="text-2xl font-bold text-primary-400">Conversion-Focused Design</h3>
+                    </div>
+                    <p class="text-gray-300 mb-4 font-medium">UI/UX That Drives Results</p>
+                    <p class="text-gray-400 leading-relaxed">User-centered design solutions that not only look stunning but are strategically crafted to maximize conversions, enhance user engagement, and deliver measurable business outcomes.</p>
+                </div>
+                
+                <!-- Service 3: Engineered Execution -->
+                <div class="service-card bg-gradient-to-br from-dark-700 to-dark-800 rounded-2xl p-8 border border-gray-700 hover:border-primary-500 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl animate-slide-up group" style="animation-delay: 0.2s;">
+                    <div class="mb-8 relative overflow-hidden rounded-xl">
+                        <div class="absolute inset-0 bg-gradient-to-br from-cyan-500 to-blue-600 opacity-90"></div>
+                        <!-- Web development technologies and programming languages visualization -->
+                        <img src="attached_assets/Web Development_1755692624116.jpg" alt="Web development technologies and programming visualization" class="w-full h-48 object-cover" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                    </div>
+                    <div class="mb-6 flex items-center">
+                        <div class="w-4 h-4 bg-green-500 rounded-full mr-3 animate-pulse"></div>
+                        <h3 class="text-2xl font-bold text-primary-400">Engineered Execution</h3>
+                    </div>
+                    <p class="text-gray-300 mb-4 font-medium">High-Performance Web Development</p>
+                    <p class="text-gray-400 leading-relaxed">Robust, scalable web solutions built with cutting-edge technologies. From responsive frontends to powerful backends, delivering exceptional performance and reliability.</p>
+                </div>
+            </div>
+            
+            <!-- Tagline & CTA -->
+            <div class="text-center animate-fade-in">
+                <h3 class="text-3xl font-serif font-bold mb-8 bg-gradient-to-r from-pink-500 to-violet-500 bg-clip-text text-transparent">
+                    We Plan, Desing then Build
+                </h3>
+                
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
+                    <a href="https://wa.me/254115594826?text=Hello%20Kennedy,%20I'm%20interested%20in%20discussing%20a%20potential%20project%20opportunity."
+                       target="_blank"
+                       class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-green-600 to-emerald-500 text-white font-medium rounded-xl hover:from-green-700 hover:to-emerald-600 transition-all duration-300 transform hover:scale-105 hover:shadow-lg text-lg">
+                        <i class="fab fa-whatsapp mr-3 text-xl"></i>
+                        Send Me a Message
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: ServicesSection -->
+
+    <!-- Contact Section -->
+    <!-- @COMPONENT: ContactSection [call to action and final engagement] -->
+    <section id="contact" class="py-20 px-4 sm:px-6 lg:px-8 bg-dark-900">
+        <div class="max-w-4xl mx-auto text-center animate-fade-in">
+            <h2 class="text-4xl sm:text-5xl font-serif font-bold mb-6 text-white">Let's Create Something Amazing</h2>
+            <p class="text-xl text-gray-300 mb-8 leading-relaxed">
+                Ready to bring your vision to life? Let's discuss your project and explore how we can work together to achieve your goals.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-6 mb-12">
+                <a href="https://wa.me/254115594826?text=Hello%20Kennedy,%20I'm%20interested%20in%20discussing%20a%20potential%20project%20opportunity."
+                   target="_blank"
+                   class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-green-600 to-emerald-500 text-white font-medium rounded-xl hover:from-green-700 hover:to-emerald-600 transition-all duration-300 transform hover:scale-105 hover:shadow-lg text-lg">
+                    <i class="fab fa-whatsapp mr-3 text-xl"></i>
+                    Start a Conversation
+                </a>
+                
+                <a href="https://drive.google.com/file/d/1xcfNH0HThexVpjk7nTFRyEHhSWH8ZsCn/view?usp=drive_link" 
+                   target="_blank"
+                   class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-primary-600 to-cyan-500 text-white font-medium rounded-xl hover:from-primary-700 hover:to-cyan-600 transition-all duration-300 transform hover:scale-105 hover:shadow-lg text-lg">
+                    <i class="fas fa-file-download mr-3"></i>
+                    View My Resume
+                </a>
+            </div>
+            
+            <!-- Social Links -->
+            <div class="flex justify-center space-x-8 mb-12">
+                <a href="https://github.com/Muri-tuu" target="_blank" class="social-icon-large text-gray-400 hover:text-white transition-colors duration-300 text-2xl transform hover:scale-110">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/kennedy-muritu-a35649354/" target="_blank" class="social-icon-large text-gray-400 hover:text-blue-500 transition-colors duration-300 text-2xl transform hover:scale-110">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://www.instagram.com/muri_tuu/" target="_blank" class="social-icon-large text-gray-400 hover:text-pink-500 transition-colors duration-300 text-2xl transform hover:scale-110">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://x.com/muri_tuu" target="_blank" class="social-icon-large text-gray-400 hover:text-blue-400 transition-colors duration-300 text-2xl transform hover:scale-110">
+                    <i class="fab fa-x-twitter"></i>
+                </a>
+                <a href="https://www.tiktok.com/@muri_tuu" target="_blank" class="social-icon-large text-gray-400 hover:text-red-500 transition-colors duration-300 text-2xl transform hover:scale-110">
+                    <i class="fab fa-tiktok"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: ContactSection -->
+
+    <!-- Footer -->
+    <!-- @COMPONENT: Footer [copyright and social links] -->
+    <footer class="bg-dark-800 border-t border-gray-700 py-8 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <!-- Copyright -->
+                <div class="mb-4 md:mb-0">
+                    <p class="text-gray-400">© 2025 Kennedy Muritu | Built with <span class="text-red-500">❤️</span> on Replit</p>
+                </div>
+                
+                <!-- Footer Social Links -->
+                <div class="flex space-x-6">
+                    <a href="https://github.com/Muri-tuu" target="_blank" class="text-gray-400 hover:text-white transition-colors duration-300">
+                        <i class="fab fa-github text-xl"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/kennedy-muritu-a35649354/" target="_blank" class="text-gray-400 hover:text-blue-500 transition-colors duration-300">
+                        <i class="fab fa-linkedin text-xl"></i>
+                    </a>
+                    <a href="https://www.instagram.com/muri_tuu/" target="_blank" class="text-gray-400 hover:text-pink-500 transition-colors duration-300">
+                        <i class="fab fa-instagram text-xl"></i>
+                    </a>
+                    <a href="https://x.com/muri_tuu" target="_blank" class="text-gray-400 hover:text-blue-400 transition-colors duration-300">
+                        <i class="fab fa-x-twitter text-xl"></i>
+                    </a>
+                    <a href="https://www.tiktok.com/@muri_tuu" target="_blank" class="text-gray-400 hover:text-red-500 transition-colors duration-300">
+                        <i class="fab fa-tiktok text-xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- @END_COMPONENT: Footer -->
+
+    <!-- JavaScript for Interactive Features -->
+    <script>
+        (function() {
+            // Mobile Menu Toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            mobileMenuButton?.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+                const icon = mobileMenuButton.querySelector('i');
+                if (mobileMenu.classList.contains('hidden')) {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                } else {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-times');
+                }
+            });
+
+            // Close mobile menu when clicking nav links
+            const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+            mobileNavLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                    const icon = mobileMenuButton.querySelector('i');
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                });
+            });
+
+            // Smooth scrolling for nav links
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetId = link.getAttribute('href');
+                    const targetSection = document.querySelector(targetId);
+                    if (targetSection) {
+                        const offsetTop = targetSection.offsetTop - 80; // Account for fixed header
+                        window.scrollTo({
+                            top: offsetTop,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // Active nav link highlighting
+            const sections = document.querySelectorAll('section');
+            const navLinksAll = document.querySelectorAll('.nav-link');
+
+            function updateActiveNavLink() {
+                const scrollPos = window.scrollY + 100;
+
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.offsetHeight;
+                    const sectionId = section.getAttribute('id');
+
+                    if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+                        navLinksAll.forEach(link => {
+                            link.classList.remove('text-primary-400');
+                            if (link.getAttribute('href') === `#${sectionId}`) {
+                                link.classList.add('text-primary-400');
+                            }
+                        });
+                    }
+                });
+            }
+
+            window.addEventListener('scroll', updateActiveNavLink);
+
+            // Fade-in animation on scroll
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -100px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            // Observe animated elements
+            const animatedElements = document.querySelectorAll('.animate-fade-in, .animate-slide-up');
+            animatedElements.forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
+                observer.observe(el);
+            });
+
+            // Enhanced project card hover effects
+            const projectCards = document.querySelectorAll('.project-card');
+            projectCards.forEach(card => {
+                card.addEventListener('mouseenter', () => {
+                    card.style.transform = 'scale(1.05) rotateY(5deg)';
+                });
+                
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = 'scale(1) rotateY(0deg)';
+                });
+            });
+
+            // Enhanced service card hover effects
+            const serviceCards = document.querySelectorAll('.service-card');
+            serviceCards.forEach(card => {
+                card.addEventListener('mouseenter', () => {
+                    const floatIcon = card.querySelector('.animate-float');
+                    if (floatIcon) {
+                        floatIcon.style.transform = 'translateY(-15px) scale(1.1)';
+                    }
+                });
+                
+                card.addEventListener('mouseleave', () => {
+                    const floatIcon = card.querySelector('.animate-float');
+                    if (floatIcon) {
+                        floatIcon.style.transform = 'translateY(0) scale(1)';
+                    }
+                });
+            });
+
+            // Social icons hover effects
+            const socialIcons = document.querySelectorAll('.social-icon, .social-icon-large');
+            socialIcons.forEach(icon => {
+                icon.addEventListener('mouseenter', () => {
+                    icon.style.transform = 'scale(1.2) rotate(10deg)';
+                });
+                
+                icon.addEventListener('mouseleave', () => {
+                    icon.style.transform = 'scale(1) rotate(0deg)';
+                });
+            });
+
+            // Enhanced button interactions
+            const buttons = document.querySelectorAll('a[class*="bg-gradient"], button[class*="bg-gradient"]');
+            buttons.forEach(button => {
+                button.addEventListener('mouseenter', () => {
+                    button.style.transform = 'scale(1.05) translateY(-2px)';
+                    button.style.boxShadow = '0 10px 25px rgba(59, 130, 246, 0.3)';
+                });
+                
+                button.addEventListener('mouseleave', () => {
+                    button.style.transform = 'scale(1) translateY(0px)';
+                    button.style.boxShadow = 'none';
+                });
+            });
+
+            // Parallax effect for hero section
+            window.addEventListener('scroll', () => {
+                const scrolled = window.pageYOffset;
+                const heroSection = document.getElementById('home');
+                if (heroSection) {
+                    heroSection.style.transform = `translateY(${scrolled * 0.5}px)`;
+                }
+            });
+
+            // Initialize on page load
+            document.addEventListener('DOMContentLoaded', () => {
+                updateActiveNavLink();
+                
+                // Add loading animation to external links
+                const externalLinks = document.querySelectorAll('a[target="_blank"]');
+                externalLinks.forEach(link => {
+                    link.addEventListener('click', (e) => {
+                        const originalText = link.innerHTML;
+                        link.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Opening...';
+                        
+                        setTimeout(() => {
+                            link.innerHTML = originalText;
+                        }, 2000);
+                    });
+                });
+            });
+
+            // Performance optimization: Throttle scroll events
+            let ticking = false;
+            
+            function updateOnScroll() {
+                updateActiveNavLink();
+                ticking = false;
+            }
+            
+            window.addEventListener('scroll', () => {
+                if (!ticking) {
+                    requestAnimationFrame(updateOnScroll);
+                    ticking = true;
+                }
+            });
+        })();
+    </script>
+</body>
+</html>

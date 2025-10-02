@@ -152,7 +152,7 @@ export default function HeroSection() {
               </h2>
               
               <motion.a
-                href="https://wa.me/254115594826?text=Hello%20Kennedy,%20I'm%20interested%20in%20discussing%20a%20potential%20project%20opportunity."
+                href="https://wa.me/254115594826?text=Hello%20M%20Solutions%20%F0%9F%91%8B%2C%20I%E2%80%99d%20love%20to%20explore%20how%20we%20can%20collaborate%20on%20a%20project%20opportunity.%20Could%20we%20discuss%20the%20details%3F."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center px-6 py-3 bg-green-600 text-white font-medium rounded-full hover:bg-green-700 transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-green-600/30"

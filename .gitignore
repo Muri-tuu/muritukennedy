@@ -1,6 +1,18 @@
+# dependencies
 node_modules
+
+# build output (Netlify will rebuild this)
 dist
+
+# system files
 .DS_Store
+
+# server static files (only if generated — remove if manually added assets)
 server/public
-vite.config.ts.*
+
+# backups, archives
 *.tar.gz
+
+# avoid ignoring main vite config
+vite.config.ts.*
+!vite.config.ts
