@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import shukaMetaverseIcon from "@assets/Shuka Metaverse_1755692624114.jpg";
+import projectsBg from "@assets/Projects_1755693402302.jpg";
 import techHubIcon from "@assets/TechHub_1755692624115.png";
 import sparkleLaundryIcon from "@assets/Sparkle Laundry Home_1755692624114.png";
 import royalPriesthoodIcon from "@assets/Royal Priesthood_1755692624113.png";
@@ -33,7 +34,13 @@ export default function ProjectsSection() {
   ];
 
   return (
-    <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8 bg-dark-900">
+    <section
+      id="projects"
+      className="py-20 px-4 sm:px-6 lg:px-8 bg-fixed bg-cover bg-center"
+      style={{
+        backgroundImage: `linear-gradient(rgba(10,10,10,0.75), rgba(10,10,10,0.75)), url(${projectsBg})`,
+      }}
+    >
       <div className="max-w-7xl mx-auto">
         <div className="bg-dark-700/80 backdrop-blur-sm rounded-3xl p-6 sm:p-8 lg:p-12 border border-gray-600">
           {/* Section Title */}
@@ -56,7 +63,7 @@ export default function ProjectsSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1.0, delay: project.delay * 0.2, ease: "easeOut" }}
                 viewport={{ once: true }}
-                className="text-center"
+                className="text-center group"
               >
                 <motion.a
                   href="https://github.com/Muri-tuu"
@@ -68,7 +75,7 @@ export default function ProjectsSection() {
                 >
                   <div className="mb-6">
                     <motion.div 
-                      className="relative bg-dark-800/60 backdrop-blur-sm rounded-2xl border border-gray-600 group-hover:border-blue-500 group-hover:shadow-lg group-hover:shadow-blue-500/50 transition-all duration-300 aspect-square overflow-hidden"
+                      className="relative bg-dark-800/60 backdrop-blur-sm rounded-2xl border border-gray-600 group-hover:border-blue-500/70 group-hover:shadow-xl group-hover:shadow-blue-500/30 transition-all duration-500 aspect-square overflow-hidden"
                       animate={{ 
                         y: [0, -5, 0],
                       }}
@@ -83,8 +90,8 @@ export default function ProjectsSection() {
                         alt={`${project.title} icon`}
                         loading="lazy"
                         decoding="async"
-                        className="w-full h-full object-cover transition-transform duration-300"
-                        whileHover={{ scale: 1.1 }}
+                        className="w-full h-full object-cover transition-transform duration-500"
+                        whileHover={{ scale: 1.08 }}
                         transition={{ duration: 0.3, ease: "easeInOut" }}
                       />
                     </motion.div>

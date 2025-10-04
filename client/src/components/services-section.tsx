@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import strategicFoundationImage from "@assets/Strategic Foundation_1755694471347.jpg";
+import servicesBg from "@assets/Services_1755696176183.jpg";
 import uixImage from "@assets/UIX_1755692624115.jpg";
 import webDevelopmentImage from "@assets/Web Development_1755692624116.jpg";
 
@@ -26,7 +27,13 @@ export default function ServicesSection() {
   ];
 
   return (
-    <section id="services" className="py-20 px-4 sm:px-6 lg:px-8 bg-dark-900">
+    <section
+      id="services"
+      className="py-20 px-4 sm:px-6 lg:px-8 bg-fixed bg-cover bg-center"
+      style={{
+        backgroundImage: `linear-gradient(rgba(10,10,10,0.75), rgba(10,10,10,0.75)), url(${servicesBg})`,
+      }}
+    >
       <div className="max-w-7xl mx-auto">
         <div className="bg-dark-700/80 backdrop-blur-sm rounded-3xl p-6 sm:p-8 lg:p-12 border border-gray-600">
           {/* Section Title */}
@@ -61,18 +68,18 @@ export default function ServicesSection() {
                     alt={service.title}
                     loading="lazy"
                     decoding="async"
-                    className="w-full h-48 object-cover rounded-xl"
-                    whileHover={{ scale: 1.1 }}
+                    className="w-full aspect-[16/10] object-cover rounded-xl"
+                    whileHover={{ scale: 1.06 }}
                     transition={{ duration: 0.3 }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
                 </motion.div>
                 
-                <h3 className="text-xl sm:text-2xl font-serif font-bold text-blue-400 mb-2">{service.title}</h3>
+                <h3 className="text-xl sm:text-2xl font-serif font-bold text-blue-400 mb-2 group-hover:text-blue-300 transition-colors">{service.title}</h3>
                 
                 <div className="flex items-center justify-center mb-4">
                   <div className="w-2 h-2 bg-green-500 rounded-full mr-3"></div>
-                  <p className="text-sm sm:text-base text-white font-medium">{service.subtitle}</p>
+                  <p className="text-sm sm:text-base text-white/90 font-medium">{service.subtitle}</p>
                 </div>
               </motion.div>
             ))}
