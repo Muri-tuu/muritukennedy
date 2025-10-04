@@ -139,6 +139,8 @@ export default function HeroSection() {
                 <motion.img
                   src={profilePicture}
                   alt="Kennedy Muritu - Professional Profile Picture"
+                  fetchPriority="high"
+                  decoding="async"
                   className="w-36 h-36 sm:w-44 sm:h-44 lg:w-48 lg:h-48 object-cover rounded-2xl mx-auto shadow-2xl border-2 border-gray-600 hover:border-blue-500 transition-all duration-300 cursor-pointer"
                   whileHover={{ scale: 1.05, rotate: 1 }}
                   transition={{ duration: 0.5, ease: "easeInOut" }}
@@ -152,7 +154,7 @@ export default function HeroSection() {
               </h2>
               
               <motion.a
-                href="https://wa.me/254103504538?text=Hey%20Kennedy%20Muritu,%20I%20am%20writing%20to%20explore%20potential%20collaboration%20on%20a%20project.%20Would%20you%20be%20available%20to%20discuss%20further?"
+                href="https://wa.me/254115594826?text=Hello%20Kennedy,%20I'm%20interested%20in%20discussing%20a%20potential%20project%20opportunity."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center px-6 py-3 bg-green-600 text-white font-medium rounded-full hover:bg-green-700 transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-green-600/30"

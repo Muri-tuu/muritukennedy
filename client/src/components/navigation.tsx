@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Menu, X, Briefcase } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function Navigation() {
@@ -55,7 +55,7 @@ export default function Navigation() {
           {/* Desktop Navigation */}
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-8">
-              {["home", "about", "projects", "services"].map((section) => (
+              {["home", "about", "projects", "services", "contact"].map((section) => (
                 <button
                   key={section}
                   onClick={() => scrollToSection(section)}
@@ -97,7 +97,7 @@ export default function Navigation() {
       {isMenuOpen && (
         <div className="md:hidden bg-dark-800/95 backdrop-blur-md">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            {["home", "about", "projects", "services"].map((section) => (
+            {["home", "about", "projects", "services", "contact"].map((section) => (
               <button
                 key={section}
                 onClick={() => scrollToSection(section)}
@@ -111,7 +111,7 @@ export default function Navigation() {
               </button>
             ))}
             <motion.a
-              href="https://wa.me/254103504538?text=Hey%20Kennedy%20Muritu,%20I%20am%20writing%20to%20explore%20potential%20collaboration%20on%20a%20project.%20Would%20you%20be%20available%20to%20discuss%20further?"
+              href="https://wa.me/254115594826?text=Hello%20Kennedy,%20I'm%20interested%20in%20discussing%20a%20potential%20project%20opportunity."
               target="_blank"
               rel="noopener noreferrer"
               className="block px-3 py-2 rounded-md text-base font-medium bg-gradient-to-r from-blue-600 to-cyan-500 text-white hover:from-blue-700 hover:to-cyan-600 transition-all duration-300"

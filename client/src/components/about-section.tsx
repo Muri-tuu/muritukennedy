@@ -61,6 +61,8 @@ export default function AboutSection() {
                     <motion.img
                       src={khsLogo}
                       alt="Kagumo High School Logo"
+                      loading="lazy"
+                      decoding="async"
                       className="h-8 sm:h-10 lg:h-12 w-auto object-contain"
                       initial={{ opacity: 0, scale: 0.8, rotateY: 180 }}
                       whileInView={{ opacity: 1, scale: 1, rotateY: 0 }}
@@ -71,6 +73,8 @@ export default function AboutSection() {
                     <motion.img
                       src={directedLogo}
                       alt="DirectEd Development Foundation Logo"
+                      loading="lazy"
+                      decoding="async"
                       className="h-8 sm:h-10 lg:h-12 w-auto object-contain"
                       initial={{ opacity: 0, scale: 0.8, rotateY: 180 }}
                       whileInView={{ opacity: 1, scale: 1, rotateY: 0 }}
@@ -81,6 +85,8 @@ export default function AboutSection() {
                     <motion.img
                       src={mutLogo}
                       alt="Murang'a University of Technology Logo"
+                      loading="lazy"
+                      decoding="async"
                       className="h-8 sm:h-10 lg:h-12 w-auto object-contain"
                       initial={{ opacity: 0, scale: 0.8, rotateY: 180 }}
                       whileInView={{ opacity: 1, scale: 1, rotateY: 0 }}
@@ -204,6 +210,8 @@ export default function AboutSection() {
                 <motion.img
                   src={whoIsKennedyImage}
                   alt="Laptop and coffee cup on bedsheets representing work-life balance"
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-auto max-w-md mx-auto lg:max-w-none rounded-2xl shadow-2xl border border-gray-600 hover:border-blue-500 transition-all duration-300 cursor-pointer object-cover"
                   style={{ maxHeight: '400px' }}
                   whileHover={{ scale: 1.05, rotate: 1 }}

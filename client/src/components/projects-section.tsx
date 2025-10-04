@@ -81,6 +81,8 @@ export default function ProjectsSection() {
                       <motion.img
                         src={project.icon}
                         alt={`${project.title} icon`}
+                        loading="lazy"
+                        decoding="async"
                         className="w-full h-full object-cover transition-transform duration-300"
                         whileHover={{ scale: 1.1 }}
                         transition={{ duration: 0.3, ease: "easeInOut" }}
@@ -122,7 +124,7 @@ export default function ProjectsSection() {
           >
             <div className="flex items-center justify-center">
               <motion.a
-                href="https://wa.me/254103504538?text=Hey%20Kennedy%20Muritu,%20I%20am%20writing%20to%20explore%20potential%20collaboration%20on%20a%20project.%20Would%20you%20be%20available%20to%20discuss%20further?"
+                href="https://wa.me/254115594826?text=Hello%20Kennedy,%20I'm%20interested%20in%20discussing%20a%20potential%20project%20opportunity."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center px-6 py-3 bg-transparent border border-green-500 text-green-400 font-medium rounded-full hover:bg-green-500/10 transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-green-500/20"
