@@ -42,8 +42,16 @@ async function generate() {
 
   for (const { file, size } of outputs) {
     const outPath = path.join(publicDir, file);
+    const circleSvg = Buffer.from(
+      `<svg width="${size}" height="${size}" viewBox="0 0 ${size} ${size}" xmlns="http://www.w3.org/2000/svg">
+         <circle cx="${size/2}" cy="${size/2}" r="${size/2}" fill="#fff" />
+       </svg>`
+    );
+
     await sharp(input)
-      .resize(size, size, { fit: 'cover', position: 'attention', withoutEnlargement: true })
+      .resize(size, size, { fit: 'cover', position: 'attention' })
+      // Apply circular alpha mask to "remove" background outside the subject area
+      .composite([{ input: circleSvg, blend: 'dest-in' }])
       .png({ quality: 90, compressionLevel: 9 })
       .toFile(outPath);
     console.log(`Wrote ${file}`);
