@@ -11,7 +11,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
 
   // Serve a consistent favicon for browsers that still request /favicon.ico
   app.get("/favicon.ico", (_req, res) => {
-    res.redirect(302, "/favicon.svg");
+    res.redirect(302, "/favicon-32x32.png");
   });
 
   const httpServer = createServer(app);
