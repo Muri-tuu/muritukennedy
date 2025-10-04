@@ -43,8 +43,17 @@ app.use((req, res, next) => {
     const status = err.status || err.statusCode || 500;
     const message = err.message || "Internal Server Error";
 
+    // Respond with a safe error payload and log the error without crashing the process
     res.status(status).json({ message });
-    throw err;
+    try {
+      log(`[${status}] ${message}`, "error");
+      // Preserve stack trace in logs when available
+      if (err && err.stack) {
+        console.error(err.stack);
+      }
+    } catch {
+      // no-op
+    }
   });
 
   // importantly only setup vite in development and after
@@ -61,11 +70,14 @@ app.use((req, res, next) => {
   // this serves both the API and the client.
   // It is the only port that is not firewalled.
   const port = parseInt(process.env.PORT || '5000', 10);
-  server.listen({
-  port,
-  host: "127.0.0.1",
-}, () => {
-  log(`serving on http://127.0.0.1:${port}`);
-});
+  server.listen(
+    {
+      port,
+      host: "0.0.0.0",
+    },
+    () => {
+      log(`serving on http://0.0.0.0:${port}`);
+    },
+  );
 
 })();
