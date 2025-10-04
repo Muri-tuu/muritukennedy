@@ -1,8 +1,15 @@
 import { motion } from "framer-motion";
+import contactBg from "@assets/Services_1755693410305.jpg";
 
 export default function ContactSection() {
   return (
-    <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 bg-dark-900">
+    <section
+      id="contact"
+      className="py-20 px-4 sm:px-6 lg:px-8 bg-fixed bg-cover bg-center"
+      style={{
+        backgroundImage: `linear-gradient(rgba(10,10,10,0.75), rgba(10,10,10,0.75)), url(${contactBg})`,
+      }}
+    >
       <div className="max-w-4xl mx-auto text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -20,8 +27,6 @@ export default function ContactSection() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-12">
             <a
               href="https://wa.me/254115594826?text=Hello%20Kennedy,%20I'm%20interested%20in%20discussing%20a%20potential%20project%20opportunity."
-              target="_blank"
-              rel="noopener noreferrer"
               className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-green-600 to-emerald-500 text-white font-medium rounded-xl hover:from-green-700 hover:to-emerald-600 transition-all duration-300 transform hover:scale-105 hover:shadow-lg text-lg"
             >
               <i className="fab fa-whatsapp mr-3 text-xl"></i>

@@ -44,7 +44,11 @@ app.use((req, res, next) => {
     const message = err.message || "Internal Server Error";
 
     res.status(status).json({ message });
-    throw err;
+    // Don't crash the server on handled errors in prod
+    if (app.get("env") === "development") {
+      // In dev, still surface the error for visibility
+      console.error(err);
+    }
   });
 
   // importantly only setup vite in development and after
@@ -62,10 +66,10 @@ app.use((req, res, next) => {
   // It is the only port that is not firewalled.
   const port = parseInt(process.env.PORT || '5000', 10);
   server.listen({
-  port,
-  host: "127.0.0.1",
-}, () => {
-  log(`serving on http://127.0.0.1:${port}`);
-});
+    port,
+    host: "0.0.0.0",
+  }, () => {
+    log(`serving on http://0.0.0.0:${port}`);
+  });
 
 })();
