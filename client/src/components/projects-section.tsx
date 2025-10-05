@@ -152,7 +152,7 @@ export default function ProjectsSection() {
               <h3 className="text-lg sm:text-xl font-medium text-muted-foreground">Featured work</h3>
               <p className="text-sm text-muted-foreground">A quick scroll through recent projects</p>
             </motion.div>
-            <div className="relative overflow-hidden" style={{ height: "120px" }}>
+            <div className="relative overflow-hidden flex justify-center" style={{ height: "120px" }}>
               <LogoLoop
                 logos={[
                   { src: shukaMetaverseIcon, alt: "Shuka Metaverse" },
@@ -167,7 +167,7 @@ export default function ProjectsSection() {
                 pauseOnHover
                 scaleOnHover
                 fadeOut
-                fadeOutColor="#0b0b0b"
+                fadeOutColor="var(--background)"
                 ariaLabel="Project logos"
               />
             </div>

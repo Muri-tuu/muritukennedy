@@ -49,7 +49,7 @@ async function generate() {
     );
 
     await sharp(input)
-      .resize(size, size, { fit: 'cover', position: 'attention' })
+      .resize(size, size, { fit: 'cover', position: 'attention' }) // zooms into subject (cover)
       // Apply circular alpha mask to "remove" background outside the subject area
       .composite([{ input: circleSvg, blend: 'dest-in' }])
       .png({ quality: 90, compressionLevel: 9 })

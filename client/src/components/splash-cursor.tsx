@@ -109,17 +109,34 @@ export default function SplashCursor() {
         const alpha = 1 - t;
         const radius = 40 * t + 6; // smaller radius
         const grad = ctx.createRadialGradient(s.x, s.y, 0, s.x, s.y, radius);
-        // Transparent and less intense center
+        // Theme-aware center color: dark on light mode, light on dark mode
         const root = document.documentElement;
         const cs = getComputedStyle(root);
-        const ringVar = cs.getPropertyValue('--ring').trim();
-        const baseColor = ringVar && ringVar.includes('rgb') ? ringVar : 'rgba(125,211,252,1)';
-        const innerAlpha = Math.max(0, 0.10 * alpha);
-        // Attempt to inject alpha if rgba(..,1) form, else fallback to a soft blue
-        const innerColor = baseColor.startsWith('rgba(')
-          ? baseColor.replace(/\,\s*([\d.]+)\)$/, `, ${innerAlpha})`)
-          : `rgba(160, 200, 255, ${innerAlpha})`;
-        grad.addColorStop(0, innerColor);
+        const isDark = root.classList.contains('dark');
+        const fgVar = (cs.getPropertyValue('--foreground').trim()) || (isDark ? '#e6f0ff' : '#0b1220');
+        const toRGBA = (color: string, a: number) => {
+          const c = color.trim();
+          if (c.startsWith('#')) {
+            const hex = c.slice(1);
+            const full = hex.length === 3 ? hex.split('').map(ch => ch + ch).join('') : hex;
+            const r = parseInt(full.slice(0, 2), 16);
+            const g = parseInt(full.slice(2, 4), 16);
+            const b = parseInt(full.slice(4, 6), 16);
+            return `rgba(${r}, ${g}, ${b}, ${a})`;
+          }
+          if (c.startsWith('rgb')) {
+            // replace existing alpha or append
+            const m = c.match(/rgba?\((.*)\)/);
+            if (m) {
+              const parts = m[1].split(',').map(s => s.trim()).slice(0, 3);
+              return `rgba(${parts[0]}, ${parts[1]}, ${parts[2]}, ${a})`;
+            }
+          }
+          // fallback neutral
+          return `rgba(${isDark ? '255,255,255' : '0,0,0'}, ${a})`;
+        };
+        const innerAlpha = Math.max(0, 0.16 * alpha);
+        grad.addColorStop(0, toRGBA(fgVar, innerAlpha));
         grad.addColorStop(1, 'rgba(0,0,0,0)');
         ctx.fillStyle = grad;
         ctx.beginPath();
