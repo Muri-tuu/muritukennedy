@@ -17,8 +17,12 @@ export const openWhatsAppPopup = ({ phoneNumber, message }: WhatsAppPayload) => 
 
   const width = 520;
   const height = 720;
-  const left = typeof window !== 'undefined' ? Math.max(0, Math.floor((window.screen.width - width) / 2)) : 100;
-  const top = typeof window !== 'undefined' ? Math.max(0, Math.floor((window.screen.height - height) / 2)) : 100;
+  // Dock popup to the right side of the current window
+  const baseLeft = (typeof window !== 'undefined' ? (window.screenX || (window as any).screenLeft || 0) : 0);
+  const baseTop = (typeof window !== 'undefined' ? (window.screenY || (window as any).screenTop || 0) : 0);
+  const outerW = (typeof window !== 'undefined' ? (window.outerWidth || window.innerWidth) : width);
+  const left = Math.max(0, Math.floor(baseLeft + outerW - width - 16));
+  const top = Math.max(0, Math.floor(baseTop + 80));
 
   const features = [
     `width=${width}`,
