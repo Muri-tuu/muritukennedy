@@ -30,6 +30,8 @@ export default function ProfileCard({
   contactText = 'Contact',
   showUserInfo = true,
   onContactClick,
+  imageOnly = false,
+  showDetails = true,
 }: any) {
   const wrapRef = useRef<HTMLDivElement | null>(null);
   const cardRef = useRef<HTMLElement | null>(null);
@@ -80,11 +82,11 @@ export default function ProfileCard({
   return (
     <div ref={wrapRef} className={`pc-card-wrapper ${className}`.trim()} style={cardStyle}>
       <section ref={cardRef as any} className="pc-card">
-        <div className="pc-inside" />
+        {!imageOnly && <div className="pc-inside" />}
         <div className="pc-content pc-avatar-content">
           <img className="avatar" src={avatarUrl} alt={`${name || 'User'} avatar`} loading="lazy" />
         </div>
-        {showUserInfo && (
+        {!imageOnly && showUserInfo && (
           <div className="pc-user-info">
             <div className="pc-user-details">
               <div className="pc-mini-avatar"><img src={miniAvatarUrl || avatarUrl} alt={`${name || 'User'} mini avatar`} loading="lazy" /></div>
@@ -93,9 +95,11 @@ export default function ProfileCard({
             <button className="pc-contact-btn" type="button">{contactText}</button>
           </div>
         )}
-        <div className="pc-content">
-          <div className="pc-details"><h3>{name}</h3><p>{title}</p></div>
-        </div>
+        {!imageOnly && showDetails && (
+          <div className="pc-content">
+            <div className="pc-details"><h3>{name}</h3><p>{title}</p></div>
+          </div>
+        )}
       </section>
     </div>
   );

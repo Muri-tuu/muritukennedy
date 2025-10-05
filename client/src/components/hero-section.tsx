@@ -144,16 +144,19 @@ export default function HeroSection() {
             className="lg:order-2"
           >
             <div className="text-center">
-              <div className="mb-6 flex justify-center w-full">
+              <div className="mb-6 flex flex-col items-center w-full gap-4">
                 <div className="w-full max-w-md">
-                  <ProfileCard
-                    avatarUrl={profilePicture}
-                    name="Kennedy Muritu"
-                    title="Software Engineer"
-                    handle="muri_tuu"
-                    status="Online"
-                    contactText="Contact"
-                  />
+                  <ProfileCard avatarUrl={profilePicture} imageOnly />
+                </div>
+                <div className="flex justify-center">
+                  <motion.button
+                    onClick={() => openWhatsAppPopup({ phoneNumber: "254115594826", message: "Hello Kennedy, I'm interested in discussing a potential project opportunity." })}
+                    className="inline-flex items-center px-6 py-3 rounded-xl border border-white/30 bg-white/15 dark:bg-white/10 backdrop-blur-md text-foreground hover:opacity-90 transition"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    Send Me a Message
+                  </motion.button>
                 </div>
               </div>
               
