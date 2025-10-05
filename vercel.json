@@ -4,6 +4,14 @@
     { "src": "package.json", "use": "@vercel/static-build", "config": { "distDir": "dist/public" } }
   ],
   "routes": [
+    { "src": "/assets/(.*)", "dest": "/assets/$1" },
+    { "src": "/favicon-16x16.png", "dest": "/favicon-16x16.png" },
+    { "src": "/favicon-32x32.png", "dest": "/favicon-32x32.png" },
+    { "src": "/apple-touch-icon.png", "dest": "/apple-touch-icon.png" },
+    { "src": "/android-chrome-192x192.png", "dest": "/android-chrome-192x192.png" },
+    { "src": "/android-chrome-512x512.png", "dest": "/android-chrome-512x512.png" },
+    { "src": "/favicon.svg", "dest": "/favicon.svg" },
+    { "src": "/site.webmanifest", "dest": "/site.webmanifest" },
     { "src": "/(.*)", "dest": "/index.html" }
   ]
 }
