@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import GradientText from "@/components/gradient-text";
-import whoIsKennedyImage from "@assets/Who is Kennedy_1755692624117.jpg";
 import aboutBg from "@assets/About_1755693396253.jpg";
 import khsLogo from "@assets/KHS_Logo-removebg-preview_1755692624111.png";
 import directedLogo from "@assets/DirectED_Logo-removebg-preview_1755692624110.png";
