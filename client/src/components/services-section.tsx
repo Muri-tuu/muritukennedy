@@ -57,7 +57,7 @@ export default function ServicesSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: service.delay }}
                 viewport={{ once: true }}
-                className="text-center glass-card p-4 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl"
+                className="text-center p-4 rounded-2xl border border-border bg-transparent"
               >
               <motion.div 
                 className="mb-6 relative overflow-hidden rounded-xl cursor-pointer"
@@ -69,18 +69,18 @@ export default function ServicesSection() {
                     alt={service.title}
                     loading="lazy"
                     decoding="async"
-                  className="w-full aspect-[16/10] object-cover rounded-xl border border-white/10"
+                  className="w-full aspect-[16/10] object-cover rounded-xl border border-border"
                     whileHover={{ scale: 1.06 }}
                     transition={{ duration: 0.3 }}
                   />
                 <div className="absolute inset-0 pointer-events-none"></div>
                 </motion.div>
                 
-                <h3 className="text-xl sm:text-2xl font-serif font-bold text-blue-400 mb-2 group-hover:text-blue-300 transition-colors">{service.title}</h3>
+                <h3 className="text-xl sm:text-2xl font-serif font-bold text-foreground mb-2 transition-colors">{service.title}</h3>
                 
                 <div className="flex items-center justify-center mb-4">
                   <div className="w-2 h-2 bg-green-500 rounded-full mr-3"></div>
-                  <p className="text-sm sm:text-base text-white/90 font-medium">{service.subtitle}</p>
+                  <p className="text-sm sm:text-base text-muted-foreground font-medium">{service.subtitle}</p>
                 </div>
               </motion.div>
             ))}

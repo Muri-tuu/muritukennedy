@@ -123,7 +123,7 @@ export default function Navigation() {
       
       {/* Mobile Navigation */}
       {isMenuOpen && (
-        <div className="md:hidden bg-dark-800/95 backdrop-blur-md">
+        <div className="md:hidden bg-secondary/95 backdrop-blur-md border-t border-border">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             {["home", "about", "projects", "services", "contact"].map((section) => (
               <ClickSpark key={`mcs-${section}`} sparkColor="#38bdf8" sparkRadius={12} sparkCount={8}>
