@@ -43,6 +43,7 @@ export type LogoLoopProps = {
   ariaLabel?: string;
   className?: string;
   style?: React.CSSProperties;
+  maxCopies?: number;
 };
 
 const toCssLength = (value: number | string | undefined) =>
@@ -188,6 +189,7 @@ const LogoLoopInner = ({
   ariaLabel = 'Partner logos',
   className,
   style,
+  maxCopies,
 }: LogoLoopProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
@@ -211,7 +213,8 @@ const LogoLoopInner = ({
     if (sequenceWidth > 0) {
       setSeqWidth(Math.ceil(sequenceWidth));
       const copiesNeeded = Math.ceil(containerWidth / sequenceWidth) + ANIMATION_CONFIG.COPY_HEADROOM;
-      setCopyCount(Math.max(ANIMATION_CONFIG.MIN_COPIES, copiesNeeded));
+      const boundedCopies = Math.max(ANIMATION_CONFIG.MIN_COPIES, copiesNeeded);
+      setCopyCount(maxCopies ? Math.min(boundedCopies, maxCopies) : boundedCopies);
     }
   }, []);
 

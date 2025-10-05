@@ -163,6 +163,7 @@ export default function ProjectsSection() {
                 direction="left"
                 logoHeight={64}
                 gap={48}
+                maxCopies={2}
                 pauseOnHover
                 scaleOnHover
                 fadeOut
