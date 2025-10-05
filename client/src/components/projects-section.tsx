@@ -4,7 +4,6 @@ import shukaMetaverseIcon from "@assets/Shuka Metaverse_1755692624114.jpg";
 import projectsBg from "@assets/Projects_1755693402302.jpg";
 import techHubIcon from "@assets/TechHub_1755692624115.png";
 import sparkleLaundryIcon from "@assets/Sparkle Laundry Home_1755692624114.png";
-import royalPriesthoodIcon from "@assets/Royal Priesthood_1755692624113.png";
 import LogoLoop from "@/components/logo-loop";
 import { openWhatsAppPopup } from "@/lib/whatsapp";
 import ClickSpark from "@/components/click-spark";
@@ -157,7 +156,6 @@ export default function ProjectsSection() {
                   { src: shukaMetaverseIcon, alt: "Shuka Metaverse" },
                   { src: techHubIcon, alt: "TechHub Solutions" },
                   { src: sparkleLaundryIcon, alt: "Sparkle Laundry Home" },
-                  { src: royalPriesthoodIcon, alt: "Royal Priesthood" },
                 ]}
                 speed={120}
                 direction="left"
