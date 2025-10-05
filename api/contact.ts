@@ -1,16 +1,16 @@
-const nodemailer = require('nodemailer');
+import type { VercelRequest, VercelResponse } from '@vercel/node';
+import nodemailer from 'nodemailer';
 
-module.exports = async function handler(req, res) {
+export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method !== 'POST') {
     res.status(405).json({ message: 'Method Not Allowed' });
     return;
   }
 
   try {
-    // Support both Vercel Node runtimes (body may already be parsed or be a raw string)
-    let body = req.body;
-    if (typeof body === 'string') {
-      try { body = JSON.parse(body); } catch { body = {}; }
+    let body: any = req.body;
+    if (!body || typeof body === 'string') {
+      try { body = JSON.parse((body as string) || '{}'); } catch { body = {}; }
     }
     const { name, email, message } = body || {};
     if (!name || !email || !message) {
@@ -25,7 +25,7 @@ module.exports = async function handler(req, res) {
       SMTP_PASS,
       TO_EMAIL = 'kenhopkins001@gmail.com',
       FROM_EMAIL = 'no-reply@vercel.app',
-    } = process.env;
+    } = process.env as Record<string, string>;
 
     if (!SMTP_HOST || !SMTP_PORT || !SMTP_USER || !SMTP_PASS) {
       console.warn('SMTP credentials missing - logging message instead of sending.');
@@ -38,10 +38,7 @@ module.exports = async function handler(req, res) {
       host: SMTP_HOST,
       port: Number(SMTP_PORT),
       secure: Number(SMTP_PORT) === 465,
-      auth: {
-        user: SMTP_USER,
-        pass: SMTP_PASS,
-      },
+      auth: { user: SMTP_USER, pass: SMTP_PASS },
     });
 
     const info = await transporter.sendMail({
@@ -53,12 +50,12 @@ module.exports = async function handler(req, res) {
       html: `<p><strong>Name:</strong> ${name}</p>
              <p><strong>Email:</strong> ${email}</p>
              <p><strong>Message:</strong></p>
-             <p>${message.replace(/\n/g, '<br/>')}</p>`,
+             <p>${String(message).replace(/\n/g, '<br/>')}</p>`,
     });
 
     res.status(200).json({ message: 'Message sent successfully', id: info.messageId });
-  } catch (err) {
+  } catch (err: any) {
     console.error('Contact error:', err);
     res.status(500).json({ message: 'Failed to send message' });
   }
-};
+}
