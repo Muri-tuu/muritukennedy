@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { motion } from "framer-motion";
+import { openWhatsAppPopup } from "@/lib/whatsapp";
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -68,14 +69,14 @@ export default function Navigation() {
                   {section.charAt(0).toUpperCase() + section.slice(1)}
                 </button>
               ))}
-              <motion.a
-                href="https://wa.me/254115594826?text=Hello%20Kennedy,%20I'm%20interested%20in%20discussing%20a%20potential%20project%20opportunity."
+              <motion.button
+                onClick={() => openWhatsAppPopup({ phoneNumber: "254115594826", message: "Hello Kennedy, I'm interested in discussing a potential project opportunity." })}
                 className="bg-gradient-to-r from-blue-600 to-cyan-500 text-white px-4 py-2 rounded-lg text-sm font-medium hover:from-blue-700 hover:to-cyan-600 transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/30"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
                 Hire Me <i className="fas fa-handshake ml-1"></i>
-              </motion.a>
+              </motion.button>
             </div>
           </div>
           
@@ -108,14 +109,14 @@ export default function Navigation() {
                 {section.charAt(0).toUpperCase() + section.slice(1)}
               </button>
             ))}
-            <motion.a
-              href="https://wa.me/254115594826?text=Hello%20Kennedy,%20I'm%20interested%20in%20discussing%20a%20potential%20project%20opportunity."
+            <motion.button
+              onClick={() => openWhatsAppPopup({ phoneNumber: "254115594826", message: "Hello Kennedy, I'm interested in discussing a potential project opportunity." })}
               className="block px-3 py-2 rounded-md text-base font-medium bg-gradient-to-r from-blue-600 to-cyan-500 text-white hover:from-blue-700 hover:to-cyan-600 transition-all duration-300"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >
               Hire Me <i className="fas fa-handshake ml-1"></i>
-            </motion.a>
+            </motion.button>
           </div>
         </div>
       )}
