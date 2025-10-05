@@ -1,9 +1,36 @@
 import { motion } from "framer-motion";
 import { openWhatsAppPopup } from "@/lib/whatsapp";
+import { useState } from "react";
 import ClickSpark from "@/components/click-spark";
 import contactBg from "@assets/Services_1755693410305.jpg";
 
 export default function ContactSection() {
+  const [submitting, setSubmitting] = useState(false);
+  const [sent, setSent] = useState<string | null>(null);
+  const [error, setError] = useState<string | null>(null);
+  const [form, setForm] = useState({ name: "", email: "", message: "" });
+
+  const submit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setSubmitting(true);
+    setError(null);
+    setSent(null);
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data?.message || 'Failed to send');
+      setSent('Thanks! Your message has been sent.');
+      setForm({ name: "", email: "", message: "" });
+    } catch (err: any) {
+      setError(err.message || 'Failed to send');
+    } finally {
+      setSubmitting(false);
+    }
+  };
   return (
     <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto text-center">
@@ -43,6 +70,50 @@ export default function ContactSection() {
               View My Resume
             </a>
           </div>
+
+          <form onSubmit={submit} className="max-w-2xl mx-auto text-left bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6">
+            <div className="grid sm:grid-cols-2 gap-4">
+              <div>
+                <label className="block text-sm mb-1">Name</label>
+                <input
+                  className="w-full px-3 py-2 rounded-md bg-black/20 border border-white/10 focus:outline-none focus:ring-2 focus:ring-cyan-400/50"
+                  value={form.name}
+                  onChange={(e) => setForm((f) => ({ ...f, name: e.target.value }))}
+                  required
+                />
+              </div>
+              <div>
+                <label className="block text-sm mb-1">Email</label>
+                <input
+                  type="email"
+                  className="w-full px-3 py-2 rounded-md bg-black/20 border border-white/10 focus:outline-none focus:ring-2 focus:ring-cyan-400/50"
+                  value={form.email}
+                  onChange={(e) => setForm((f) => ({ ...f, email: e.target.value }))}
+                  required
+                />
+              </div>
+            </div>
+            <div className="mt-4">
+              <label className="block text-sm mb-1">Message</label>
+              <textarea
+                className="w-full px-3 py-2 h-32 rounded-md bg-black/20 border border-white/10 focus:outline-none focus:ring-2 focus:ring-cyan-400/50"
+                value={form.message}
+                onChange={(e) => setForm((f) => ({ ...f, message: e.target.value }))}
+                required
+              />
+            </div>
+            <div className="mt-4 flex items-center gap-3">
+              <button
+                type="submit"
+                disabled={submitting}
+                className="px-5 py-2 rounded-md bg-cyan-500 text-black font-medium hover:bg-cyan-400 disabled:opacity-50"
+              >
+                {submitting ? 'Sending…' : 'Send Email'}
+              </button>
+              {sent && <span className="text-green-400 text-sm">{sent}</span>}
+              {error && <span className="text-red-400 text-sm">{error}</span>}
+            </div>
+          </form>
           
           {/* Social Links */}
           <div className="flex justify-center space-x-8 mb-12">
