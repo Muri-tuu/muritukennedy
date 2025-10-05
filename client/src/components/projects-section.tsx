@@ -4,6 +4,8 @@ import projectsBg from "@assets/Projects_1755693402302.jpg";
 import techHubIcon from "@assets/TechHub_1755692624115.png";
 import sparkleLaundryIcon from "@assets/Sparkle Laundry Home_1755692624114.png";
 import royalPriesthoodIcon from "@assets/Royal Priesthood_1755692624113.png";
+import LogoLoop from "@/components/logo-loop";
+import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss } from "react-icons/si";
 
 export default function ProjectsSection() {
   const projects = [
@@ -140,6 +142,62 @@ export default function ProjectsSection() {
               </motion.a>
             </div>
           </motion.div>
+
+          {/* Logo Loop: Featured projects */}
+          <div className="mt-16">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-center mb-6"
+            >
+              <h3 className="text-lg sm:text-xl font-medium text-gray-300">Featured work</h3>
+              <p className="text-sm text-gray-400">A quick scroll through recent projects</p>
+            </motion.div>
+            <div className="relative overflow-hidden" style={{ height: "120px" }}>
+              <LogoLoop
+                logos={[
+                  { src: shukaMetaverseIcon, alt: "Shuka Metaverse" },
+                  { src: techHubIcon, alt: "TechHub Solutions" },
+                  { src: sparkleLaundryIcon, alt: "Sparkle Laundry Home" },
+                  { src: royalPriesthoodIcon, alt: "Royal Priesthood" },
+                ]}
+                speed={120}
+                direction="left"
+                logoHeight={64}
+                gap={48}
+                pauseOnHover
+                scaleOnHover
+                fadeOut
+                fadeOutColor="#0b0b0b"
+                ariaLabel="Project logos"
+              />
+            </div>
+          </div>
+
+          {/* Logo Loop: Tech stack */}
+          <div className="mt-12">
+            <div className="relative overflow-hidden" style={{ height: "100px" }}>
+              <LogoLoop
+                logos={[
+                  { node: <SiReact />, title: "React", href: "https://react.dev" },
+                  { node: <SiNextdotjs />, title: "Next.js", href: "https://nextjs.org" },
+                  { node: <SiTypescript />, title: "TypeScript", href: "https://www.typescriptlang.org" },
+                  { node: <SiTailwindcss />, title: "Tailwind CSS", href: "https://tailwindcss.com" },
+                ]}
+                speed={100}
+                direction="right"
+                logoHeight={44}
+                gap={40}
+                pauseOnHover
+                scaleOnHover
+                fadeOut
+                fadeOutColor="#0b0b0b"
+                ariaLabel="Technology stack"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </section>
