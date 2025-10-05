@@ -8,15 +8,11 @@ import Footer from "@/components/footer";
 
 import profilePicture from "@assets/Profile Picture_1755692636143.jpg";
 import CometBackground from "@/components/comet-background";
-import LiquidEther from "@/components/liquid-ether";
 
 export default function Home() {
   return (
     <div className="relative bg-background text-foreground font-sans overflow-x-hidden min-h-screen">
       <CometBackground />
-      <div className="fixed inset-0 -z-10">
-        <LiquidEther colors={[ '#5227FF', '#FF9FFC', '#B19EEF' ]} autoDemo autoSpeed={0.5} autoIntensity={2.2} />
-      </div>
       {/* Remove heavy image blur overlay to let WebGL show through */}
       <Navigation />
       <HeroSection />
