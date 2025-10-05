@@ -58,17 +58,18 @@ export default function Navigation() {
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-8">
               {["home", "about", "projects", "services", "contact"].map((section) => (
-                <button
-                  key={section}
-                  onClick={() => scrollToSection(section)}
-                  className={`nav-link px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300 ${
-                    activeSection === section 
-                      ? "text-blue-400" 
-                      : "text-white hover:text-blue-400"
-                  }`}
-                >
-                  {section.charAt(0).toUpperCase() + section.slice(1)}
-                </button>
+                <ClickSpark key={`cs-${section}`} sparkColor="#38bdf8" sparkRadius={12} sparkCount={8}>
+                  <button
+                    onClick={() => scrollToSection(section)}
+                    className={`nav-link px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300 ${
+                      activeSection === section 
+                        ? "text-blue-400" 
+                        : "text-white hover:text-blue-400"
+                    }`}
+                  >
+                    {section.charAt(0).toUpperCase() + section.slice(1)}
+                  </button>
+                </ClickSpark>
               ))}
               <ClickSpark sparkColor="#38bdf8" sparkRadius={16} sparkCount={10}>
                 <motion.button
@@ -100,17 +101,18 @@ export default function Navigation() {
         <div className="md:hidden bg-dark-800/95 backdrop-blur-md">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             {["home", "about", "projects", "services", "contact"].map((section) => (
-              <button
-                key={section}
-                onClick={() => scrollToSection(section)}
-                className={`nav-link block px-3 py-2 rounded-md text-base font-medium transition-colors duration-300 w-full text-left ${
-                  activeSection === section 
-                    ? "text-blue-400" 
-                    : "text-white hover:text-blue-400"
-                }`}
-              >
-                {section.charAt(0).toUpperCase() + section.slice(1)}
-              </button>
+              <ClickSpark key={`mcs-${section}`} sparkColor="#38bdf8" sparkRadius={12} sparkCount={8}>
+                <button
+                  onClick={() => scrollToSection(section)}
+                  className={`nav-link block px-3 py-2 rounded-md text-base font-medium transition-colors duration-300 w-full text-left ${
+                    activeSection === section 
+                      ? "text-blue-400" 
+                      : "text-white hover:text-blue-400"
+                  }`}
+                >
+                  {section.charAt(0).toUpperCase() + section.slice(1)}
+                </button>
+              </ClickSpark>
             ))}
             <ClickSpark sparkColor="#38bdf8" sparkRadius={16} sparkCount={10}>
               <motion.button
