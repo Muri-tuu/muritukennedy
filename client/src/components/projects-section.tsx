@@ -8,6 +8,7 @@ import LogoLoop from "@/components/logo-loop";
 import Threads from "@/components/threads";
 import { openWhatsAppPopup } from "@/lib/whatsapp";
 import ClickSpark from "@/components/click-spark";
+import CardSwap, { Card } from "@/components/card-swap";
 
 export default function ProjectsSection() {
   const projects = [
@@ -51,60 +52,21 @@ export default function ProjectsSection() {
             </h2>
           </motion.div>
           
-          {/* Projects Grid */}
-          <div className="grid sm:grid-cols-2 gap-8 lg:gap-12 mb-12">
-            {projects.map((project, index) => (
-              <motion.div
-                key={project.title}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1.0, delay: project.delay * 0.2, ease: "easeOut" }}
-                viewport={{ once: true }}
-                className="text-center group p-4 rounded-2xl border border-border bg-transparent"
-              >
-                <motion.a
-                  href="https://github.com/Muri-tuu"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block cursor-pointer group"
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ duration: 0.4, ease: "easeInOut" }}
-                >
-                  <div className="mb-6">
-              <motion.div 
-                className="relative rounded-2xl transition-all duration-500 aspect-square overflow-hidden"
-                      animate={{ 
-                        y: [0, -5, 0],
-                      }}
-                      transition={{
-                        duration: 4,
-                        repeat: Infinity,
-                        ease: "easeInOut"
-                      }}
-                    >
-                      <motion.img
-                        src={project.icon}
-                        alt={`${project.title} icon`}
-                        loading="lazy"
-                        decoding="async"
-                        className="w-full h-full object-cover transition-transform duration-500"
-                        whileHover={{ scale: 1.08 }}
-                        transition={{ duration: 0.3, ease: "easeInOut" }}
-                      />
-                    </motion.div>
-                  </div>
-                  
-                  <h3 className="text-xl sm:text-2xl font-serif font-bold text-foreground mb-2 transition-colors duration-300 group-hover:text-primary">
-                    {project.title}
-                  </h3>
-                  
-                  <div className="flex items-center justify-center mb-4">
-                    <div className="w-2 h-2 bg-green-500 rounded-full mr-3 animate-pulse"></div>
-                    <p className="text-sm sm:text-base text-muted-foreground font-medium transition-colors duration-300 group-hover:text-foreground">{project.subtitle}</p>
-                  </div>
-                </motion.a>
-              </motion.div>
-            ))}
+          {/* Projects CardSwap - single row */}
+          <div className="mb-12">
+            <CardSwap width={320} height={220} cardDistance={80} verticalDistance={50} delay={4500}>
+              {projects.map((project) => (
+                <Card key={project.title} className="p-3">
+                  <a href="https://github.com/Muri-tuu" target="_blank" rel="noopener noreferrer" className="block group">
+                    <div className="relative rounded-xl overflow-hidden" style={{ height: 120 }}>
+                      <img src={project.icon} alt={`${project.title} icon`} loading="lazy" decoding="async" className="w-full h-full object-cover" />
+                    </div>
+                    <h3 className="text-lg font-serif font-bold text-foreground mt-3 group-hover:text-primary transition-colors">{project.title}</h3>
+                    <p className="text-sm text-muted-foreground">{project.subtitle}</p>
+                  </a>
+                </Card>
+              ))}
+            </CardSwap>
           </div>
           
           {/* Tagline */}
