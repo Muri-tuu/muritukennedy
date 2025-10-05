@@ -21,7 +21,7 @@ export default function HeroSection() {
             className="space-y-6"
           >
             {/* Welcome Card */}
-            <div className="bg-dark-700/50 backdrop-blur-xl rounded-3xl p-6 sm:p-8 border border-cyan-400/20 shadow-[0_0_40px_rgba(56,189,248,0.08)]">
+            <div className="glass-card bg-dark-700/50 backdrop-blur-xl rounded-3xl p-6 sm:p-8 border border-cyan-400/20 shadow-[0_0_40px_rgba(56,189,248,0.08)]">
               <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-serif font-bold leading-tight">
                 <GradientText colors={["#38bdf8","#a78bfa","#ff79c6","#38bdf8"]} animationSpeed={8}>
                   Welcome to<br/>My Portfolio

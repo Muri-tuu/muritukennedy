@@ -36,8 +36,19 @@ export default function SplashCursor() {
       if (splashesRef.current.length > 20) splashesRef.current.shift();
     };
 
-    window.addEventListener('mousemove', onMove, { passive: true });
-    window.addEventListener('touchmove', onMove, { passive: true });
+    const shouldIgnore = (target: EventTarget | null) => {
+      if (!(target instanceof HTMLElement)) return false;
+      return target.closest('.glass-card') !== null;
+    };
+
+    const onMoveFiltered = (e: MouseEvent | TouchEvent) => {
+      const t = (e as any).target as EventTarget | null;
+      if (shouldIgnore(t)) return;
+      onMove(e as any);
+    };
+
+    window.addEventListener('mousemove', onMoveFiltered as any, { passive: true } as any);
+    window.addEventListener('touchmove', onMoveFiltered as any, { passive: true } as any);
 
     const draw = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -50,9 +61,13 @@ export default function SplashCursor() {
         const alpha = 1 - t;
         const radius = 80 * t + 10;
         const grad = ctx.createRadialGradient(s.x, s.y, 0, s.x, s.y, radius);
-        // premium cyan-blue gradient to match site theme
-        grad.addColorStop(0, `rgba(34,197,94,${0.25 * alpha})`); // emerald hint
-        grad.addColorStop(1, `rgba(59,130,246,0)`); // blue fade
+        // adaptive color: sample body computed styles as hue
+        const root = document.documentElement;
+        const cs = getComputedStyle(root);
+        const ring = cs.getPropertyValue('--ring') || 'rgba(125,211,252,1)';
+        // fallback colors
+        grad.addColorStop(0, ring.replace('1)', `${0.22 * alpha})`));
+        grad.addColorStop(1, 'rgba(0,0,0,0)');
         ctx.fillStyle = grad;
         ctx.beginPath();
         ctx.arc(s.x, s.y, radius, 0, Math.PI * 2);
@@ -67,8 +82,8 @@ export default function SplashCursor() {
     return () => {
       cancelAnimationFrame(id);
       window.removeEventListener('resize', setSize);
-      window.removeEventListener('mousemove', onMove as any);
-      window.removeEventListener('touchmove', onMove as any);
+      window.removeEventListener('mousemove', onMoveFiltered as any);
+      window.removeEventListener('touchmove', onMoveFiltered as any);
     };
   }, []);
 
