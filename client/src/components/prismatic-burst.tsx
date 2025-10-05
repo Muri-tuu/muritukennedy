@@ -81,9 +81,14 @@ export default function PrismaticBurst({ animationType='rotate3d', intensity=2, 
 
   useEffect(() => {
     const gl = rendererRef.current?.gl as any; const program = programRef.current; const tex = gradTexRef.current; if (!program || !gl || !tex) return;
+    const hexToRgb = (hex: string): [number, number, number] => {
+      let h = hex.trim(); if (h.startsWith('#')) h = h.slice(1); if (h.length === 3) { const r=h[0], g=h[1], b=h[2]; h = r+r+g+g+b+b; }
+      const intVal = parseInt(h, 16); if (isNaN(intVal) || (h.length !== 6 && h.length !== 8)) return [255,255,255];
+      const r = (intVal >> 16) & 255; const g = (intVal >> 8) & 255; const b = intVal & 255; return [r,g,b];
+    };
     const capped = (Array.isArray(colors) ? colors : ['#ffffff']).slice(0, 64); const count = capped.length;
     const data = new Uint8Array(count*4);
-    for (let i=0;i<count;i++){ const c = new (window as any).THREE?.Color ? new (window as any).THREE.Color(capped[i]) : null; const tmp = new THREE.Color(capped[i]); const r=Math.round(tmp.r*255), g=Math.round(tmp.g*255), b=Math.round(tmp.b*255); data[i*4+0]=r; data[i*4+1]=g; data[i*4+2]=b; data[i*4+3]=255; }
+    for (let i=0;i<count;i++){ const [r,g,b] = hexToRgb(String(capped[i])); data[i*4+0]=r; data[i*4+1]=g; data[i*4+2]=b; data[i*4+3]=255; }
     tex.image = data; (tex as any).width = count; (tex as any).height = 1; tex.minFilter = gl.LINEAR; tex.magFilter = gl.LINEAR; tex.wrapS = gl.CLAMP_TO_EDGE; tex.wrapT = gl.CLAMP_TO_EDGE; (tex as any).flipY = false; (tex as any).generateMipmaps = false; (tex as any).needsUpdate = true;
     (program.uniforms.uColorCount.value as number) = count;
   }, [colors]);
