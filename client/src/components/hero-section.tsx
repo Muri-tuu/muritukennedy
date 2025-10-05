@@ -3,7 +3,7 @@ import ClickSpark from "@/components/click-spark";
 import { motion } from "framer-motion";
 import GradientText from "@/components/gradient-text";
 import profilePicture from "@assets/Profile Picture_1755692636143.jpg";
-import ProfileCard from "@/components/profile-card";
+// Profile image only per latest request
 import homeBg from "@assets/Home_1755693390757.jpg";
 
 export default function HeroSection() {
@@ -145,8 +145,16 @@ export default function HeroSection() {
           >
             <div className="text-center">
               <div className="mb-6 flex flex-col items-center w-full gap-4">
-                <div className="w-full max-w-md">
-                  <ProfileCard avatarUrl={profilePicture} imageOnly />
+                <div className="w-full max-w-md flex justify-center">
+                  <motion.img
+                    src={profilePicture}
+                    alt="Kennedy Muritu - Profile"
+                    fetchPriority="high"
+                    decoding="async"
+                    className="w-40 h-40 sm:w-48 sm:h-48 lg:w-56 lg:h-56 object-cover rounded-2xl shadow-xl"
+                    whileHover={{ scale: 1.03 }}
+                    transition={{ duration: 0.3, ease: "easeInOut" }}
+                  />
                 </div>
                 <div className="flex justify-center">
                   <motion.button
