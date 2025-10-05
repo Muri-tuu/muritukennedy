@@ -43,7 +43,7 @@ export default function AboutSection() {
             >
               <div className="flex items-start mb-8">
                 <div className="w-3 h-3 bg-green-500 rounded-full mt-2 mr-4 flex-shrink-0"></div>
-                <p className="text-lg text-white leading-relaxed">
+                <p className="text-lg text-foreground leading-relaxed">
                   I'm a Mechatronics Engineering student passionate about blending technology and creativity. I love solving digital challenges with smart, efficient solutions and continuously expanding my skill set.
                 </p>
               </div>
@@ -57,7 +57,7 @@ export default function AboutSection() {
                 viewport={{ once: true }}
               >
                 <motion.div 
-                  className="bg-dark-800/60 rounded-2xl p-4 sm:p-6 border border-blue-500/30"
+                  className="rounded-2xl p-4 sm:p-6 border border-border bg-secondary/50"
                   whileHover={{ scale: 1.02, borderColor: "rgb(59 130 246)" }}
                   transition={{ duration: 0.3 }}
                 >

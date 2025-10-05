@@ -88,8 +88,8 @@ export default function Navigation() {
                     onClick={() => scrollToSection(section)}
                     className={`nav-link px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300 ${
                       activeSection === section 
-                        ? "text-blue-400" 
-                        : "text-white hover:text-blue-400"
+                        ? "text-primary" 
+                        : "text-foreground hover:text-primary"
                     }`}
                   >
                     {section.charAt(0).toUpperCase() + section.slice(1)}
@@ -131,8 +131,8 @@ export default function Navigation() {
                   onClick={() => scrollToSection(section)}
                   className={`nav-link block px-3 py-2 rounded-md text-base font-medium transition-colors duration-300 w-full text-left ${
                     activeSection === section 
-                      ? "text-blue-400" 
-                      : "text-white hover:text-blue-400"
+                      ? "text-primary" 
+                      : "text-foreground hover:text-primary"
                   }`}
                 >
                   {section.charAt(0).toUpperCase() + section.slice(1)}

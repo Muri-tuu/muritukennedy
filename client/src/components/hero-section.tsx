@@ -35,7 +35,7 @@ export default function HeroSection() {
                 href="https://drive.google.com/file/d/1xcfNH0HThexVpjk7nTFRyEHhSWH8ZsCn/view?usp=drive_link"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center px-6 py-3 bg-transparent border border-blue-400 text-white font-medium rounded-full hover:bg-blue-400/10 transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-blue-400/20"
+                className="inline-flex items-center px-6 py-3 bg-transparent border border-primary text-foreground font-medium rounded-full hover:bg-primary/10 transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-primary/20"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -155,7 +155,7 @@ export default function HeroSection() {
                 />
               </div>
               
-              <h2 className="text-xl sm:text-2xl font-serif font-bold text-white mb-6">
+              <h2 className="text-xl sm:text-2xl font-serif font-bold text-foreground mb-6">
                 <a href="https://www.linkedin.com/in/kennedy-muritu-a35649354/" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition-colors duration-300">
                   Kennedy<br />Muritu
                 </a>
@@ -164,16 +164,15 @@ export default function HeroSection() {
               <ClickSpark sparkColor="#22c55e" sparkSize={10} sparkRadius={18} sparkCount={10}>
                 <motion.button
                   onClick={() => openWhatsAppPopup({ phoneNumber: "254115594826", message: "Hello Kennedy, I'm interested in discussing a potential project opportunity." })}
-                  className="inline-flex items-center px-6 py-3 bg-green-600 text-white font-medium rounded-full hover:bg-green-700 transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-green-600/30"
+                  className="inline-flex items-center px-6 py-3 bg-primary text-primary-foreground font-medium rounded-full hover:opacity-90 transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-primary/30"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center mr-3">
-                    <i className="fab fa-whatsapp text-white"></i>
+                  <div className="w-8 h-8 bg-primary-foreground/20 rounded-full flex items-center justify-center mr-3">
+                    <i className="fab fa-whatsapp text-primary-foreground"></i>
                   </div>
                   <div className="flex items-center">
-                    <i className="fas fa-arrow-turn-down text-white mr-2"></i>
-                    <span className="text-green-300">Send Me a Message</span>
+                    <span className="text-primary-foreground">Send Me a Message</span>
                   </div>
                 </motion.button>
               </ClickSpark>

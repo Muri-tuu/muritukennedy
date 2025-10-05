@@ -51,7 +51,7 @@ export default function ContactSection() {
               Let's Create Something Amazing
             </h2>
           </div>
-          <p className="text-xl text-gray-300 mb-8 leading-relaxed">
+          <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
             Ready to bring your vision to life? Let's discuss your project and explore how we can work together to achieve your goals.
           </p>
           

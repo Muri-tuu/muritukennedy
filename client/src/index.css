@@ -5,24 +5,25 @@
 @tailwind utilities;
 
 :root {
-  --background: #f7fbff;
-  --foreground: #0b1220;
-  --card: #ffffffb3;
-  --card-foreground: #0b1220;
+  /* Light theme - cream/beige base with clear contrast */
+  --background: #fbf7ef; /* cream */
+  --foreground: #1b1f2a; /* deep slate */
+  --card: #ffffff; /* white card on cream */
+  --card-foreground: #1b1f2a;
   --popover: #ffffff;
-  --popover-foreground: #0b1220;
-  --primary: #0ea5e9;
+  --popover-foreground: #1b1f2a;
+  --primary: #0ea5e9; /* cyan */
   --primary-foreground: #ffffff;
-  --secondary: #e6f2ff;
-  --secondary-foreground: #0b1220;
-  --muted: #eef6ff;
-  --muted-foreground: #324b6b;
-  --accent: #7c3aed;
+  --secondary: #f4ecdc; /* beige */
+  --secondary-foreground: #1b1f2a;
+  --muted: #efe7d8; /* soft beige */
+  --muted-foreground: #475569; /* slate */
+  --accent: #a78bfa; /* violet */
   --accent-foreground: #ffffff;
   --destructive: #ef4444;
   --destructive-foreground: #ffffff;
-  --border: #dbe7ff;
-  --input: #dbe7ff;
+  --border: #e6dcc7; /* beige border */
+  --input: #e6dcc7;
   --ring: #38bdf8;
   --chart-1: #0ea5e9;
   --chart-2: #7c3aed;
