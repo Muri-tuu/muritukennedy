@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import GradientText from "@/components/gradient-text";
 import shukaMetaverseIcon from "@assets/Shuka Metaverse_1755692624114.jpg";
 import projectsBg from "@assets/Projects_1755693402302.jpg";
 import techHubIcon from "@assets/TechHub_1755692624115.png";
@@ -39,7 +40,7 @@ export default function ProjectsSection() {
   return (
     <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        <div className="bg-dark-700/80 backdrop-blur-sm rounded-3xl p-6 sm:p-8 lg:p-12 border border-gray-600">
+        <div className="bg-white/5 backdrop-blur-xl rounded-3xl p-6 sm:p-8 lg:p-12 border border-white/10 shadow-[0_0_60px_rgba(59,130,246,0.15)]">
           {/* Section Title */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -48,7 +49,11 @@ export default function ProjectsSection() {
             viewport={{ once: true }}
             className="mb-16"
           >
-            <h2 className="text-4xl sm:text-5xl font-serif font-bold text-white">Projects</h2>
+            <h2 className="text-4xl sm:text-5xl font-serif font-bold">
+              <GradientText colors={["#38bdf8", "#ff79c6", "#a78bfa", "#38bdf8"]} animationSpeed={7}>
+                Projects
+              </GradientText>
+            </h2>
           </motion.div>
           
           {/* Projects Grid */}

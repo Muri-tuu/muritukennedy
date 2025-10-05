@@ -1,6 +1,7 @@
 import { openWhatsAppPopup } from "@/lib/whatsapp";
 import ClickSpark from "@/components/click-spark";
 import { motion } from "framer-motion";
+import GradientText from "@/components/gradient-text";
 import profilePicture from "@assets/Profile Picture_1755692636143.jpg";
 import homeBg from "@assets/Home_1755693390757.jpg";
 
@@ -20,10 +21,11 @@ export default function HeroSection() {
             className="space-y-6"
           >
             {/* Welcome Card */}
-            <div className="bg-dark-700/80 backdrop-blur-sm rounded-3xl p-6 sm:p-8 border border-gray-600">
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-serif font-bold leading-tight text-white">
-                Welcome to<br />
-                My Portfolio
+            <div className="bg-dark-700/50 backdrop-blur-xl rounded-3xl p-6 sm:p-8 border border-cyan-400/20 shadow-[0_0_40px_rgba(56,189,248,0.08)]">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-serif font-bold leading-tight">
+                <GradientText colors={["#38bdf8","#a78bfa","#ff79c6","#38bdf8"]} animationSpeed={8}>
+                  Welcome to<br/>My Portfolio
+                </GradientText>
               </h1>
             </div>
             

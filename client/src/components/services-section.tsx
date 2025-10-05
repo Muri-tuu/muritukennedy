@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import GradientText from "@/components/gradient-text";
 import strategicFoundationImage from "@assets/Strategic Foundation_1755694471347.jpg";
 import servicesBg from "@assets/Services_1755696176183.jpg";
 import uixImage from "@assets/UIX_1755692624115.jpg";
@@ -31,7 +32,7 @@ export default function ServicesSection() {
   return (
     <section id="services" className="py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        <div className="bg-dark-700/80 backdrop-blur-sm rounded-3xl p-6 sm:p-8 lg:p-12 border border-gray-600">
+        <div className="bg-white/5 backdrop-blur-xl rounded-3xl p-6 sm:p-8 lg:p-12 border border-white/10 shadow-[0_0_60px_rgba(59,130,246,0.15)]">
           {/* Section Title */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -40,7 +41,11 @@ export default function ServicesSection() {
             viewport={{ once: true }}
             className="mb-16"
           >
-            <h2 className="text-4xl sm:text-5xl font-serif font-bold text-white">Services</h2>
+            <h2 className="text-4xl sm:text-5xl font-serif font-bold">
+              <GradientText colors={["#38bdf8", "#22c55e", "#a78bfa", "#38bdf8"]} animationSpeed={7}>
+                Services
+              </GradientText>
+            </h2>
           </motion.div>
           
           {/* Services Grid */}

@@ -13,9 +13,11 @@ export default function ContactSection() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl sm:text-5xl font-serif font-bold mb-6 text-white">
-            Let's Create Something Amazing
-          </h2>
+          <div className="bg-white/5 backdrop-blur-xl rounded-3xl p-6 border border-white/10 inline-block">
+            <h2 className="text-4xl sm:text-5xl font-serif font-bold mb-2">
+              Let's Create Something Amazing
+            </h2>
+          </div>
           <p className="text-xl text-gray-300 mb-8 leading-relaxed">
             Ready to bring your vision to life? Let's discuss your project and explore how we can work together to achieve your goals.
           </p>

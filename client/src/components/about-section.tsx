@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import GradientText from "@/components/gradient-text";
 import whoIsKennedyImage from "@assets/Who is Kennedy_1755692624117.jpg";
 import aboutBg from "@assets/About_1755693396253.jpg";
 import khsLogo from "@assets/KHS_Logo-removebg-preview_1755692624111.png";
@@ -16,7 +17,7 @@ export default function AboutSection() {
   return (
     <section id="about" className="py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        <div className="bg-dark-700/80 backdrop-blur-sm rounded-3xl p-6 sm:p-8 lg:p-12 border border-gray-600">
+        <div className="bg-white/5 backdrop-blur-xl rounded-3xl p-6 sm:p-8 lg:p-12 border border-white/10 shadow-[0_0_60px_rgba(59,130,246,0.15)]">
           {/* Section Title */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -25,8 +26,10 @@ export default function AboutSection() {
             viewport={{ once: true }}
             className="mb-12"
           >
-            <h2 className="text-4xl sm:text-5xl font-serif font-bold text-white">
-              Who is Kennedy?
+            <h2 className="text-4xl sm:text-5xl font-serif font-bold">
+              <GradientText colors={["#38bdf8", "#a78bfa", "#22c55e", "#38bdf8"]} animationSpeed={6}>
+                Who is Kennedy?
+              </GradientText>
             </h2>
           </motion.div>
           
