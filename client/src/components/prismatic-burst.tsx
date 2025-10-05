@@ -41,7 +41,7 @@ export default function PrismaticBurst({ animationType='rotate3d', intensity=2, 
   useEffect(() => {
     const container = containerRef.current; if (!container) return;
     const dpr = Math.min(window.devicePixelRatio||1, 2);
-    const renderer = new Renderer({ dpr, alpha: true, antialias: false });
+    const renderer = new Renderer({ dpr, alpha: true, antialias: true });
     rendererRef.current = renderer;
     const gl = renderer.gl as any;
     gl.canvas.style.position='absolute'; gl.canvas.style.inset='0'; gl.canvas.style.width='100%'; gl.canvas.style.height='100%';
@@ -56,6 +56,7 @@ export default function PrismaticBurst({ animationType='rotate3d', intensity=2, 
 
     const triangle = new Triangle(gl);
     const mesh = new Mesh(gl, { geometry: triangle, program });
+    (renderer as any).render({ scene: mesh });
 
     const resize = () => { const w = container.clientWidth || 1; const h = container.clientHeight || 1; renderer.setSize(w,h); (program.uniforms.uResolution.value as number[])[0] = gl.drawingBufferWidth; (program.uniforms.uResolution.value as number[])[1] = gl.drawingBufferHeight; };
     const ro = new ResizeObserver(resize); ro.observe(container); resize();

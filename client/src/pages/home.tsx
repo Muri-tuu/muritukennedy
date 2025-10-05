@@ -17,20 +17,7 @@ export default function Home() {
       <div className="fixed inset-0 -z-10">
         <LiquidEther colors={[ '#5227FF', '#FF9FFC', '#B19EEF' ]} autoDemo autoSpeed={0.5} autoIntensity={2.2} />
       </div>
-      <div
-        aria-hidden
-        className="pointer-events-none fixed inset-0 -z-10"
-        style={{
-          backgroundImage: `url(${profilePicture})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          filter: "blur(8px)",
-        }}
-      />
-      <div
-        className="fixed inset-0 -z-10 pointer-events-none bg-gradient-to-b from-black/10 via-black/5 to-transparent dark:from-black/60 dark:via-black/40 dark:to-transparent"
-        aria-hidden
-      />
+      {/* Remove heavy image blur overlay to let WebGL show through */}
       <Navigation />
       <HeroSection />
       <AboutSection />

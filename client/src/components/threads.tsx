@@ -22,7 +22,7 @@ export default function Threads({ color=[1,1,1], amplitude=1, distance=0, classN
     const program = new Program(gl, { vertex: v, fragment: f, uniforms: { iTime: { value: 0 }, iResolution: { value: new Color(gl.canvas.width, gl.canvas.height, gl.canvas.width / gl.canvas.height) }, uColor: { value: new Color(...color) }, uAmplitude: { value: amplitude }, uDistance: { value: distance } } });
     const mesh = new Mesh(gl, { geometry, program });
 
-    function resize(){ const { clientWidth, clientHeight } = container; renderer.setSize(clientWidth, clientHeight); (program.uniforms.iResolution.value as any).r = clientWidth; (program.uniforms.iResolution.value as any).g = clientHeight; (program.uniforms.iResolution.value as any).b = clientWidth / clientHeight; }
+    function resize(){ const { clientWidth, clientHeight } = container; renderer.setSize(clientWidth, clientHeight); (program.uniforms.iResolution.value as any).r = gl.drawingBufferWidth; (program.uniforms.iResolution.value as any).g = gl.drawingBufferHeight; (program.uniforms.iResolution.value as any).b = gl.drawingBufferWidth / Math.max(gl.drawingBufferHeight, 1); }
     window.addEventListener('resize', resize); resize();
 
     function update(t: number){ (program.uniforms.iTime.value as number) = t * 0.001; renderer.render({ scene: mesh }); rafRef.current = requestAnimationFrame(update); }

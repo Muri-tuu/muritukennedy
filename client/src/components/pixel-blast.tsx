@@ -40,6 +40,7 @@ export default function PixelBlast({ variant='circle', pixelSize=6, color='#B19E
     const clock = new THREE.Clock();
 
     const setSize = () => { const w = container.clientWidth||1; const h = container.clientHeight||1; renderer.setSize(w,h,false); uniforms.uResolution.value.set(renderer.domElement.width, renderer.domElement.height); uniforms.uPixelSize.value = pixelSize * renderer.getPixelRatio(); };
+    renderer.setClearAlpha(0);
     setSize(); const ro = new ResizeObserver(setSize); ro.observe(container);
 
     let raf = 0; const animate = () => { uniforms.uTime.value = clock.getElapsedTime()*speedRef.current; renderer.render(scene, camera); raf = requestAnimationFrame(animate); };
