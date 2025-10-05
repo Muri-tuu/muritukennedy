@@ -1,3 +1,4 @@
+import { openWhatsAppModal } from "@/lib/whatsapp";
 import { motion } from "framer-motion";
 import profilePicture from "@assets/Profile Picture_1755692636143.jpg";
 import homeBg from "@assets/Home_1755693390757.jpg";
@@ -160,8 +161,8 @@ export default function HeroSection() {
                 </a>
               </h2>
               
-              <motion.a
-                href="https://wa.me/254115594826?text=Hello%20Kennedy,%20I'm%20interested%20in%20discussing%20a%20potential%20project%20opportunity."
+              <motion.button
+                onClick={() => openWhatsAppModal({ phoneNumber: "254115594826", message: "Hello Kennedy, I'm interested in discussing a potential project opportunity." })}
                 className="inline-flex items-center px-6 py-3 bg-green-600 text-white font-medium rounded-full hover:bg-green-700 transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-green-600/30"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -173,7 +174,7 @@ export default function HeroSection() {
                   <i className="fas fa-arrow-turn-down text-white mr-2"></i>
                   <span className="text-green-300">Send Me a Message</span>
                 </div>
-              </motion.a>
+              </motion.button>
             </div>
           </motion.div>
         </div>
