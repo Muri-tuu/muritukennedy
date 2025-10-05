@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import GradientText from "@/components/gradient-text";
 import PrismaticBurst from "@/components/prismatic-burst";
+import GlassIcons from "@/components/glass-icons";
 import aboutBg from "@assets/About_1755693396253.jpg";
 import khsLogo from "@assets/KHS_Logo-removebg-preview_1755692624111.png";
 import directedLogo from "@assets/DirectED_Logo-removebg-preview_1755692624110.png";
@@ -42,11 +43,12 @@ export default function AboutSection() {
               transition={{ duration: 1.0, ease: "easeOut" }}
               viewport={{ once: true }}
             >
-              <div className="flex items-start mb-8">
-                <div className="w-3 h-3 bg-green-500 rounded-full mt-2 mr-4 flex-shrink-0"></div>
-                <p className="text-lg text-foreground leading-relaxed">
-                  I'm a Mechatronics Engineering student passionate about blending technology and creativity. I love solving digital challenges with smart, efficient solutions and continuously expanding my skill set.
-                </p>
+              <div className="flex justify-center mb-8">
+                <div className="rounded-2xl border border-white/30 bg-white/20 dark:bg-white/10 backdrop-blur-xl px-6 py-6 max-w-2xl text-center">
+                  <p className="text-lg text-foreground leading-relaxed">
+                    I'm a Mechatronics Engineering student passionate about blending technology and creativity. I love solving digital challenges with smart, efficient solutions and continuously expanding my skill set.
+                  </p>
+                </div>
               </div>
               
               {/* Educational Logos */}
@@ -115,90 +117,17 @@ export default function AboutSection() {
                 </motion.button>
               </div>
               
-              {/* Social Links */}
-              <div className="flex flex-wrap justify-center gap-4">
-                <motion.a 
-                  href="https://github.com/Muri-tuu" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="w-12 h-12 bg-black rounded-full flex items-center justify-center text-white relative overflow-hidden group"
-                  whileHover={{ scale: 1.15, rotate: 5 }}
-                  whileTap={{ scale: 0.95 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <motion.div
-                    className="absolute inset-0 bg-gradient-to-r from-gray-600 to-gray-800 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full"
-                    initial={{ scale: 0 }}
-                    whileHover={{ scale: 1 }}
-                  />
-                  <i className="fab fa-github text-xl relative z-10"></i>
-                </motion.a>
-                <motion.a 
-                  href="https://www.linkedin.com/in/kennedy-muritu-a35649354/" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white relative overflow-hidden group"
-                  whileHover={{ scale: 1.15, rotate: -5 }}
-                  whileTap={{ scale: 0.95 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <motion.div
-                    className="absolute inset-0 bg-gradient-to-r from-blue-400 to-blue-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full"
-                    initial={{ scale: 0 }}
-                    whileHover={{ scale: 1 }}
-                  />
-                  <i className="fab fa-linkedin text-xl relative z-10"></i>
-                </motion.a>
-                <motion.a 
-                  href="https://www.instagram.com/muri_tuu/" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-white relative overflow-hidden group"
-                  whileHover={{ scale: 1.15, rotate: 5 }}
-                  whileTap={{ scale: 0.95 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <motion.div
-                    className="absolute inset-0 bg-gradient-to-r from-pink-400 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full"
-                    initial={{ scale: 0 }}
-                    whileHover={{ scale: 1 }}
-                  />
-                  <i className="fab fa-instagram text-xl relative z-10"></i>
-                </motion.a>
-                <motion.a 
-                  href="https://x.com/muri_tuu" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="w-12 h-12 bg-black rounded-full flex items-center justify-center text-white relative overflow-hidden group"
-                  whileHover={{ scale: 1.15, rotate: -5 }}
-                  whileTap={{ scale: 0.95 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <motion.div
-                    className="absolute inset-0 bg-gradient-to-r from-gray-700 to-black opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full"
-                    initial={{ scale: 0 }}
-                    whileHover={{ scale: 1 }}
-                  />
-                  <svg className="w-5 h-5 relative z-10" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-                  </svg>
-                </motion.a>
-                <motion.a 
-                  href="https://www.tiktok.com/@muri_tuu" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="w-12 h-12 bg-black rounded-full flex items-center justify-center text-white relative overflow-hidden group"
-                  whileHover={{ scale: 1.15, rotate: 5 }}
-                  whileTap={{ scale: 0.95 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <motion.div
-                    className="absolute inset-0 bg-gradient-to-r from-red-500 to-black opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full"
-                    initial={{ scale: 0 }}
-                    whileHover={{ scale: 1 }}
-                  />
-                  <i className="fab fa-tiktok text-xl relative z-10"></i>
-                </motion.a>
+              {/* Social Links - GlassIcons */}
+              <div className="flex justify-center">
+                <GlassIcons
+                  items={[
+                    { href: 'https://github.com/Muri-tuu', color: 'indigo', label: 'GitHub' },
+                    { href: 'https://www.linkedin.com/in/kennedy-muritu-a35649354/', color: 'blue', label: 'LinkedIn' },
+                    { href: 'https://www.instagram.com/muri_tuu/', color: 'purple', label: 'Instagram' },
+                    { href: 'https://x.com/muri_tuu', color: 'indigo', label: 'X' },
+                    { href: 'https://drive.google.com/file/d/1xcfNH0HThexVpjk7nTFRyEHhSWH8ZsCn/view?usp=drive_link', color: 'green', label: 'Resume' },
+                  ]}
+                />
               </div>
               
             </motion.div>
