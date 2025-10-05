@@ -4,6 +4,7 @@ import servicesBg from "@assets/Services_1755696176183.jpg";
 import uixImage from "@assets/UIX_1755692624115.jpg";
 import webDevelopmentImage from "@assets/Web Development_1755692624116.jpg";
 import { openWhatsAppPopup } from "@/lib/whatsapp";
+import ClickSpark from "@/components/click-spark";
 
 export default function ServicesSection() {
   const services = [
@@ -102,14 +103,16 @@ export default function ServicesSection() {
             className="text-center mb-12"
           >
             <div className="flex items-center justify-center">
-              <motion.button
-                onClick={() => openWhatsAppPopup({ phoneNumber: "254115594826", message: "Hello Kennedy, I'm interested in discussing a potential project opportunity." })}
-                className="inline-flex items-center px-6 py-3 bg-transparent border border-green-500 text-green-400 font-medium rounded-full hover:bg-green-500/10 transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-green-500/20"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Send Me a Message
-              </motion.button>
+              <ClickSpark sparkColor="#22c55e" sparkRadius={16} sparkCount={10}>
+                <motion.button
+                  onClick={() => openWhatsAppPopup({ phoneNumber: "254115594826", message: "Hello Kennedy, I'm interested in discussing a potential project opportunity." })}
+                  className="inline-flex items-center px-6 py-3 bg-transparent border border-green-500 text-green-400 font-medium rounded-full hover:bg-green-500/10 transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-green-500/20"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  Send Me a Message
+                </motion.button>
+              </ClickSpark>
             </div>
           </motion.div>
           

@@ -6,6 +6,7 @@ import sparkleLaundryIcon from "@assets/Sparkle Laundry Home_1755692624114.png";
 import royalPriesthoodIcon from "@assets/Royal Priesthood_1755692624113.png";
 import LogoLoop from "@/components/logo-loop";
 import { openWhatsAppPopup } from "@/lib/whatsapp";
+import ClickSpark from "@/components/click-spark";
 
 export default function ProjectsSection() {
   const projects = [
@@ -126,14 +127,16 @@ export default function ProjectsSection() {
             className="text-center"
           >
             <div className="flex items-center justify-center">
-              <motion.button
-                onClick={() => openWhatsAppPopup({ phoneNumber: "254115594826", message: "Hello Kennedy, I'm interested in discussing a potential project opportunity." })}
-                className="inline-flex items-center px-6 py-3 bg-transparent border border-green-500 text-green-400 font-medium rounded-full hover:bg-green-500/10 transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-green-500/20"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Send Me a Message
-              </motion.button>
+              <ClickSpark sparkColor="#22c55e" sparkRadius={16} sparkCount={10}>
+                <motion.button
+                  onClick={() => openWhatsAppPopup({ phoneNumber: "254115594826", message: "Hello Kennedy, I'm interested in discussing a potential project opportunity." })}
+                  className="inline-flex items-center px-6 py-3 bg-transparent border border-green-500 text-green-400 font-medium rounded-full hover:bg-green-500/10 transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-green-500/20"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  Send Me a Message
+                </motion.button>
+              </ClickSpark>
             </div>
           </motion.div>
 

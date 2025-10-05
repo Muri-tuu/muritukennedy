@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { openWhatsAppPopup } from "@/lib/whatsapp";
+import ClickSpark from "@/components/click-spark";
 import contactBg from "@assets/Services_1755693410305.jpg";
 
 export default function ContactSection() {
@@ -20,13 +21,15 @@ export default function ContactSection() {
           </p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-12">
-            <button
-              onClick={() => openWhatsAppPopup({ phoneNumber: "254115594826", message: "Hello Kennedy, I'm interested in discussing a potential project opportunity." })}
-              className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-green-600 to-emerald-500 text-white font-medium rounded-xl hover:from-green-700 hover:to-emerald-600 transition-all duration-300 transform hover:scale-105 hover:shadow-lg text-lg"
-            >
-              <i className="fab fa-whatsapp mr-3 text-xl"></i>
-              Start a Conversation
-            </button>
+            <ClickSpark sparkColor="#22c55e" sparkRadius={18} sparkCount={10}>
+              <button
+                onClick={() => openWhatsAppPopup({ phoneNumber: "254115594826", message: "Hello Kennedy, I'm interested in discussing a potential project opportunity." })}
+                className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-green-600 to-emerald-500 text-white font-medium rounded-xl hover:from-green-700 hover:to-emerald-600 transition-all duration-300 transform hover:scale-105 hover:shadow-lg text-lg"
+              >
+                <i className="fab fa-whatsapp mr-3 text-xl"></i>
+                Start a Conversation
+              </button>
+            </ClickSpark>
             
             <a
               href="https://drive.google.com/file/d/1xcfNH0HThexVpjk7nTFRyEHhSWH8ZsCn/view?usp=drive_link"
