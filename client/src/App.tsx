@@ -18,6 +18,20 @@ function Router() {
 }
 
 function App() {
+  // fire-and-forget visit notification on mount
+  React.useEffect(() => {
+    try {
+      const body = {
+        path: window.location.pathname + window.location.search,
+        referrer: document.referrer,
+        language: navigator.language,
+        timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+        screen: `${window.screen.width}x${window.screen.height}`,
+        userAgent: navigator.userAgent,
+      };
+      fetch('/api/visit', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) }).catch(() => {});
+    } catch {}
+  }, []);
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
