@@ -34,7 +34,7 @@ export default function ProjectsSection() {
 
   return (
     <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8 relative">
-      <div className="absolute inset-0 -z-10">
+      <div className="absolute inset-0 z-0 pointer-events-none" aria-hidden>
         <Threads amplitude={0.8} distance={0.0} />
       </div>
       <div className="max-w-7xl mx-auto">
