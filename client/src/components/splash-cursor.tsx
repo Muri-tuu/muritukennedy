@@ -53,13 +53,13 @@ export default function SplashCursor() {
     const draw = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       const now = performance.now();
-      const duration = 700; // ms
+      const duration = 550; // ms
 
       splashesRef.current = splashesRef.current.filter((s) => {
         const t = (now - s.start) / duration;
         if (t >= 1) return false;
         const alpha = 1 - t;
-        const radius = 80 * t + 10;
+        const radius = 60 * t + 8;
         const grad = ctx.createRadialGradient(s.x, s.y, 0, s.x, s.y, radius);
         // adaptive color: sample body computed styles as hue
         const root = document.documentElement;

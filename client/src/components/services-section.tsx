@@ -57,7 +57,7 @@ export default function ServicesSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: service.delay }}
                 viewport={{ once: true }}
-                className="text-center"
+                className="text-center glass-card p-4 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl"
               >
                 <motion.div 
                   className="mb-6 relative overflow-hidden rounded-xl cursor-pointer"

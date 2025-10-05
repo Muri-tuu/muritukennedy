@@ -58,7 +58,7 @@ export default function ProjectsSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1.0, delay: project.delay * 0.2, ease: "easeOut" }}
                 viewport={{ once: true }}
-                className="text-center group"
+                className="text-center group glass-card p-4 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl"
               >
                 <motion.a
                   href="https://github.com/Muri-tuu"

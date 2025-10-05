@@ -71,7 +71,7 @@ export default function ContactSection() {
             </a>
           </div>
 
-          <form onSubmit={submit} className="max-w-2xl mx-auto text-left bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6">
+          <form onSubmit={submit} className="max-w-2xl mx-auto text-left bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 glass-card">
             <div className="grid sm:grid-cols-2 gap-4">
               <div>
                 <label className="block text-sm mb-1">Name</label>
@@ -89,7 +89,8 @@ export default function ContactSection() {
                   className="w-full px-3 py-2 rounded-md bg-black/20 border border-white/10 focus:outline-none focus:ring-2 focus:ring-cyan-400/50"
                   value={form.email}
                   onChange={(e) => setForm((f) => ({ ...f, email: e.target.value }))}
-                  required
+                  placeholder={(typeof navigator !== 'undefined' && (navigator as any).credentials) ? 'Using browser email if available' : ''}
+                  required={!(typeof navigator !== 'undefined' && (navigator as any).credentials)}
                 />
               </div>
             </div>
