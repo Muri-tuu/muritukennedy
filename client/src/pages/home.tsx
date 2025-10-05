@@ -4,6 +4,7 @@ import AboutSection from "@/components/about-section";
 import ProjectsSection from "@/components/projects-section";
 import ServicesSection from "@/components/services-section";
 import ContactSection from "@/components/contact-section";
+import Footer from "@/components/footer";
 
 import profilePicture from "@assets/Profile Picture_1755692636143.jpg";
 import CometBackground from "@/components/comet-background";
@@ -31,6 +32,7 @@ export default function Home() {
       <ProjectsSection />
       <ServicesSection />
       <ContactSection />
+      <Footer />
     </div>
   );
 }
