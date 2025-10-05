@@ -3,6 +3,7 @@ import ClickSpark from "@/components/click-spark";
 import { motion } from "framer-motion";
 import GradientText from "@/components/gradient-text";
 import profilePicture from "@assets/Profile Picture_1755692636143.jpg";
+import ElectricBorder from "@/components/electric-border";
 import homeBg from "@assets/Home_1755693390757.jpg";
 
 export default function HeroSection() {
@@ -143,16 +144,18 @@ export default function HeroSection() {
             className="lg:order-2"
           >
             <div className="text-center">
-              <div className="mb-6">
-                <motion.img
-                  src={profilePicture}
-                  alt="Kennedy Muritu - Professional Profile Picture"
-                  fetchPriority="high"
-                  decoding="async"
-                  className="w-36 h-36 sm:w-44 sm:h-44 lg:w-52 lg:h-52 object-cover rounded-2xl mx-auto shadow-2xl border-2 border-gray-600 hover:border-blue-500 transition-all duration-500 cursor-pointer"
-                  whileHover={{ scale: 1.05, rotate: 1 }}
-                  transition={{ duration: 0.5, ease: "easeInOut" }}
-                />
+              <div className="mb-6 flex justify-center">
+                <ElectricBorder color="#7dd3fc" thickness={2} className="rounded-2xl">
+                  <motion.img
+                    src={profilePicture}
+                    alt="Kennedy Muritu - Professional Profile Picture"
+                    fetchPriority="high"
+                    decoding="async"
+                    className="w-36 h-36 sm:w-44 sm:h-44 lg:w-52 lg:h-52 object-cover rounded-2xl shadow-2xl border border-border transition-all duration-500 cursor-pointer"
+                    whileHover={{ scale: 1.05, rotate: 1 }}
+                    transition={{ duration: 0.5, ease: "easeInOut" }}
+                  />
+                </ElectricBorder>
               </div>
               
               <h2 className="text-xl sm:text-2xl font-serif font-bold text-foreground mb-6">

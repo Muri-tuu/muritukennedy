@@ -203,26 +203,7 @@ export default function AboutSection() {
             </motion.div>
             
             {/* Image and CTA */}
-            <motion.div
-              initial={{ opacity: 0, x: 40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="lg:order-2 space-y-8"
-            >
-              <div className="relative">
-                <motion.img
-                  src={whoIsKennedyImage}
-                  alt="Laptop and coffee cup on bedsheets representing work-life balance"
-                  loading="lazy"
-                  decoding="async"
-                  className="w-full max-w-xl mx-auto lg:max-w-none rounded-2xl shadow-2xl border border-gray-600 hover:border-blue-500 transition-all duration-500 cursor-pointer object-cover"
-                  style={{ maxHeight: '420px', aspectRatio: '16/10' }}
-                  whileHover={{ scale: 1.05, rotate: 1 }}
-                  transition={{ duration: 0.3 }}
-                />
-              </div>
-            </motion.div>
+            <div className="lg:order-2" />
           </div>
         </div>
       </div>
