@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import GradientText from "@/components/gradient-text";
-import PrismaticBurst from "@/components/prismatic-burst";
+import DarkVeil from "@/components/dark-veil";
 import GlassIcons from "@/components/glass-icons";
 import aboutBg from "@assets/About_1755693396253.jpg";
 import khsLogo from "@assets/KHS_Logo-removebg-preview_1755692624111.png";
@@ -17,7 +17,9 @@ export default function AboutSection() {
 
   return (
     <section id="about" className="py-20 px-4 sm:px-6 lg:px-8 relative">
-      <PrismaticBurst animationType="rotate3d" intensity={1.6} speed={0.4} distort={0.8} rayCount={24} mixBlendMode="lighten" colors={["#ff007a", "#4d3dff", "#ffffff"]} />
+      <div className="absolute inset-0 -z-10" aria-hidden>
+        <DarkVeil />
+      </div>
       <div className="max-w-7xl mx-auto">
         <div className="p-0">
           {/* Section Title */}
