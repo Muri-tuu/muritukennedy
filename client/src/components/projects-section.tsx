@@ -5,7 +5,6 @@ import techHubIcon from "@assets/TechHub_1755692624115.png";
 import sparkleLaundryIcon from "@assets/Sparkle Laundry Home_1755692624114.png";
 import royalPriesthoodIcon from "@assets/Royal Priesthood_1755692624113.png";
 import LogoLoop from "@/components/logo-loop";
-import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss } from "react-icons/si";
 import { openWhatsAppModal } from "@/lib/whatsapp";
 
 export default function ProjectsSection() {
@@ -177,28 +176,7 @@ export default function ProjectsSection() {
             </div>
           </div>
 
-          {/* Logo Loop: Tech stack */}
-          <div className="mt-12">
-            <div className="relative overflow-hidden" style={{ height: "100px" }}>
-              <LogoLoop
-                logos={[
-                  { node: <SiReact />, title: "React", href: "https://react.dev" },
-                  { node: <SiNextdotjs />, title: "Next.js", href: "https://nextjs.org" },
-                  { node: <SiTypescript />, title: "TypeScript", href: "https://www.typescriptlang.org" },
-                  { node: <SiTailwindcss />, title: "Tailwind CSS", href: "https://tailwindcss.com" },
-                ]}
-                speed={100}
-                direction="right"
-                logoHeight={44}
-                gap={40}
-                pauseOnHover
-                scaleOnHover
-                fadeOut
-                fadeOutColor="#0b0b0b"
-                ariaLabel="Technology stack"
-              />
-            </div>
-          </div>
+          
         </div>
       </div>
     </section>

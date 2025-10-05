@@ -9,11 +9,8 @@ export const openWhatsAppModal = (payload: WhatsAppPayload) => {
 
 export const openWhatsAppPopup = ({ phoneNumber, message }: WhatsAppPayload) => {
   const encodedMsg = encodeURIComponent(message);
-  const desktopUrl = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodedMsg}`;
-  const mobileUrl = `https://wa.me/${phoneNumber}?text=${encodedMsg}`;
-
-  const isMobile = typeof navigator !== 'undefined' && /Mobi|Android|iPhone/i.test(navigator.userAgent);
-  const url = isMobile ? mobileUrl : desktopUrl;
+  // Open a themed bridge page within a small popup that then navigates to WhatsApp
+  const url = `/whatsapp-bridge?phone=${encodeURIComponent(phoneNumber)}&text=${encodedMsg}`;
 
   const width = 520;
   const height = 720;
@@ -34,7 +31,7 @@ export const openWhatsAppPopup = ({ phoneNumber, message }: WhatsAppPayload) => 
 
   const popup = window.open(url, 'whatsapp_popup', features);
   if (!popup) {
-    // Popup blocked; fallback to same-window navigation
+    // Popup blocked; fallback to same-window navigation to the bridge page
     window.location.href = url;
     return false;
   }
