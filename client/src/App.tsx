@@ -1,4 +1,5 @@
 import { Switch, Route } from "wouter";
+import { useEffect } from "react";
 import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
@@ -19,7 +20,7 @@ function Router() {
 
 function App() {
   // fire-and-forget visit notification on mount
-  React.useEffect(() => {
+  useEffect(() => {
     try {
       const body = {
         path: window.location.pathname + window.location.search,
