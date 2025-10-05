@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import whoIsKennedyImage from "@assets/Who is Kennedy_1755692624117.jpg";
+import aboutBg from "@assets/About_1755693396253.jpg";
 import khsLogo from "@assets/KHS_Logo-removebg-preview_1755692624111.png";
 import directedLogo from "@assets/DirectED_Logo-removebg-preview_1755692624110.png";
 import mutLogo from "@assets/MUT_logo-removebg-preview_1755692624112.png";
@@ -13,7 +14,13 @@ export default function AboutSection() {
   };
 
   return (
-    <section id="about" className="py-20 px-4 sm:px-6 lg:px-8 bg-dark-900">
+    <section
+      id="about"
+      className="py-20 px-4 sm:px-6 lg:px-8 bg-fixed bg-cover bg-center"
+      style={{
+        backgroundImage: `linear-gradient(rgba(10,10,10,0.7), rgba(10,10,10,0.7)), url(${aboutBg})`,
+      }}
+    >
       <div className="max-w-7xl mx-auto">
         <div className="bg-dark-700/80 backdrop-blur-sm rounded-3xl p-6 sm:p-8 lg:p-12 border border-gray-600">
           {/* Section Title */}
@@ -61,6 +68,8 @@ export default function AboutSection() {
                     <motion.img
                       src={khsLogo}
                       alt="Kagumo High School Logo"
+                      loading="lazy"
+                      decoding="async"
                       className="h-8 sm:h-10 lg:h-12 w-auto object-contain"
                       initial={{ opacity: 0, scale: 0.8, rotateY: 180 }}
                       whileInView={{ opacity: 1, scale: 1, rotateY: 0 }}
@@ -71,6 +80,8 @@ export default function AboutSection() {
                     <motion.img
                       src={directedLogo}
                       alt="DirectEd Development Foundation Logo"
+                      loading="lazy"
+                      decoding="async"
                       className="h-8 sm:h-10 lg:h-12 w-auto object-contain"
                       initial={{ opacity: 0, scale: 0.8, rotateY: 180 }}
                       whileInView={{ opacity: 1, scale: 1, rotateY: 0 }}
@@ -81,6 +92,8 @@ export default function AboutSection() {
                     <motion.img
                       src={mutLogo}
                       alt="Murang'a University of Technology Logo"
+                      loading="lazy"
+                      decoding="async"
                       className="h-8 sm:h-10 lg:h-12 w-auto object-contain"
                       initial={{ opacity: 0, scale: 0.8, rotateY: 180 }}
                       whileInView={{ opacity: 1, scale: 1, rotateY: 0 }}
@@ -204,8 +217,10 @@ export default function AboutSection() {
                 <motion.img
                   src={whoIsKennedyImage}
                   alt="Laptop and coffee cup on bedsheets representing work-life balance"
-                  className="w-full h-auto max-w-md mx-auto lg:max-w-none rounded-2xl shadow-2xl border border-gray-600 hover:border-blue-500 transition-all duration-300 cursor-pointer object-cover"
-                  style={{ maxHeight: '400px' }}
+                  loading="lazy"
+                  decoding="async"
+                  className="w-full max-w-xl mx-auto lg:max-w-none rounded-2xl shadow-2xl border border-gray-600 hover:border-blue-500 transition-all duration-500 cursor-pointer object-cover"
+                  style={{ maxHeight: '420px', aspectRatio: '16/10' }}
                   whileHover={{ scale: 1.05, rotate: 1 }}
                   transition={{ duration: 0.3 }}
                 />
