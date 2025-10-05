@@ -5,7 +5,7 @@ import projectsBg from "@assets/Projects_1755693402302.jpg";
 import techHubIcon from "@assets/TechHub_1755692624115.png";
 import sparkleLaundryIcon from "@assets/Sparkle Laundry Home_1755692624114.png";
 import LogoLoop from "@/components/logo-loop";
-import Threads from "@/components/threads";
+import DarkVeil from "@/components/dark-veil";
 import { openWhatsAppPopup } from "@/lib/whatsapp";
 import ClickSpark from "@/components/click-spark";
 import CardSwap, { Card } from "@/components/card-swap";
@@ -35,7 +35,7 @@ export default function ProjectsSection() {
   return (
     <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8 relative">
       <div className="absolute inset-0 z-0 pointer-events-none" aria-hidden>
-        <Threads amplitude={0.8} distance={0.0} />
+        <DarkVeil />
       </div>
       <div className="max-w-7xl mx-auto">
         <div className="p-1">

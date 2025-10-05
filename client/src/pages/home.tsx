@@ -8,11 +8,15 @@ import Footer from "@/components/footer";
 
 import profilePicture from "@assets/Profile Picture_1755692636143.jpg";
 import CometBackground from "@/components/comet-background";
+import DarkVeil from "@/components/dark-veil";
 
 export default function Home() {
   return (
     <div className="relative bg-background text-foreground font-sans overflow-x-hidden min-h-screen">
       <CometBackground />
+      <div className="fixed inset-0 -z-10">
+        <DarkVeil />
+      </div>
       {/* Remove heavy image blur overlay to let WebGL show through */}
       <Navigation />
       <HeroSection />

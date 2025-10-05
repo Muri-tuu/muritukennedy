@@ -4,7 +4,7 @@ import { useState } from "react";
 import ClickSpark from "@/components/click-spark";
 import contactBg from "@assets/Services_1755693410305.jpg";
 
-import PixelBlast from "@/components/pixel-blast";
+import DarkVeil from "@/components/dark-veil";
 
 export default function ContactSection() {
   const [submitting, setSubmitting] = useState(false);
@@ -42,7 +42,7 @@ export default function ContactSection() {
   return (
     <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 relative">
       <div className="absolute inset-0 z-0 pointer-events-none">
-        <PixelBlast variant="circle" pixelSize={6} color="#B19EEF" patternScale={3} patternDensity={1.2} pixelSizeJitter={0.5} enableRipples rippleSpeed={0.4} rippleThickness={0.12} rippleIntensityScale={1.5} liquid liquidStrength={0.12} liquidRadius={1.2} liquidWobbleSpeed={5} speed={0.6} edgeFade={0.25} />
+        <DarkVeil />
       </div>
       <div className="max-w-4xl mx-auto text-center">
         <motion.div
