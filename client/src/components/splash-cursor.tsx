@@ -6,6 +6,7 @@ import { useEffect, useRef } from 'react';
 export default function SplashCursor() {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const splashesRef = useRef<Array<{ x: number; y: number; start: number }>>([]);
+  const lastAddRef = useRef<{ x: number; y: number; time: number } | null>(null);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -32,13 +33,60 @@ export default function SplashCursor() {
         x = e.clientX;
         y = e.clientY;
       }
-      splashesRef.current.push({ x, y, start: performance.now() });
-      if (splashesRef.current.length > 20) splashesRef.current.shift();
+      // Throttle by time and distance to reduce density
+      const now = performance.now();
+      const last = lastAddRef.current;
+      if (last) {
+        const dt = now - last.time;
+        const dx = x - last.x;
+        const dy = y - last.y;
+        const dist2 = dx * dx + dy * dy;
+        if (dt < 40 && dist2 < 16 * 16) return;
+      }
+      lastAddRef.current = { x, y, time: now };
+      splashesRef.current.push({ x, y, start: now });
+      if (splashesRef.current.length > 8) splashesRef.current.shift();
     };
 
     const shouldIgnore = (target: EventTarget | null) => {
       if (!(target instanceof HTMLElement)) return false;
-      return target.closest('.glass-card') !== null;
+      // Ignore interactive elements, text containers, media, and card-like wrappers
+      const IGNORE_SELECTOR = [
+        'button',
+        '[role="button"]',
+        'a',
+        'input',
+        'select',
+        'textarea',
+        'label',
+        'img',
+        'svg',
+        'canvas',
+        'video',
+        'picture',
+        'figure',
+        'figcaption',
+        // text elements
+        'p',
+        'span',
+        'strong',
+        'em',
+        'small',
+        'h1', 'h2', 'h3', 'h4', 'h5', 'h6',
+        'code', 'pre',
+        'li',
+        // card-like containers or explicit opt-out
+        '.card', '.panel', '.tile',
+        '[class*="card" i]',
+        '[class*="glass" i]',
+        '[class*="panel" i]',
+        '[class*="tile" i]',
+        '[class*="box" i]',
+        '[data-card]',
+        '[data-no-splash]'
+      ].join(',');
+      if (target.closest(IGNORE_SELECTOR)) return true;
+      return false;
     };
 
     const onMoveFiltered = (e: MouseEvent | TouchEvent) => {
@@ -53,20 +101,25 @@ export default function SplashCursor() {
     const draw = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       const now = performance.now();
-      const duration = 550; // ms
+      const duration = 450; // ms (shorter for a lighter feel)
 
       splashesRef.current = splashesRef.current.filter((s) => {
         const t = (now - s.start) / duration;
         if (t >= 1) return false;
         const alpha = 1 - t;
-        const radius = 60 * t + 8;
+        const radius = 40 * t + 6; // smaller radius
         const grad = ctx.createRadialGradient(s.x, s.y, 0, s.x, s.y, radius);
-        // adaptive color: sample body computed styles as hue
+        // Transparent and less intense center
         const root = document.documentElement;
         const cs = getComputedStyle(root);
-        const ring = cs.getPropertyValue('--ring') || 'rgba(125,211,252,1)';
-        // fallback colors
-        grad.addColorStop(0, ring.replace('1)', `${0.22 * alpha})`));
+        const ringVar = cs.getPropertyValue('--ring').trim();
+        const baseColor = ringVar && ringVar.includes('rgb') ? ringVar : 'rgba(125,211,252,1)';
+        const innerAlpha = Math.max(0, 0.10 * alpha);
+        // Attempt to inject alpha if rgba(..,1) form, else fallback to a soft blue
+        const innerColor = baseColor.startsWith('rgba(')
+          ? baseColor.replace(/\,\s*([\d.]+)\)$/, `, ${innerAlpha})`)
+          : `rgba(160, 200, 255, ${innerAlpha})`;
+        grad.addColorStop(0, innerColor);
         grad.addColorStop(1, 'rgba(0,0,0,0)');
         ctx.fillStyle = grad;
         ctx.beginPath();
