@@ -9,8 +9,11 @@ export const openWhatsAppModal = (payload: WhatsAppPayload) => {
 
 export const openWhatsAppPopup = ({ phoneNumber, message }: WhatsAppPayload) => {
   const encodedMsg = encodeURIComponent(message);
-  // Open a themed bridge page within a small popup that then navigates to WhatsApp
-  const url = `/whatsapp-bridge?phone=${encodeURIComponent(phoneNumber)}&text=${encodedMsg}`;
+  // Direct to WhatsApp web on desktop and wa.me on mobile in a centered popup
+  const desktopUrl = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodedMsg}`;
+  const mobileUrl = `https://wa.me/${phoneNumber}?text=${encodedMsg}`;
+  const isMobile = typeof navigator !== 'undefined' && /Mobi|Android|iPhone/i.test(navigator.userAgent);
+  const url = isMobile ? mobileUrl : desktopUrl;
 
   const width = 520;
   const height = 720;

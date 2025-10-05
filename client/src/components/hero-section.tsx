@@ -1,4 +1,5 @@
 import { openWhatsAppPopup } from "@/lib/whatsapp";
+import ClickSpark from "@/components/click-spark";
 import { motion } from "framer-motion";
 import profilePicture from "@assets/Profile Picture_1755692636143.jpg";
 import homeBg from "@assets/Home_1755693390757.jpg";
@@ -158,20 +159,22 @@ export default function HeroSection() {
                 </a>
               </h2>
               
-              <motion.button
-                onClick={() => openWhatsAppPopup({ phoneNumber: "254115594826", message: "Hello Kennedy, I'm interested in discussing a potential project opportunity." })}
-                className="inline-flex items-center px-6 py-3 bg-green-600 text-white font-medium rounded-full hover:bg-green-700 transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-green-600/30"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center mr-3">
-                  <i className="fab fa-whatsapp text-white"></i>
-                </div>
-                <div className="flex items-center">
-                  <i className="fas fa-arrow-turn-down text-white mr-2"></i>
-                  <span className="text-green-300">Send Me a Message</span>
-                </div>
-              </motion.button>
+              <ClickSpark sparkColor="#22c55e" sparkSize={10} sparkRadius={18} sparkCount={10}>
+                <motion.button
+                  onClick={() => openWhatsAppPopup({ phoneNumber: "254115594826", message: "Hello Kennedy, I'm interested in discussing a potential project opportunity." })}
+                  className="inline-flex items-center px-6 py-3 bg-green-600 text-white font-medium rounded-full hover:bg-green-700 transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-green-600/30"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center mr-3">
+                    <i className="fab fa-whatsapp text-white"></i>
+                  </div>
+                  <div className="flex items-center">
+                    <i className="fas fa-arrow-turn-down text-white mr-2"></i>
+                    <span className="text-green-300">Send Me a Message</span>
+                  </div>
+                </motion.button>
+              </ClickSpark>
             </div>
           </motion.div>
         </div>

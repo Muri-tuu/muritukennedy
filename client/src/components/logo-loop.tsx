@@ -194,7 +194,7 @@ const LogoLoopInner = ({
   const seqRef = useRef<HTMLUListElement>(null);
 
   const [seqWidth, setSeqWidth] = useState(0);
-  const [copyCount, setCopyCount] = useState(ANIMATION_CONFIG.MIN_COPIES);
+  const [copyCount, setCopyCount] = useState<number>(ANIMATION_CONFIG.MIN_COPIES);
   const [isHovered, setIsHovered] = useState(false);
 
   const targetVelocity = useMemo(() => {
