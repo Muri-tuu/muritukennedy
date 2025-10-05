@@ -54,19 +54,24 @@ export default function ProjectsSection() {
           
           {/* Projects CardSwap - single row */}
           <div className="mb-12">
-            <CardSwap width={320} height={220} cardDistance={80} verticalDistance={50} delay={4500}>
+            <CardSwap width={420} height={280} cardDistance={90} verticalDistance={60} delay={4500}>
               {projects.map((project) => (
                 <Card key={project.title} className="p-3">
-                  <a href="https://github.com/Muri-tuu" target="_blank" rel="noopener noreferrer" className="block group">
-                    <div className="relative rounded-xl overflow-hidden" style={{ height: 120 }}>
+                  <div className="block group">
+                    <div className="relative rounded-xl overflow-hidden" style={{ height: 180 }}>
                       <img src={project.icon} alt={`${project.title} icon`} loading="lazy" decoding="async" className="w-full h-full object-cover" />
                     </div>
-                    <h3 className="text-lg font-serif font-bold text-foreground mt-3 group-hover:text-primary transition-colors">{project.title}</h3>
+                    <h3 className="text-xl font-serif font-bold text-foreground mt-3 group-hover:text-primary transition-colors">{project.title}</h3>
                     <p className="text-sm text-muted-foreground">{project.subtitle}</p>
-                  </a>
+                  </div>
                 </Card>
               ))}
             </CardSwap>
+            <div className="mt-6 flex justify-center">
+              <a href="https://github.com/Muri-tuu" target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-6 py-3 rounded-xl border border-white/30 bg-white/15 dark:bg-white/10 backdrop-blur-md text-foreground hover:opacity-90 transition">
+                View My Work
+              </a>
+            </div>
           </div>
           
           {/* Tagline */}
@@ -116,7 +121,7 @@ export default function ProjectsSection() {
               <h3 className="text-lg sm:text-xl font-medium text-muted-foreground">Featured work</h3>
               <p className="text-sm text-muted-foreground">A quick scroll through recent projects</p>
             </motion.div>
-            <div className="relative overflow-hidden flex justify-center" style={{ height: "120px" }}>
+            <div className="relative overflow-hidden" style={{ height: "120px" }}>
               <LogoLoop
                 logos={[
                   { src: shukaMetaverseIcon, alt: "Shuka Metaverse" },
@@ -127,11 +132,9 @@ export default function ProjectsSection() {
                 direction="left"
                 logoHeight={64}
                 gap={48}
-                maxCopies={2}
                 pauseOnHover
                 scaleOnHover
                 fadeOut
-                fadeOutColor="var(--background)"
                 ariaLabel="Project logos"
               />
             </div>
