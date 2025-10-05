@@ -22,10 +22,13 @@ export default function Home() {
           backgroundImage: `url(${profilePicture})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
-          filter: "blur(12px)",
+          filter: "blur(8px)",
         }}
       />
-      <div className="fixed inset-0 -z-10 bg-black/15" />
+      <div
+        className="fixed inset-0 -z-10 pointer-events-none bg-gradient-to-b from-black/10 via-black/5 to-transparent dark:from-black/60 dark:via-black/40 dark:to-transparent"
+        aria-hidden
+      />
       <Navigation />
       <HeroSection />
       <AboutSection />

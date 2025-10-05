@@ -58,7 +58,7 @@ export default function ProjectsSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1.0, delay: project.delay * 0.2, ease: "easeOut" }}
                 viewport={{ once: true }}
-                className="text-center group glass-card p-4 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl"
+                className="text-center group p-4 rounded-2xl border border-border bg-transparent"
               >
                 <motion.a
                   href="https://github.com/Muri-tuu"
@@ -92,11 +92,13 @@ export default function ProjectsSection() {
                     </motion.div>
                   </div>
                   
-                  <h3 className="text-xl sm:text-2xl font-serif font-bold text-blue-400 mb-2 group-hover:text-blue-300 transition-colors duration-300">{project.title}</h3>
+                  <h3 className="text-xl sm:text-2xl font-serif font-bold text-foreground mb-2 transition-colors duration-300 group-hover:text-primary">
+                    {project.title}
+                  </h3>
                   
                   <div className="flex items-center justify-center mb-4">
                     <div className="w-2 h-2 bg-green-500 rounded-full mr-3 animate-pulse"></div>
-                    <p className="text-sm sm:text-base text-white font-medium group-hover:text-gray-200 transition-colors duration-300">{project.subtitle}</p>
+                    <p className="text-sm sm:text-base text-muted-foreground font-medium transition-colors duration-300 group-hover:text-foreground">{project.subtitle}</p>
                   </div>
                 </motion.a>
               </motion.div>
@@ -147,8 +149,8 @@ export default function ProjectsSection() {
               viewport={{ once: true }}
               className="text-center mb-6"
             >
-              <h3 className="text-lg sm:text-xl font-medium text-gray-300">Featured work</h3>
-              <p className="text-sm text-gray-400">A quick scroll through recent projects</p>
+              <h3 className="text-lg sm:text-xl font-medium text-muted-foreground">Featured work</h3>
+              <p className="text-sm text-muted-foreground">A quick scroll through recent projects</p>
             </motion.div>
             <div className="relative overflow-hidden" style={{ height: "120px" }}>
               <LogoLoop

@@ -80,19 +80,19 @@ export default function ContactSection() {
           <form onSubmit={submit} className="max-w-2xl mx-auto text-left rounded-2xl p-6" data-no-splash>
             <div className="grid sm:grid-cols-2 gap-4">
               <div>
-                <label className="block text-sm mb-1">Name</label>
+                <label className="block text-sm mb-1 text-foreground">Name</label>
                 <input
-                  className="w-full px-3 py-2 rounded-md bg-black/20 border border-white/10 focus:outline-none focus:ring-2 focus:ring-cyan-400/50"
+                  className="w-full px-3 py-2 rounded-md bg-background border border-input text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/40"
                   value={form.name}
                   onChange={(e) => setForm((f) => ({ ...f, name: e.target.value }))}
                   required
                 />
               </div>
               <div>
-                <label className="block text-sm mb-1">Email</label>
+                <label className="block text-sm mb-1 text-foreground">Email</label>
                 <input
                   type="email"
-                  className="w-full px-3 py-2 rounded-md bg-black/20 border border-white/10 focus:outline-none focus:ring-2 focus:ring-cyan-400/50"
+                  className="w-full px-3 py-2 rounded-md bg-background border border-input text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/40"
                   value={form.email}
                   onChange={(e) => setForm((f) => ({ ...f, email: e.target.value }))}
                   placeholder={(typeof navigator !== 'undefined' && (navigator as any).credentials) ? 'Using browser email if available' : ''}
@@ -101,9 +101,9 @@ export default function ContactSection() {
               </div>
             </div>
             <div className="mt-4">
-              <label className="block text-sm mb-1">Message</label>
+              <label className="block text-sm mb-1 text-foreground">Message</label>
               <textarea
-                className="w-full px-3 py-2 h-32 rounded-md bg-black/20 border border-white/10 focus:outline-none focus:ring-2 focus:ring-cyan-400/50"
+                className="w-full px-3 py-2 h-32 rounded-md bg-background border border-input text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/40"
                 value={form.message}
                 onChange={(e) => setForm((f) => ({ ...f, message: e.target.value }))}
                 required
@@ -113,12 +113,12 @@ export default function ContactSection() {
               <button
                 type="submit"
                 disabled={submitting}
-                className="px-5 py-2 rounded-md bg-cyan-500 text-black font-medium hover:bg-cyan-400 disabled:opacity-50"
+                className="px-5 py-2 rounded-md bg-primary text-primary-foreground font-medium hover:opacity-90 disabled:opacity-50"
               >
                 {submitting ? 'Sending…' : 'Send Email'}
               </button>
-              {sent && <span className="text-green-400 text-sm">{sent}</span>}
-              {error && <span className="text-red-400 text-sm">{error}</span>}
+              {sent && <span className="text-green-600 dark:text-green-400 text-sm">{sent}</span>}
+              {error && <span className="text-red-600 dark:text-red-400 text-sm">{error}</span>}
             </div>
           </form>
           
