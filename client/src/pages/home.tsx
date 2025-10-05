@@ -7,14 +7,11 @@ import ContactSection from "@/components/contact-section";
 import Footer from "@/components/footer";
 
 import profilePicture from "@assets/Profile Picture_1755692636143.jpg";
-import DarkVeil from "@/components/dark-veil";
 
 export default function Home() {
   return (
     <div className="relative bg-background text-foreground font-sans overflow-x-hidden min-h-screen">
-      <div className="fixed inset-0 -z-10" aria-hidden>
-        <DarkVeil />
-      </div>
+      {/* Global DarkVeil is mounted at App level */}
       {/* Remove heavy image blur overlay to let WebGL show through */}
       <Navigation />
       <HeroSection />

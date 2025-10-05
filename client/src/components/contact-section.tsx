@@ -4,7 +4,6 @@ import { useState } from "react";
 import ClickSpark from "@/components/click-spark";
 import contactBg from "@assets/Services_1755693410305.jpg";
 
-import DarkVeil from "@/components/dark-veil";
 
 export default function ContactSection() {
   const [submitting, setSubmitting] = useState(false);
@@ -41,9 +40,7 @@ export default function ContactSection() {
   };
   return (
     <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 relative">
-      <div className="absolute inset-0 z-0 pointer-events-none">
-        <DarkVeil />
-      </div>
+      {/* Global DarkVeil is mounted at App level */}
       <div className="max-w-4xl mx-auto text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
