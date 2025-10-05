@@ -7,11 +7,13 @@ import ContactSection from "@/components/contact-section";
 
 import profilePicture from "@assets/Profile Picture_1755692636143.jpg";
 import CometBackground from "@/components/comet-background";
+import LaserFlow from "@/components/laser-flow";
 
 export default function Home() {
   return (
     <div className="relative bg-dark-900 text-white font-sans overflow-x-hidden min-h-screen">
       <CometBackground />
+      <LaserFlow color="#38bdf8" />
       <div
         aria-hidden
         className="pointer-events-none fixed inset-0 -z-10"
@@ -22,7 +24,7 @@ export default function Home() {
           filter: "blur(12px)",
         }}
       />
-      <div className="fixed inset-0 -z-10 bg-black/60" />
+      <div className="fixed inset-0 -z-10 bg-black/30" />
       <Navigation />
       <HeroSection />
       <AboutSection />
