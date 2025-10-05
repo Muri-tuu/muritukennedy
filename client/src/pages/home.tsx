@@ -12,7 +12,7 @@ import LaserFlow from "@/components/laser-flow";
 
 export default function Home() {
   return (
-    <div className="relative bg-dark-900 text-white font-sans overflow-x-hidden min-h-screen">
+    <div className="relative bg-background text-foreground font-sans overflow-x-hidden min-h-screen">
       <CometBackground />
       <LaserFlow color="#38bdf8" />
       <div

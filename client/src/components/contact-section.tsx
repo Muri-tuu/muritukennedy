@@ -21,7 +21,13 @@ export default function ContactSection() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form),
       });
-      const data = await res.json();
+      let data: any = null;
+      const contentType = res.headers.get('content-type') || '';
+      if (contentType.includes('application/json')) {
+        try { data = await res.json(); } catch { data = null; }
+      } else {
+        try { const text = await res.text(); data = text ? { message: text } : null; } catch { data = null; }
+      }
       if (!res.ok) throw new Error(data?.message || 'Failed to send');
       setSent('Thanks! Your message has been sent.');
       setForm({ name: "", email: "", message: "" });
@@ -71,7 +77,7 @@ export default function ContactSection() {
             </a>
           </div>
 
-          <form onSubmit={submit} className="max-w-2xl mx-auto text-left bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 glass-card">
+          <form onSubmit={submit} className="max-w-2xl mx-auto text-left rounded-2xl p-6" data-no-splash>
             <div className="grid sm:grid-cols-2 gap-4">
               <div>
                 <label className="block text-sm mb-1">Name</label>

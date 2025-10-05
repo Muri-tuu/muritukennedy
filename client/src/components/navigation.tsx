@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Sun, Moon } from "lucide-react";
 import { motion } from "framer-motion";
 import { openWhatsAppPopup } from "@/lib/whatsapp";
 import ClickSpark from "@/components/click-spark";
@@ -8,7 +8,10 @@ export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [dark, setDark] = useState<boolean>(() => {
     if (typeof document === 'undefined') return true;
-    return document.documentElement.classList.contains('dark');
+    const stored = localStorage.getItem('theme');
+    if (stored === 'dark') return true;
+    if (stored === 'light') return false;
+    return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
   });
   const [activeSection, setActiveSection] = useState("home");
 
@@ -47,8 +50,18 @@ export default function Navigation() {
     setIsMenuOpen(false);
   };
 
+  useEffect(() => {
+    if (dark) {
+      document.documentElement.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+      localStorage.setItem('theme', 'light');
+    }
+  }, [dark]);
+
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-b from-black/70 to-transparent backdrop-blur-md border-b border-gray-800">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-b from-black/70 to-transparent backdrop-blur-md border-b border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
@@ -58,21 +71,17 @@ export default function Navigation() {
             </span>
             <button
               aria-label="Toggle theme"
-              onClick={() => {
-                const next = !dark;
-                setDark(next);
-                if (next) document.documentElement.classList.add('dark');
-                else document.documentElement.classList.remove('dark');
-              }}
-              className="px-2 py-1 rounded-md text-xs bg-white/10 hover:bg-white/20 border border-white/10"
+              onClick={() => setDark((d) => !d)}
+              className="p-2 rounded-md bg-white/10 hover:bg-white/20 border border-white/10 text-white"
+              data-no-splash
             >
-              {dark ? 'Dark' : 'Light'}
+              {dark ? <Sun size={18} /> : <Moon size={18} />}
             </button>
           </div>
           
           {/* Desktop Navigation */}
           <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-8">
+            <div className="ml-10 flex items-baseline space-x-8" data-no-splash>
               {["home", "about", "projects", "services", "contact"].map((section) => (
                 <ClickSpark key={`cs-${section}`} sparkColor="#38bdf8" sparkRadius={12} sparkCount={8}>
                   <button
