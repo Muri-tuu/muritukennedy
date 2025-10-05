@@ -7,7 +7,12 @@ module.exports = async function handler(req, res) {
   }
 
   try {
-    const { name, email, message } = req.body || {};
+    // Support both Vercel Node runtimes (body may already be parsed or be a raw string)
+    let body = req.body;
+    if (typeof body === 'string') {
+      try { body = JSON.parse(body); } catch { body = {}; }
+    }
+    const { name, email, message } = body || {};
     if (!name || !email || !message) {
       res.status(400).json({ message: 'Missing name, email, or message' });
       return;
