@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { openWhatsAppModal } from "@/lib/whatsapp";
+import { openWhatsAppPopup } from "@/lib/whatsapp";
 import contactBg from "@assets/Services_1755693410305.jpg";
 
 export default function ContactSection() {
@@ -27,7 +27,7 @@ export default function ContactSection() {
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-12">
             <button
-              onClick={() => openWhatsAppModal({ phoneNumber: "254115594826", message: "Hello Kennedy, I'm interested in discussing a potential project opportunity." })}
+              onClick={() => openWhatsAppPopup({ phoneNumber: "254115594826", message: "Hello Kennedy, I'm interested in discussing a potential project opportunity." })}
               className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-green-600 to-emerald-500 text-white font-medium rounded-xl hover:from-green-700 hover:to-emerald-600 transition-all duration-300 transform hover:scale-105 hover:shadow-lg text-lg"
             >
               <i className="fab fa-whatsapp mr-3 text-xl"></i>
