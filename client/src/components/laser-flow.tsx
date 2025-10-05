@@ -129,7 +129,7 @@ export default function LaserFlow({ color = '#38bdf8' }: { color?: string }) {
   return (
     <div
       ref={mountRef}
-      style={{ position: 'fixed', inset: 0, zIndex: 0, pointerEvents: 'none' }}
+      style={{ position: 'fixed', inset: 0, zIndex: -0.5 as any, pointerEvents: 'none', mixBlendMode: 'screen' }}
       aria-hidden
     />
   );

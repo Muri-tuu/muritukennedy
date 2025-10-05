@@ -63,8 +63,8 @@ export default function CometBackground() {
 
       // Space gradient background (deep violet to near-black)
       const g = ctx.createLinearGradient(0, 0, 0, h);
-      g.addColorStop(0, '#04030a');
-      g.addColorStop(1, '#0a0f1c');
+      g.addColorStop(0, '#060818');
+      g.addColorStop(1, '#0a1022');
       ctx.fillStyle = g;
       ctx.fillRect(0, 0, w, h);
 
@@ -77,12 +77,12 @@ export default function CometBackground() {
 
       // Starfield twinkle
       ctx.save();
-      ctx.globalCompositeOperation = 'lighter';
+      ctx.globalCompositeOperation = 'screen';
       for (const s of starsRef.current) {
         s.a += s.tw * 0.01;
         if (s.a < 0.1 || s.a > 0.8) s.tw *= -1;
         ctx.globalAlpha = Math.max(0.05, Math.min(0.9, s.a));
-        ctx.fillStyle = '#c7d2fe'; // soft indigo
+        ctx.fillStyle = '#7dd3fc'; // soft cyan
         ctx.beginPath();
         ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
         ctx.fill();
@@ -118,9 +118,9 @@ export default function CometBackground() {
         const len = 140 * (1 + (1 - lifeT) * 1.5) * DPR;
 
         ctx.save();
-        ctx.globalCompositeOperation = 'lighter';
-        ctx.strokeStyle = `rgba(99,102,241,${alpha})`; // indigo
-        ctx.shadowColor = 'rgba(56,189,248,0.6)'; // cyan glow
+        ctx.globalCompositeOperation = 'screen';
+        ctx.strokeStyle = `rgba(56,189,248,${alpha})`; // cyan
+        ctx.shadowColor = 'rgba(167,139,250,0.5)'; // purple glow
         ctx.shadowBlur = 12 * DPR;
         ctx.lineWidth = 2 * DPR;
         ctx.beginPath();
