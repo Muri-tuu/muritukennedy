@@ -6,6 +6,10 @@ import ClickSpark from "@/components/click-spark";
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [dark, setDark] = useState<boolean>(() => {
+    if (typeof document === 'undefined') return true;
+    return document.documentElement.classList.contains('dark');
+  });
   const [activeSection, setActiveSection] = useState("home");
 
   useEffect(() => {
@@ -48,10 +52,22 @@ export default function Navigation() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <div className="flex-shrink-0">
+          <div className="flex-shrink-0 flex items-center gap-3">
             <span className="text-xl font-bold bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent">
               Kennedy
             </span>
+            <button
+              aria-label="Toggle theme"
+              onClick={() => {
+                const next = !dark;
+                setDark(next);
+                if (next) document.documentElement.classList.add('dark');
+                else document.documentElement.classList.remove('dark');
+              }}
+              className="px-2 py-1 rounded-md text-xs bg-white/10 hover:bg-white/20 border border-white/10"
+            >
+              {dark ? 'Dark' : 'Light'}
+            </button>
           </div>
           
           {/* Desktop Navigation */}

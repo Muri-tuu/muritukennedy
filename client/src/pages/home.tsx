@@ -24,7 +24,7 @@ export default function Home() {
           filter: "blur(12px)",
         }}
       />
-      <div className="fixed inset-0 -z-10 bg-black/30" />
+      <div className="fixed inset-0 -z-10 bg-black/15" />
       <Navigation />
       <HeroSection />
       <AboutSection />

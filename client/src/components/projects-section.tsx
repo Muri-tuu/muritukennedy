@@ -28,12 +28,6 @@ export default function ProjectsSection() {
       title: "Sparkle Laundry Home",
       subtitle: "Automated Convenience Platform",
       delay: 0.2
-    },
-    {
-      icon: royalPriesthoodIcon,
-      title: "Royal Priesthood",
-      subtitle: "Digital Ministry Platform",
-      delay: 0.3
     }
   ];
 
