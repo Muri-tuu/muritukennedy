@@ -33,7 +33,7 @@ export default function ProjectsSection() {
   return (
     <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        <div className="glass-card bg-white/5 backdrop-blur-xl rounded-3xl p-6 sm:p-8 lg:p-12 border border-white/10 shadow-[0_0_60px_rgba(59,130,246,0.15)]">
+        <div className="p-1">
           {/* Section Title */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -69,8 +69,8 @@ export default function ProjectsSection() {
                   transition={{ duration: 0.4, ease: "easeInOut" }}
                 >
                   <div className="mb-6">
-                    <motion.div 
-                      className="relative bg-dark-800/60 backdrop-blur-sm rounded-2xl border border-gray-600 group-hover:border-blue-500/70 group-hover:shadow-xl group-hover:shadow-blue-500/30 transition-all duration-500 aspect-square overflow-hidden"
+              <motion.div 
+                className="relative rounded-2xl transition-all duration-500 aspect-square overflow-hidden"
                       animate={{ 
                         y: [0, -5, 0],
                       }}

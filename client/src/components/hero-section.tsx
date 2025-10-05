@@ -20,8 +20,8 @@ export default function HeroSection() {
             transition={{ duration: 1.2, ease: "easeOut" }}
             className="space-y-6"
           >
-            {/* Welcome Card */}
-            <div className="glass-card bg-dark-700/50 backdrop-blur-xl rounded-3xl p-6 sm:p-8 border border-cyan-400/20 shadow-[0_0_40px_rgba(56,189,248,0.08)]">
+            {/* Welcome */}
+            <div>
               <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-serif font-bold leading-tight">
                 <GradientText colors={["#38bdf8","#a78bfa","#ff79c6","#38bdf8"]} animationSpeed={8}>
                   Welcome to<br/>My Portfolio
@@ -135,14 +135,14 @@ export default function HeroSection() {
             </div>
           </motion.div>
           
-          {/* Right Profile Card */}
+          {/* Right Profile */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2, delay: 0.4, ease: "easeOut" }}
             className="lg:order-2"
           >
-            <div className="bg-dark-700/80 backdrop-blur-sm rounded-3xl p-6 sm:p-8 border border-gray-600 text-center shadow-xl">
+            <div className="text-center">
               <div className="mb-6">
                 <motion.img
                   src={profilePicture}
