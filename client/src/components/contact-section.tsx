@@ -96,10 +96,10 @@ export default function ContactSection() {
                 <input
                   type="email"
                   className="w-full px-3 py-2 rounded-md bg-background border border-input text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/40"
+                  placeholder="your.email@example.com"
                   value={form.email}
                   onChange={(e) => setForm((f) => ({ ...f, email: e.target.value }))}
-                  placeholder={(typeof navigator !== 'undefined' && (navigator as any).credentials) ? 'Using browser email if available' : ''}
-                  required={!(typeof navigator !== 'undefined' && (navigator as any).credentials)}
+                  required
                 />
               </div>
             </div>
