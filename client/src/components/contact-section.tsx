@@ -85,6 +85,7 @@ export default function ContactSection() {
                 <label className="block text-sm mb-1 text-foreground">Name</label>
                 <input
                   className="w-full px-3 py-2 rounded-md bg-background border border-input text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/40"
+                  placeholder="Your full name"
                   value={form.name}
                   onChange={(e) => setForm((f) => ({ ...f, name: e.target.value }))}
                   required
