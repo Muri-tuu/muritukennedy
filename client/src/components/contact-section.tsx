@@ -107,6 +107,7 @@ export default function ContactSection() {
               <label className="block text-sm mb-1 text-foreground">Message</label>
               <textarea
                 className="w-full px-3 py-2 h-32 rounded-md bg-background border border-input text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/40"
+                placeholder="Tell me about your project or inquiry..."
                 value={form.message}
                 onChange={(e) => setForm((f) => ({ ...f, message: e.target.value }))}
                 required
