@@ -6,7 +6,7 @@ export default function Footer() {
           {/* Copyright */}
           <div className="mb-4 md:mb-0">
             <p className="text-gray-400">
-              © 2025 Kennedy Muritu | Built with <span className="text-red-500">❤️</span> on Replit
+              © 2025 Kennedy Muritu | Built with <span className="text-red-500">❤️</span> 
             </p>
           </div>
           
