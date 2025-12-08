@@ -16,7 +16,7 @@ export default function SideElements() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1, duration: 0.5 }}
-        className="fixed left-6 lg:left-10 bottom-0 hidden lg:flex flex-col items-center gap-6 z-40"
+        className="fixed left-3 xl:left-6 bottom-0 hidden lg:flex flex-col items-center gap-6 z-40"
       >
         {socialLinks.map(({ icon: Icon, href, label }) => (
           <motion.a
@@ -39,7 +39,7 @@ export default function SideElements() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1, duration: 0.5 }}
-        className="fixed right-6 lg:right-10 bottom-0 hidden lg:flex flex-col items-center gap-6 z-40"
+        className="fixed right-3 xl:right-6 bottom-0 hidden lg:flex flex-col items-center gap-6 z-40"
       >
         <motion.a
           href="mailto:kennedymuritu@gmail.com"
