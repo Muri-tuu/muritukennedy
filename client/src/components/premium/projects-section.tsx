@@ -1,13 +1,11 @@
 import { motion } from "framer-motion";
 import { ExternalLink, Github, Folder } from "lucide-react";
-import shukaMetaverseIcon from "@assets/Shuka Metaverse_1755692624114.jpg";
-import techHubIcon from "@assets/TechHub_1755692624115.png";
-import sparkleLaundryIcon from "@assets/Sparkle Laundry Home_1755692624114.png";
+import mSolutionsImage from "@assets/m-solutions-icon.svg";
 
 interface FeaturedProject {
   title: string;
   description: string;
-  image: string;
+  image?: string;
   tech: string[];
   github?: string;
   external?: string;
@@ -16,33 +14,31 @@ interface FeaturedProject {
 
 const featuredProjects: FeaturedProject[] = [
   {
-    title: "Shuka Metaverse",
+    title: "Campus Vote - Decentralized Student Elections",
     description:
-      "An immersive Web3 game interface that combines blockchain technology with interactive gaming experiences. Built with modern web technologies to deliver seamless virtual world interactions.",
-    image: shukaMetaverseIcon,
-    tech: ["React", "Three.js", "Web3.js", "Solidity"],
-    github: "https://github.com/Muri-tuu",
-    external: "#",
+      "A modern, secure, and transparent election platform for university students. Built to run on the Scroll blockchain, providing wallet-based authentication, one-vote-per-user enforcement, and real-time results.",
+    tech: ["Next.js", "React", "Tailwind CSS", "Web3"],
+    github: "https://github.com/Muri-tuu/v0-decentralized-student-elections",
+    external: "https://v0-decentralized-student-elections.vercel.app/",
     align: "right",
   },
   {
-    title: "TechHub Solutions",
+    title: "M Solutions - Campus Essentials & Tech Services",
     description:
-      "A comprehensive e-commerce platform designed for print services. Features include custom product configuration, real-time pricing, and streamlined order management.",
-    image: techHubIcon,
-    tech: ["Next.js", "Node.js", "PostgreSQL", "Stripe"],
-    github: "https://github.com/Muri-tuu",
-    external: "#",
+      "A modern e-commerce website for student supplies and professional tech services. Includes product filtering, cart functionality with localStorage persistence, and WhatsApp checkout.",
+    image: mSolutionsImage,
+    tech: ["HTML5", "CSS3", "JavaScript", "Node.js"],
+    github: "https://github.com/Muri-tuu/M-Solutions-Website",
+    external: "https://m-solutions-website.vercel.app/",
     align: "left",
   },
   {
-    title: "Sparkle Laundry Home",
+    title: "RP Website",
     description:
-      "An automated convenience platform that revolutionizes laundry services. Includes scheduling, tracking, and payment integration for a seamless user experience.",
-    image: sparkleLaundryIcon,
-    tech: ["React", "Express", "MongoDB", "Tailwind"],
-    github: "https://github.com/Muri-tuu",
-    external: "#",
+      "A sample church website built as a clean, modern web experience with responsive layouts and a polished UI.",
+    tech: ["React", "TypeScript", "Tailwind CSS"],
+    github: "https://github.com/Muri-tuu/rpwebsite",
+    external: "https://rpwebsite.vercel.app/",
     align: "right",
   },
 ];
@@ -113,11 +109,23 @@ export default function ProjectsSection() {
                   className="block relative rounded-lg overflow-hidden"
                 >
                   <div className="absolute inset-0 bg-primary/20 group-hover:bg-transparent transition-colors duration-300 z-10" />
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full aspect-video object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
-                  />
+                  {project.image ? (
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className={`w-full aspect-video transition-all duration-500 group-hover:grayscale-0 ${
+                        project.image.endsWith(".svg")
+                          ? "object-contain bg-card p-10"
+                          : "object-cover grayscale"
+                      }`}
+                    />
+                  ) : (
+                    <div className="w-full aspect-video bg-card border border-border flex items-center justify-center px-8">
+                      <span className="text-lg sm:text-xl font-display font-semibold text-foreground text-center">
+                        {project.title}
+                      </span>
+                    </div>
+                  )}
                 </a>
               </div>
 
@@ -243,6 +251,7 @@ export default function ProjectsSection() {
             </motion.div>
           ))}
         </div>
+
       </div>
     </section>
   );
