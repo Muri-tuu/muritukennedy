@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import { ExternalLink, Github, Folder } from "lucide-react";
 import mSolutionsImage from "@assets/m-solutions-icon.svg";
+import campusVoteImage from "@assets/campus-vote.png";
+import rpWebsiteImage from "@assets/Royal Priesthood_1755692624113.png";
 
 interface FeaturedProject {
   title: string;
@@ -17,6 +19,7 @@ const featuredProjects: FeaturedProject[] = [
     title: "Campus Vote - Decentralized Student Elections",
     description:
       "A modern, secure, and transparent election platform for university students. Built to run on the Scroll blockchain, providing wallet-based authentication, one-vote-per-user enforcement, and real-time results.",
+    image: campusVoteImage,
     tech: ["Next.js", "React", "Tailwind CSS", "Web3"],
     github: "https://github.com/Muri-tuu/v0-decentralized-student-elections",
     external: "https://v0-decentralized-student-elections.vercel.app/",
@@ -36,6 +39,7 @@ const featuredProjects: FeaturedProject[] = [
     title: "RP Website",
     description:
       "A sample church website built as a clean, modern web experience with responsive layouts and a polished UI.",
+    image: rpWebsiteImage,
     tech: ["React", "TypeScript", "Tailwind CSS"],
     github: "https://github.com/Muri-tuu/rpwebsite",
     external: "https://rpwebsite.vercel.app/",
