@@ -16,3 +16,5 @@ server/public
 # avoid ignoring main vite config
 vite.config.ts.*
 !vite.config.ts
+.replit
+replid.md
