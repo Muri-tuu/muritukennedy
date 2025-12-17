@@ -18,3 +18,6 @@ vite.config.ts.*
 !vite.config.ts
 .replit
 replid.md
+.local
+redeploy-trigger-2025-10-27-120812.txt
+netlify.toml
